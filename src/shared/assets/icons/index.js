@@ -20,6 +20,7 @@ import postgresqlLogo from "./skills/frontend/png/postgresql.png"
 import reactRouterLogo from "./skills/frontend/svg/react-router.svg"
 import tailwindLogo from "./skills/frontend/svg/tailwind.svg"
 import axiosLogo from "./skills/frontend/svg/axios.svg"
+import gitLogo from "./skills/frontend/svg/git.svg"
 
 // ai
 // png
@@ -70,6 +71,7 @@ export {
   reduxLogo,
   axiosLogo,
   postgresqlLogo,
+  gitLogo,
 
   // ai
   ai,

@@ -8,6 +8,8 @@ import {
   gdocsLogo,
   geminiLogo,
   ghatGPTLogo,
+  github,
+  gitLogo,
   grokLogo,
   htmlLogo,
   jsLogo,
@@ -35,11 +37,20 @@ import {
 } from "../../shared/assets/icons"
 
 export const resources = {
+  // Frontend
   html: { href: "https://developer.mozilla.org/docs/Web/HTML", logo: htmlLogo },
   css: { href: "https://developer.mozilla.org/docs/Web/CSS", logo: cssLogo },
   js: {
     href: "https://developer.mozilla.org/docs/Web/JavaScript",
     logo: jsLogo,
+  },
+  git: {
+    href: "https://git-scm.com/",
+    logo: gitLogo,
+  },
+  github: {
+    href: "https://github.com/",
+    logo: github,
   },
   scss: { href: "https://sass-lang.com/", logo: sassLogo },
   tailwind: { href: "https://tailwindcss.com/", logo: tailwindLogo },
@@ -48,6 +59,8 @@ export const resources = {
   vite: { href: "https://vite.dev/", logo: viteLogo },
   rtk: { href: "https://redux-toolkit.js.org/", logo: reduxLogo },
   postgres: { href: "https://www.postgresql.org/", logo: postgresqlLogo },
+
+  // AI
   comfy: { href: "https://www.comfy.org", logo: comfyLogo },
   qwen: { href: "https://qwen.ai/home", logo: qwenLogo },
   flux: { href: "https://flux.com.ru/", logo: fluxLogo },
@@ -63,6 +76,8 @@ export const resources = {
   chatgpt: { href: "https://chatgpt.com/", logo: ghatGPTLogo },
   perplexity: { href: "https://www.perplexity.ai/", logo: perplexityLogo },
   notebookLM: { href: "https://notebooklm.google/", logo: notebooklmLogo },
+
+  // Softwares
   photoshop: {
     href: "https://www.adobe.com/ru/products/photoshop.html",
     logo: photoshopLogo,
@@ -83,7 +98,7 @@ export const resources = {
 export const skillsInfo = [
   {
     id: "frontend",
-    title: "Frontend",
+    title: "Web разработка",
     img: ui,
     groups: [
       {
@@ -92,6 +107,8 @@ export const skillsInfo = [
           { name: "HTML5", key: "html" },
           { name: "CSS", key: "css" },
           { name: "JavaScript", key: "js" },
+          { name: "Git", key: "git" },
+          { name: "GitHub", key: "github" },
         ],
       },
       {
