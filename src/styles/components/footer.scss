@@ -1,0 +1,38 @@
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  flex-grow: 1;
+}
+
+p {
+  flex-grow: 1;
+}
+
+.copyright-link:hover {
+  color: #8404fc;
+}
+
+.menu__list--link {
+  display: block;
+  width: 50px; /* Размер иконки */
+  height: 50px; /* Размер иконки */
+  &:hover {
+    animation: pulse 2s infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

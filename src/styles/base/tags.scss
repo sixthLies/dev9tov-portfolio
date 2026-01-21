@@ -1,0 +1,33 @@
+@use "../theme/colors.scss" as *;
+
+body,
+html {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 18px;
+  color: $primary-color;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: linear-gradient(to right bottom, #050302, #230043);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(5px);
+  overflow-x: hidden;
+  overflow-y: hidden; /* Добавляем возможность прокрутки */
+}
+
+header {
+  margin-bottom: 100px;
+  border-bottom: 1px solid $primary-color;
+}
+
+
+footer {
+  margin-top: auto;
+  border-top: 1px solid $primary-color;
+}

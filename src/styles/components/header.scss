@@ -1,0 +1,40 @@
+@use "../configs/variables" as *;
+@use "../configs/mixins" as *;
+@use "../theme/colors" as *;
+
+.header__content {
+  @include flex-between-center;
+}
+
+.header__logo {
+  flex-grow: 1;
+}
+
+.menu__list {
+  display: flex;
+  gap: 37px;
+}
+
+.menu__item--link {
+  font-size: 20px;
+}
+
+.menu__item {
+  @include underline-gradient($color-white, $color-accent);
+}
+
+.header__btn {
+  margin-left: 25px;
+  padding: 16px 20px;
+  border: none;
+  outline: none;
+  color: $color-white;
+  background: transparent;
+  cursor: pointer;
+
+  @include glowing-border-btn;
+
+  &:active {
+    font-size: smaller;
+  }
+}

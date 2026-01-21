@@ -1,0 +1,108 @@
+@use "../configs/mixins.scss" as *;
+@use "../theme/colors.scss" as *;
+
+.skills {
+  height: 650px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $color-btn-bg $primary-color;
+}
+
+.group__img {
+  margin-top: 1px;
+  width: 32px;
+  height: 32px;
+}
+
+.skills-table__img {
+  width: 26px;
+  height: 26px;
+  color: aliceblue;
+}
+
+.skills__title {
+  margin-bottom: 15px;
+  font-size: 1.75rem; // 28px
+}
+
+.skills-table {
+  display: grid;
+  gap: 24px;
+  margin-right: 10px;
+
+  &__group {
+    margin: 5px 0;
+    padding: 20px 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    font-size: 1.8rem; // 29px
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(140px, 220px) 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.25),
+        rgba(255, 255, 255, 0.02)
+      );
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    &--secondary {
+      margin-top: 6px;
+    }
+  }
+
+  &__tag {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 20px; // 20px
+    background: rgba(111, 169, 255, 0.18);
+    box-shadow: 0 0 12px rgba(111, 169, 255, 0.25);
+  }
+
+  &__link {
+    @include glass-link;
+  }
+
+  @media (max-width: 640px) {
+    &__row {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.skills__link {
+  @include glass-link;
+}

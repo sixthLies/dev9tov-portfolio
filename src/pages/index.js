@@ -1,0 +1,6 @@
+export * from "./about"
+export * from "./home"
+export * from "./projects"
+export * from "./skills"
+export * from "./contact"
+export * from "./404"

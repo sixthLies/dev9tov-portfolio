@@ -1,0 +1,49 @@
+@use "../theme/colors.scss" as *;
+@use "../configs/mixins.scss" as *;
+
+.about {
+  color: $color-white;
+  height: 650px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $color-btn-bg $primary-color;
+}
+
+.about__content {
+  @include flex-column-gap(50px);
+  backdrop-filter: blur(8px);
+}
+
+.about__title {
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+.about__list {
+  @include flex-column-gap(10px);
+}
+
+.about__list--item {
+  @include row-base(21px, 400);
+}
+
+.portfolio__list {
+  @include flex-column-gap(30px);
+}
+
+.portfolio__list--item {
+  @include flex-column-gap(16px);
+}
+
+.portfolio__title {
+  @include row-base(21px, 700);
+}
+
+.portfolio__task {
+  @include row-base(17px, 400);
+  line-height: 1.5;
+}
+
+.about__link {
+  @include glass-link;
+}
