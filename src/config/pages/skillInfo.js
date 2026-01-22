@@ -3,6 +3,7 @@ import {
   axiosLogo,
   comfyLogo,
   cssLogo,
+  nodejsLogo,
   flstudioLogo,
   fluxLogo,
   gdocsLogo,
@@ -34,6 +35,7 @@ import {
   viteLogo,
   vsstudioLogo,
   wanLogo,
+  reactLogo,
 } from "../../shared/assets/icons"
 
 export const resources = {
@@ -44,16 +46,12 @@ export const resources = {
     href: "https://developer.mozilla.org/docs/Web/JavaScript",
     logo: jsLogo,
   },
-  git: {
-    href: "https://git-scm.com/",
-    logo: gitLogo,
-  },
-  github: {
-    href: "https://github.com/",
-    logo: github,
-  },
+  git: { href: "https://git-scm.com/", logo: gitLogo },
+  github: { href: "https://github.com/", logo: github },
+  nodejs: { href: "https://nodejs.org/en", logo: nodejsLogo },
   scss: { href: "https://sass-lang.com/", logo: sassLogo },
   tailwind: { href: "https://tailwindcss.com/", logo: tailwindLogo },
+  react: { href: "https://react.dev/", logo: reactLogo },
   reactRouter: { href: "https://reactrouter.com/", logo: reactRouterLogo },
   axios: { href: "https://axios-http.com/docs/api_intro", logo: axiosLogo },
   vite: { href: "https://vite.dev/", logo: viteLogo },
@@ -109,6 +107,7 @@ export const skillsInfo = [
           { name: "JavaScript", key: "js" },
           { name: "Git", key: "git" },
           { name: "GitHub", key: "github" },
+          { name: "Node JS", key: "nodejs" },
         ],
       },
       {
@@ -121,6 +120,7 @@ export const skillsInfo = [
       {
         label: "React‑экосистема: ",
         items: [
+          { name: "React", key: "react" },
           { name: "React Router", key: "reactRouter" },
           { name: "Axios", key: "axios" },
           { name: "Vite", key: "vite" },

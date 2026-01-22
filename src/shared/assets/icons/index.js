@@ -12,6 +12,7 @@ import ui from "./skills/frontend/png/frontend.png"
 import htmlLogo from "./skills/frontend/png/html.png"
 import cssLogo from "./skills/frontend/png/css.png"
 import jsLogo from "./skills/frontend/png/js.png"
+import reactLogo from "./skills/frontend/png/react.png"
 import sassLogo from "./skills/frontend/png/sass.png"
 import viteLogo from "./skills/frontend/png/vite.png"
 import reduxLogo from "./skills/frontend/png/redux.png"
@@ -21,6 +22,7 @@ import reactRouterLogo from "./skills/frontend/svg/react-router.svg"
 import tailwindLogo from "./skills/frontend/svg/tailwind.svg"
 import axiosLogo from "./skills/frontend/svg/axios.svg"
 import gitLogo from "./skills/frontend/svg/git.svg"
+import nodejsLogo from "./skills/frontend/svg/nodejs.svg"
 
 // ai
 // png
@@ -64,8 +66,10 @@ export {
   htmlLogo,
   cssLogo,
   jsLogo,
+  nodejsLogo,
   sassLogo,
   tailwindLogo,
+  reactLogo,
   reactRouterLogo,
   viteLogo,
   reduxLogo,
