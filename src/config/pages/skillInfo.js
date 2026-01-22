@@ -96,7 +96,7 @@ export const resources = {
 export const skillsInfo = [
   {
     id: "frontend",
-    title: "Web разработка",
+    title: "Web",
     img: ui,
     groups: [
       {
