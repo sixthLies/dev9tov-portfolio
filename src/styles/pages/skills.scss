@@ -28,14 +28,11 @@
 .skills-table {
   display: grid;
   gap: 24px;
-  margin-right: 10px;
+  margin: 0 10px 50px 0;
 
   &__group {
+    @include backdrop-bg;
     margin: 5px 0;
-    padding: 20px 14px;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(8px);
   }
 
   &__title {
@@ -101,6 +98,11 @@
       grid-template-columns: 1fr;
     }
   }
+}
+
+.skills-links__block {
+  @include flex-between-center;
+  margin-right: 10px;
 }
 
 .skills__link {

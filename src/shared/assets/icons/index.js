@@ -1,5 +1,5 @@
 // базовые иконки
-import logo from "./logo.png"
+import logo from "./app/logo.png"
 
 // social
 import github from "./socials/github.svg"
