@@ -1,4 +1,5 @@
 @use "../theme/colors" as *;
+@use "../configs/mixins.scss" as *;
 
 .cards__container {
   display: flex;
@@ -8,8 +9,7 @@
 
 .holographic__card {
   display: flex;
-  width: 400px;
-  height: 242px;
+  @include width-height(400px, 240px);
   background: #111;
   position: relative;
   overflow: hidden;

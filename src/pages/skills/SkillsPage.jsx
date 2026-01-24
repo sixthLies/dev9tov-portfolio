@@ -2,15 +2,15 @@ import { Link } from "react-router"
 import { SkillsTable } from "./SkillsTable"
 import { skillsClasses } from "@/config/ui/classNames"
 import { skillsInfo } from "@/config/pages/skills.config."
-import { InfoBox } from "@/shared/ui/AlertBox"
+import { InfoBox } from "@/shared/ui/InfoBox"
 import { infoBoxSkillsData } from "@/config/ui/infoBox.config"
 
 export const SkillsPage = () => {
   return (
     <section className="skills">
-      <InfoBox data={infoBoxSkillsData} />
-
       <h2 className="skills__title">Мой Стек</h2>
+
+      <InfoBox data={infoBoxSkillsData} />
 
       <SkillsTable skillsInfo={skillsInfo} {...skillsClasses} />
 
