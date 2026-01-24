@@ -1,8 +1,8 @@
 import { Link } from "react-router"
-import { menuItems } from "@/config/navigation"
 import { ListMenu } from "@/shared"
 import { logo } from "@/shared/assets/icons"
-import { headerClasses } from "../../config/classNames"
+import { headerClasses } from "@/config/ui/classNames"
+import { menuItems } from "@/config/app/navigation"
 
 export const Header = () => {
   return (

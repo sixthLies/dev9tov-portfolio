@@ -1,4 +1,5 @@
-import { resources } from "../../config/pages/skillInfo"
+import { resources } from "@/config/pages/skills.config."
+
 export const SkillsTable = ({
   skillsInfo,
   root,

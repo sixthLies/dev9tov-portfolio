@@ -1,7 +1,7 @@
 import { Link } from "react-router"
-import { skillsInfo } from "@/config/pages/skillInfo"
 import { SkillsTable } from "./SkillsTable"
-import { skillsClasses } from "../../config/classNames"
+import { skillsClasses } from "@/config/ui/classNames"
+import { skillsInfo } from "@/config/pages/skills.config."
 
 export const SkillsPage = () => {
   return (

@@ -1,10 +1,10 @@
-import React from "react"
-import { Cards } from "../../shared/ui/Cards"
+import { Cards } from "@/shared/ui/Cards"
+import { contactsPageCards } from "@/config/pages/contact.config."
 
 export const ContactsPage = () => {
   return (
     <div>
-      <Cards />
+      <Cards data={contactsPageCards} />
     </div>
   )
 }

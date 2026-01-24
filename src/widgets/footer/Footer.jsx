@@ -1,9 +1,9 @@
 import { Link } from "react-router"
-import { githubLink, gmailLink, telegrammLink } from "@/config/appConfig"
 import { IconsList } from "@/shared"
-import { socialItems } from "@/config/navigation"
 import { icons } from "@/shared/assets"
-import { footerClasses } from "../../config/classNames"
+import { githubLink, gmailLink, telegrammLink } from "@/config/app/appConfig"
+import { footerClasses } from "@/config/ui/classNames"
+import { socialItems } from "@/config/app/navigation"
 
 const links = { telegrammLink, githubLink, gmailLink }
 

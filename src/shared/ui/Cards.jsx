@@ -1,10 +1,9 @@
-import { cardsData } from "@/config/cardContent"
 import { Link } from "react-router"
 
-export const Cards = () => {
+export const Cards = ({ data }) => {
   return (
     <div id="cards-container" className="cards__container">
-      {cardsData.map((card) => (
+      {data.map((card) => (
         <Link key={card.id} to={card.link}>
           <article className="holographic__card">
             <div className="card__content">
