@@ -1,11 +1,15 @@
 import { Link } from "react-router"
 
 export const LinksBlock = ({ links }) => {
+  if (!links?.length) return null
+
+  const [first, ...rest] = links
+
   return (
     <div className="skills-links__block">
-      {links.map((link) => (
+      {[first, ...rest].map((link) => (
         <Link key={link.href} className="skills__link" to={link.href}>
-          {link.label}
+          {link.href === first.href ? `← ${link.label}` : `${link.label} →`}
         </Link>
       ))}
     </div>

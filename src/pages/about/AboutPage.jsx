@@ -16,11 +16,11 @@ export const AboutPage = () => {
           <h2 className="about__title">О моём техническом опыте:</h2>
           <PortfolioList portfolioInfo={portfolioInfo} {...portfolioClasses} />
         </div>
-
-        <Link className="about__link" to="/skills">
-          Подробнее о моих навыках &#8594;
-        </Link>
       </div>
+
+      <Link className="about__link" to="/skills">
+        Подробнее о моих навыках &#8594;
+      </Link>
     </section>
   )
 }
