@@ -5,7 +5,7 @@ export const Cards = ({ cards }) => {
   return (
     <div id="cards-container" className="cards__container">
       {cards.map((card) => (
-        <Card card={card} key={card.link} />
+        <Card card={card} key={card.title} />
       ))}
     </div>
   )

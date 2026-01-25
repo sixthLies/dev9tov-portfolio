@@ -1,8 +1,8 @@
-export const InfoBox = ({ data }) => {
+export const InfoBlock = ({ data }) => {
   return (
     <div className="info">
-      <div class="info-container">
-        <div class="info-icon">i</div>
+      <div className="info-container">
+        <div className="info-icon">i</div>
       </div>
 
       <div className="info__content">

@@ -1,0 +1,37 @@
+@use "../configs" as *;
+
+.social-card__body {
+  @include flex-column-gap(20px);
+  cursor: auto;
+}
+
+.social-card__qr {
+  width: 400px;
+  height: 400px;
+}
+
+.social-card__content {
+  display: flex;
+  gap: 20px;
+}
+
+.social-card__text {
+  text-align: start;
+}
+
+.social-card__description {
+  margin-bottom: 10px;
+}
+
+.social-card__link {
+  @include glass-link;
+}
+
+.social-card {
+  box-shadow: none;
+}
+
+.social-card__avatar {
+  width: 100px;
+  height: 100px;
+}

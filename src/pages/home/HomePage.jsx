@@ -1,4 +1,4 @@
-import { Cards } from "@/shared"
+import { Cards } from "@/shared/ui"
 import { homePageCards } from "@/config/pages/home.config"
 
 export const HomePage = () => {

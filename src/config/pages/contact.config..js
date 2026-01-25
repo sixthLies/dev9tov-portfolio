@@ -1,39 +1,54 @@
-import { github, gmail, hh, mail, telegram } from "../../shared/assets/images"
+import {
+  github,
+  gmail,
+  hh,
+  mail,
+  telegram,
+  telegramavatar,
+  mailavatar,
+  githubavatar,
+} from "../../shared/assets/images"
+import { githubLink, telegrammLink, gmailLink } from "../app/appConfig"
 
 export const contactsPageCards = [
   {
     img: telegram,
-    avatar: "",
-    link: "https://t.me/aveaveavenjoyer",
+    avatar: telegramavatar,
+    name: "hyperMegaUltra<>",
+    socialLink: telegrammLink,
     title: "Telegram",
     description: "Мой телеграмм аккаунт",
   },
   {
     img: github,
-    avatar: "",
+    avatar: githubavatar,
+    name: "SixthLies",
     title: "GitHub",
-    link: "https://github.com/sixthLies",
+    socialLink: githubLink,
     description: "Мой профиль на GitHub",
   },
   {
+    img: hh,
+    avatar: mailavatar,
+    name: "Данил Девятов",
+    title: "HH.ru",
+    socialLink: "https://hh.ru/profile/me?hhtmFrom=ProfileActivator",
+    description: "Мой Профиль на HH.ru",
+  },
+  {
     img: gmail,
-    avatar: "",
+    avatar: githubavatar,
+    name: "Danil",
     title: "Google Mail",
-    link: "https://hh.ru/profile/me?hhtmFrom=ProfileActivatorfddffd",
+    socialLink: gmailLink,
     description: "Моя Google почта",
   },
   {
     img: mail,
-    avatar: "",
+    avatar: mailavatar,
+    name: "Danil Devyatov",
     title: "Mail.ru",
-    link: "hystep_2@mail.ru",
+    socialLink: "hystep_2@mail.ru",
     description: "Моя почта mail.ru",
-  },
-  {
-    img: hh,
-    avatar: "",
-    title: "HH.ru",
-    link: "https://hh.ru/profile/me?hhtmFrom=ProfileActivator",
-    description: "Мой Профиль на HH.ru",
   },
 ]
