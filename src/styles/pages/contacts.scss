@@ -1,14 +1,22 @@
 @use "../theme/colors.scss" as *;
-@use "../configs/mixins.scss" as *;
+@use "../configs" as *;
 
 .contacts {
+  @include scollbar;
   height: 650px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: $color-btn-bg $primary-color;
 
-  & article {
+  .card {
     @include width-height(400px, fit-content);
+    display: block;
+  }
+
+  .card:hover {
+    box-shadow: 0 0 20px $color-accent;
+  }
+
+  .card__img {
+    width: 250px;
+    height: 250px;
   }
 }
 

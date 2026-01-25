@@ -1,5 +1,5 @@
 @use "../theme/colors" as *;
-@use "../configs/mixins.scss" as *;
+@use "../configs" as *;
 
 .cards__container {
   display: flex;
@@ -7,10 +7,10 @@
   flex-wrap: wrap;
 }
 
-.holographic__card {
-  display: flex;
+.card {
   @include width-height(400px, 240px);
-  background: #111;
+  display: flex;
+  background: $background-color;
   position: relative;
   overflow: hidden;
   border-radius: 15px;
@@ -24,42 +24,42 @@
   padding: 30px;
 }
 
-.holographic__card h3 {
+.card__title {
   margin: 10px 0;
   font-size: 26px;
   position: relative;
   z-index: 2;
 }
 
-.holographic__card p {
+.card__description {
   line-height: 140%;
   color: $primary-color;
 }
 
-.holographic__card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    0deg,
-    transparent,
-    transparent 30%,
-    $primary-color
-  );
-  transform: rotate(-45deg);
-  transition: all 0.5s ease;
-  opacity: 0;
-}
+// .card::before {
+//   content: "";
+//   position: absolute;
+//   top: -50%;
+//   left: -50%;
+//   width: 200%;
+//   height: 200%;
+//   background: linear-gradient(
+//     0deg,
+//     transparent,
+//     transparent 30%,
+//     $primary-color
+//   );
+//   transform: rotate(-45deg);
+//   transition: all 0.5s ease;
+//   opacity: 0;
+// }
 
-.holographic__card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px $color-accent;
-}
+// .card:hover {
+//   transform: scale(1.05);
+//   box-shadow: 0 0 20px $color-accent;
+// }
 
-.holographic__card:hover::before {
-  opacity: 1;
-  transform: rotate(-45deg) translateY(100%);
-}
+// .card:hover::before {
+//   opacity: 1;
+//   transform: rotate(-45deg) translateY(100%);
+// }

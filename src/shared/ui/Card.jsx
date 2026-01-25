@@ -1,27 +1,22 @@
 import { Link } from "react-router"
 
-export const Card = ({ as = Link, to, title, description, img, className }) => {
-  const Component = as
-  const isInlineSvg = typeof img === "string" && img.trim().startsWith("<")
-
+export const Card = ({ card }) => {
   return (
-    <Component to={to} className={`card__${className}`}>
-      <article className="card__inner">
-        <div className="card__inner">
-          {img &&
-            (isInlineSvg ? (
-              <div
-                className="card__img"
-                dangerouslySetInnerHTML={{ __html: img }}
-              />
-            ) : (
-              <img className="card__img" src={img} alt={title} />
-            ))}
+    <Link to={card.link}>
+      <article className="card">
+        <div className="card__content">
+          {card.img &&
+          typeof card.img === "string" &&
+          card.img.startsWith("<") ? (
+            <div dangerouslySetInnerHTML={{ __html: card.img }} />
+          ) : card.img ? (
+            <img className="card__img" src={card.img} alt={card.title} />
+          ) : null}
 
-          <h3 className="card__title">{title}</h3>
-          {description && <p className="card__description">{description}</p>}
+          <h3 className="card__title">{card.title}</h3>
+          <p className="card__description">{card.description}</p>
         </div>
       </article>
-    </Component>
+    </Link>
   )
 }

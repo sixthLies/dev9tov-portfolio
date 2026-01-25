@@ -1,5 +1,5 @@
-@use "../configs/mixins.scss" as *;
 @use "../theme/colors.scss" as *;
+@use "../configs" as *;
 
 .info-container {
   position: relative;

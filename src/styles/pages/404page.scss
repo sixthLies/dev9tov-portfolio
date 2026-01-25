@@ -1,5 +1,5 @@
 @use "../theme/colors" as *;
-@use "../configs/mixins" as *;
+@use "../configs" as *;
 
 .not-found {
   @include flex-column-center;

@@ -1,12 +1,10 @@
 @use "../theme/colors.scss" as *;
-@use "../configs/mixins.scss" as *;
+@use "../configs" as *;
 
 .about {
+  @include scollbar;
   color: $color-white;
   height: 650px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: $color-btn-bg $primary-color;
 }
 
 .about__content {

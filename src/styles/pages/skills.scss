@@ -1,11 +1,9 @@
-@use "../configs/mixins.scss" as *;
 @use "../theme/colors.scss" as *;
+@use "../configs" as *;
 
 .skills {
+  @include scollbar;
   height: 650px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: $color-btn-bg $primary-color;
 }
 
 .group__img {
