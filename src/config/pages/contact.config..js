@@ -10,10 +10,10 @@ import {
 } from "../../shared/assets/images"
 import {
   githubLink,
-  telegrammLink,
   gmailLink,
   mailLink,
-} from "../app/appConfig"
+  telegrammLink,
+} from "../../shared/config/profileLinks"
 
 export const contactsPageCards = [
   {

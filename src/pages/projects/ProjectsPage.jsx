@@ -1,7 +1,7 @@
-import { menuItems } from "@/config/app/navigation"
 import { LinksBlock } from "@/shared/ui"
+import { menuItems } from "@/shared/config/navigation"
 
-export const ProjecsPage = () => {
+export const ProjectsPage = () => {
   const primaryLinks = ["/skills", "/contacts"]
 
   return (

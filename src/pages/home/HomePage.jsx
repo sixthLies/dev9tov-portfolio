@@ -1,5 +1,5 @@
 import { Cards } from "@/shared/ui"
-import { homePageCards } from "@/config/pages/home.config"
+import { homePageCards } from "./model/homePageCards"
 
 export const HomePage = () => {
   return (

@@ -1,7 +1,7 @@
 import { ListMenu } from "@/shared/ui"
-import { headerClasses } from "@/config/ui/classNames"
-import { menuItems } from "@/config/app/navigation"
 import { NAV_ARIA_LABEL } from "../model/constants"
+import { headerClasses } from "../model/classes"
+import { menuItems } from "@/shared/config/navigation"
 
 const listMenuProps = { items: menuItems, ...headerClasses }
 

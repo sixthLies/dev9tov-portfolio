@@ -1,4 +1,3 @@
-import React from "react"
 import { CONTACT_BUTTON_TEXT } from "../model/constants"
 
 export const HeaderCta = ({ onClick }) => {

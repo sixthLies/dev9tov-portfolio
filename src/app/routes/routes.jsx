@@ -1,16 +1,14 @@
-import {
-  AboutPage,
-  ContactsPage,
-  HomePage,
-  NotFoundPage,
-  ProjecsPage,
-  SkillsPage,
-} from "../../pages"
+import { HomePage } from "../../pages/home"
+import { AboutPage } from "../../pages/about"
+import { ProjectsPage } from "../../pages/projects"
+import { SkillsPage } from "../../pages/skills"
+import { ContactsPage } from "../../pages/contact"
+import { NotFoundPage } from "../../pages/not-found"
 
 export const routes = [
   { index: true, element: <HomePage /> },
   { path: "/about", element: <AboutPage /> },
-  { path: "/projects", element: <ProjecsPage /> },
+  { path: "/projects", element: <ProjectsPage /> },
   { path: "/skills", element: <SkillsPage /> },
   { path: "/contacts", element: <ContactsPage /> },
   { path: "*", element: <NotFoundPage /> },

@@ -1,9 +1,9 @@
 import { SkillsTable } from "./SkillsTable"
-import { skillsClasses } from "@/config/ui/classNames"
 import { skillsInfo } from "@/config/pages/skills.config."
-import { infoBoxSkillsData } from "@/config/ui/infoBox.config"
 import { InfoBlock, LinksBlock } from "@/shared/ui"
-import { menuItems } from "@/config/app/navigation"
+import { skillsClasses } from "./model/classes"
+import { infoBoxSkillsData } from "./model/infoBox"
+import { menuItems } from "@/shared/config/navigation"
 
 export const SkillsPage = () => {
   const primaryLinks = ["/about", "/projects"]
