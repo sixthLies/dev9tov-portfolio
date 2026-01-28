@@ -1,7 +1,7 @@
-import { contactsPageCards } from "@/config/pages/contact.config."
 import { Cards, InfoBlock, LinksBlock } from "@/shared/ui"
 import { infoBoxContactsData } from "./model/infoBox"
 import { menuItems } from "@/shared/config/navigation"
+import { contactsPageCards } from "./model/pageConfig"
 
 export const ContactsPage = () => {
   return (

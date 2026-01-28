@@ -1,7 +1,7 @@
 import { Link } from "react-router"
 import { PortfolioList, PersonalInfoList } from "@/shared/ui"
-import { personalInfo, portfolioInfo } from "@/config/pages/about.config."
 import { aboutClasses, portfolioClasses } from "./model/classes"
+import { personalInfo, portfolioInfo } from "./model/pageConfig"
 
 export const AboutPage = () => {
   return (
