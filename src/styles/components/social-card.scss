@@ -12,10 +12,12 @@
 
 .social-card__content {
   display: flex;
+  align-items: flex-start;
   gap: 20px;
 }
 
 .social-card__text {
+  @include flex-box(column);
   text-align: start;
 }
 
@@ -32,6 +34,6 @@
 }
 
 .social-card__avatar {
-  width: 100px;
-  height: 100px;
+  width: 128px;
+  height: 128px;
 }

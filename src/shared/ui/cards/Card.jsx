@@ -1,7 +1,7 @@
 import { Link } from "react-router"
-import { ModalWindow } from "../modals/ModalWindow"
 import { useState } from "react"
-import { ModalWindowCard } from "../modals/ModalWindowCard"
+import { ModalWindow } from "../modals/ModalWindow"
+import { ModalWindowCard } from "../modals/modalWindowCard/ModalWindowCard"
 
 export const Card = ({ card }) => {
   const [isOpen, setIsOpen] = useState(false)

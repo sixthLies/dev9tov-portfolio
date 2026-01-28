@@ -13,4 +13,4 @@ export { PersonalInfoList } from "./lists/PersonalInfoList"
 
 // modals
 export { ModalWindow } from "./modals/ModalWindow"
-export { ModalWindowCard } from "./modals/ModalWindowCard"
+export { ModalWindowCard } from "./modals/modalWindowCard/ModalWindowCard"

@@ -8,7 +8,12 @@ import {
   mailavatar,
   githubavatar,
 } from "../../shared/assets/images"
-import { githubLink, telegrammLink, gmailLink } from "../app/appConfig"
+import {
+  githubLink,
+  telegrammLink,
+  gmailLink,
+  mailLink,
+} from "../app/appConfig"
 
 export const contactsPageCards = [
   {
@@ -30,7 +35,7 @@ export const contactsPageCards = [
   {
     img: hh,
     avatar: mailavatar,
-    name: "Данил Девятов",
+    // name: "Данил Девятов",
     title: "HH.ru",
     socialLink: "https://hh.ru/profile/me?hhtmFrom=ProfileActivator",
     description: "Мой Профиль на HH.ru",
@@ -38,7 +43,7 @@ export const contactsPageCards = [
   {
     img: gmail,
     avatar: githubavatar,
-    name: "Danil",
+    name: "Danil 6lies",
     title: "Google Mail",
     socialLink: gmailLink,
     description: "Моя Google почта",
@@ -46,9 +51,9 @@ export const contactsPageCards = [
   {
     img: mail,
     avatar: mailavatar,
-    name: "Danil Devyatov",
+    // name: "Danil Devyatov",
     title: "Mail.ru",
-    socialLink: "hystep_2@mail.ru",
+    socialLink: mailLink,
     description: "Моя почта mail.ru",
   },
 ]

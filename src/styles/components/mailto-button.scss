@@ -1,0 +1,10 @@
+@use "../configs" as *;
+
+.mailto__btn {
+  @include glowing-border-btn;
+  padding: 0.7rem 1rem;
+}
+
+.mailto__link:hover {
+  color: #fff;
+}
