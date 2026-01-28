@@ -1,0 +1,1 @@
+export { ModalWindowCard } from "./ModalWindowCard"
