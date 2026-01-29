@@ -9,3 +9,8 @@ export const skillsClasses = {
   tagsListSecondary: "skills-table__tags skills-table__tags--secondary",
   link: "skills-table__link",
 }
+
+export const root = {
+  rootClass: "skills",
+  titleClass: "skills__title",
+}

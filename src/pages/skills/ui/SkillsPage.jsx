@@ -1,24 +1,23 @@
 import { InfoBlock, LinksBlock } from "@/shared/ui"
-import { menuItems } from "@/shared/config/navigation"
 import { SkillsTable } from "./SkillsTable"
 import { infoBoxSkillsData } from "../model/infoBox"
 import { skillsInfo } from "../model/pageConfig"
-import { skillsClasses } from "../model/classes"
+import { root, skillsClasses } from "../model/classes"
+import { SKILLS_PAGE } from "../model/constants"
+import { selectPrimaryLinks } from "../lib/selectPrimaryLinks"
 
 export const SkillsPage = () => {
-  const primaryLinks = ["/about", "/projects"]
+  const links = selectPrimaryLinks()
 
   return (
-    <section className="skills">
-      <h2 className="skills__title">Мой Стек</h2>
+    <section className={root.rootClass}>
+      <h2 className={root.titleClass}>{SKILLS_PAGE.titleText}</h2>
 
       <InfoBlock data={infoBoxSkillsData} />
 
       <SkillsTable skillsInfo={skillsInfo} {...skillsClasses} />
 
-      <LinksBlock
-        links={menuItems.filter((link) => primaryLinks.includes(link.href))}
-      />
+      <LinksBlock links={links} />
     </section>
   )
 }
