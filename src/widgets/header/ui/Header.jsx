@@ -10,7 +10,7 @@ export const Header = () => {
       <div className="header__content">
         <HeaderLogo />
         <HeaderNav />
-        <ContactMeButton onClick={handleContactClick} />
+        {/* <ContactMeButton onClick={handleContactClick} /> */}
       </div>
     </header>
   )
