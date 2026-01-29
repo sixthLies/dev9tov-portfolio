@@ -1,4 +1,4 @@
-import { MailButton } from "../../../buttons/MailButton"
+import { MailButton } from "@/shared/ui/buttons/MailButton"
 import {
   EMAIL_MARKER,
   GMAIL_MARKER,
