@@ -1,0 +1,130 @@
+// src/features/contact-me/ui/contact-me.scss
+
+$contact-me-overlay: rgba(0, 0, 0, 0.6);
+$contact-me-surface: #0f1216;
+$contact-me-border: rgba(255, 255, 255, 0.12);
+$contact-me-text: rgba(255, 255, 255, 0.92);
+$contact-me-muted: rgba(255, 255, 255, 0.72);
+
+$contact-me-primary: #2a66ff;
+$contact-me-primary-hover: #1f54d8;
+
+$contact-me-radius: 14px;
+$contact-me-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+
+$contact-me-z: 9999;
+
+.contactMeModal__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: $contact-me-z;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+  background: $contact-me-overlay;
+
+  // лёгкая анимация появления
+  animation: contactMeFadeIn 140ms ease-out;
+}
+
+.contactMeModal {
+  width: 100%;
+  max-width: 520px;
+
+  border-radius: $contact-me-radius;
+  border: 1px solid $contact-me-border;
+  background: $contact-me-surface;
+  color: $contact-me-text;
+  box-shadow: $contact-me-shadow;
+
+  padding: 18px 18px 16px;
+
+  animation: contactMePopIn 160ms ease-out;
+}
+
+.contactMeModal__title {
+  margin: 0 0 14px;
+  font-size: 18px;
+  font-weight: 700;
+  color: $contact-me-text;
+}
+
+.contactMeModal__actions {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.contactMeModal__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 44px;
+  border-radius: 12px;
+
+  border: 1px solid $contact-me-border;
+  background: rgba(255, 255, 255, 0.04);
+  color: $contact-me-text;
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(42, 102, 255, 0.35);
+    outline-offset: 2px;
+  }
+}
+
+// Кнопка "Закрыть"
+.contactMeModal__close {
+  width: 100%;
+  height: 42px;
+
+  border-radius: 12px;
+  border: 1px solid $contact-me-primary;
+  background: $contact-me-primary;
+  color: #fff;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: transform 120ms ease, background 120ms ease;
+
+  &:hover {
+    background: $contact-me-primary-hover;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(42, 102, 255, 0.35);
+    outline-offset: 2px;
+  }
+}
+
+@keyframes contactMeFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes contactMePopIn {
+  from { transform: translateY(6px) scale(0.98); opacity: 0.7; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}

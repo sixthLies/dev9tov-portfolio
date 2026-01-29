@@ -1,6 +1,5 @@
 import { resources } from "./model/pageConfig"
 
-
 export const SkillsTable = ({
   skillsInfo,
   root,

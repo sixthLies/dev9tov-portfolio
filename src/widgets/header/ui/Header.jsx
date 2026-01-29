@@ -1,9 +1,8 @@
-import { HeaderCta } from "./HeaderCta"
 import { HeaderLogo } from "./HeaderLogo"
 import { HeaderNav } from "./HeaderNav"
+import { ContactMeButton } from "@/features/contact-me"
 
 export const Header = () => {
-  // Поведение не меняем: кнопка по умолчанию ничего не делает.
   const handleContactClick = undefined
 
   return (
@@ -11,7 +10,7 @@ export const Header = () => {
       <div className="header__content">
         <HeaderLogo />
         <HeaderNav />
-        <HeaderCta onClick={handleContactClick} />
+        <ContactMeButton onClick={handleContactClick} />
       </div>
     </header>
   )
