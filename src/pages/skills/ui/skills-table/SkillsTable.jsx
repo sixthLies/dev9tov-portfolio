@@ -1,32 +1,5 @@
-import { resources } from "../model/pageConfig"
-
-const GroupTitle = ({ titleClassName, title, img }) => {
-  return (
-    <h3 className={titleClassName}>
-      {title}
-      <img className="group__img" src={img} alt="Logo" />
-    </h3>
-  )
-}
-
-const SkillItemLink = ({ item, linkClassName, itemClassName }) => {
-  const resource = resources[item.key]
-  if (!resource) return null
-
-  return (
-    <li className={itemClassName} key={item.key}>
-      <a
-        className={linkClassName}
-        href={resource.href}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img className="skills-table__img" src={resource.logo} alt="itemLogo" />
-        {item.name}
-      </a>
-    </li>
-  )
-}
+import { GroupTitle } from "./GroupTitle"
+import { SkillItemLink } from "./SkillItemLink"
 
 export const SkillsTable = ({
   skillsInfo,
