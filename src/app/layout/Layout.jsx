@@ -1,7 +1,7 @@
 import { Outlet } from "react-router"
 import { Header } from "@/widgets/header"
 import { Footer } from "@/widgets/footer"
-import Stars from "../../shared/lib/Stars"
+import { Stars } from "@/widgets/stars"
 
 export const Layout = () => {
   return (

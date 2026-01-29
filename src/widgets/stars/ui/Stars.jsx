@@ -2,7 +2,7 @@ import { useEffect } from "react"
 
 const NUM_STARS = 250
 
-const Stars = () => {
+export const Stars = () => {
   useEffect(() => {
     const container = document.createElement("div")
     container.className = "stars-container"
@@ -35,5 +35,3 @@ const Stars = () => {
   // Ничего не рендерим напрямую, всё добавляется в DOM в useEffect
   return null
 }
-
-export default Stars
