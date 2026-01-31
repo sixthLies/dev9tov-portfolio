@@ -1,9 +1,10 @@
-import React from "react"
 import { InfoBlock } from "@/shared/ui"
-
-import { infoBoxImagesData, IMAGES_DATA, imagesPageClasses } from "../model"
-import { useInfiniteImages, useImageModal } from "../lib"
-import { ImagesGrid, ImagesModal } from "./"
+import { infoBoxImagesData } from "../model/infoBox"
+import { IMAGES_DATA } from "../model/images.data"
+import { useInfiniteImages } from "../lib/useInfiniteImages"
+import { useImageModal } from "../lib/useImageModal"
+import { ImagesModal, ImagesGrid, GalleryFooter } from "./"
+import { imagesPageClasses } from "../model/images.classes"
 
 export const ImagesPage = () => {
   const { items, hasMore, isLoading, sentinelRef } =
@@ -11,26 +12,8 @@ export const ImagesPage = () => {
   const { active, open, close, closeBtnRef, onOverlayMouseDown } =
     useImageModal()
 
-  // классы — без лишнего spread/объекта
   const { root, title, sentinel, loading, end } = imagesPageClasses
-
-  // условия для “сканируемости”
   const hasItems = items.length > 0
-  const showEnd = !hasMore && hasItems
-
-  const loadingNode = isLoading ? (
-    <div className={loading} role="status" aria-live="polite">
-      Загрузка…
-    </div>
-  ) : null
-
-  const sentinelNode = hasMore ? (
-    <div ref={sentinelRef} className={sentinel} aria-hidden="true" />
-  ) : null
-
-  const endNode = showEnd ? (
-    <div className={end}>Все изображения загружены.</div>
-  ) : null
 
   return (
     <section className={root} aria-label="Галерея изображений">
@@ -39,9 +22,13 @@ export const ImagesPage = () => {
 
       <ImagesGrid items={items} onOpen={open} classes={imagesPageClasses} />
 
-      {loadingNode}
-      {sentinelNode}
-      {endNode}
+      <GalleryFooter
+        isLoading={isLoading}
+        hasMore={hasMore}
+        hasItems={hasItems}
+        sentinelRef={sentinelRef}
+        classes={{ loading, sentinel, end }}
+      />
 
       <ImagesModal
         active={active}
