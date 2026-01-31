@@ -1,5 +1,5 @@
 import { InfoBlock } from "@/shared/ui"
-import { infoBoxImagesData } from "../model/infoBox"
+import { infoBoxImagesData } from "../model/images.infoBox"
 import { IMAGES_DATA } from "../model/images.data"
 import { useInfiniteImages } from "../lib/useInfiniteImages"
 import { useImageModal } from "../lib/useImageModal"
