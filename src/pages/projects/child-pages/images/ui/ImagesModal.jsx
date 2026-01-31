@@ -1,3 +1,5 @@
+import { imagesModalClasses } from "../model/images.classes"
+
 export function ImagesModal({
   active,
   onClose,
@@ -6,39 +8,39 @@ export function ImagesModal({
 }) {
   if (!active) return null
 
+  const { root, modal, header, title, button, body, img, desc_title, text } = {
+    ...imagesModalClasses,
+  }
+
   return (
-    <div className="gallery-modalOverlay" onMouseDown={onOverlayMouseDown}>
+    <div className={root} onMouseDown={onOverlayMouseDown}>
       <div
-        className="gallery-modal"
+        className={modal}
         role="dialog"
         aria-modal="true"
         aria-labelledby="img-title"
         aria-describedby="img-desc"
         onMouseDown={(e) => e.stopPropagation()}
       >
-        <div className="gallery-modal__header">
-          <h3 className="gallery-modal__title" id="img-title">
+        <div className={header}>
+          <h3 className={title} id="img-title">
             {active.title}
           </h3>
 
           <button
             ref={closeBtnRef}
             type="button"
-            className="closeBtn"
+            className={button}
             onClick={onClose}
           >
             Закрыть
           </button>
         </div>
 
-        <div className="gallery-modal__body">
-          <img
-            className="gallery-modal__img"
-            src={active.fullUrl}
-            alt={active.title}
-          />
-          <div className="gallery-modal__descTitle">Как создано</div>
-          <p className="gallery-modal__text" id="img-desc">
+        <div className={body}>
+          <img className={img} src={active.fullUrl} alt={active.title} />
+          <div className={desc_title}>Как создано</div>
+          <p className={text} id="img-desc">
             {active.howCreated}
           </p>
         </div>
