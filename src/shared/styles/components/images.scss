@@ -2,7 +2,6 @@
 @use "../configs" as *;
 @use "../theme" as *;
 
-/* ---------- Design tokens ---------- */
 // :root {
 //   color-scheme: dark;
 
@@ -28,32 +27,30 @@
 //   --container: 1200px;
 // }
 
-/* ---------- Base ---------- */
-
 // body {
-//   // background:
-//   //   radial-gradient(
-//   //     1200px 700px at 10% 10%,
-//   //     rgba(124, 92, 255, 0.2),
-//   //     transparent 60%
-//   //   ),
-//   //   radial-gradient(
-//   //     900px 600px at 90% 20%,
-//   //     rgba(35, 213, 255, 0.14),
-//   //     transparent 55%
-//   //   ),
-//   //   radial-gradient(
-//   //     1200px 900px at 50% 90%,
-//   //     rgba(124, 92, 255, 0.12),
-//   //     transparent 60%
-//   //   ),
-//   //   linear-gradient(180deg, var(--bg0), var(--bg1));
-//   // color: var(--text);
+//   background:
+//     radial-gradient(
+//       1200px 700px at 10% 10%,
+//       rgba(124, 92, 255, 0.2),
+//       transparent 60%
+//     ),
+//     radial-gradient(
+//       900px 600px at 90% 20%,
+//       rgba(35, 213, 255, 0.14),
+//       transparent 55%
+//     ),
+//     radial-gradient(
+//       1200px 900px at 50% 90%,
+//       rgba(124, 92, 255, 0.12),
+//       transparent 60%
+//     ),
+//     linear-gradient(180deg, var(--bg0), var(--bg1));
+//   color: var(--text);
 // }
 
-// ::selection {
-//   background: rgba(124, 92, 255, 0.35);
-// }
+::selection {
+  background: rgba(124, 92, 255, 0.35);
+}
 
 /* ---------- Gallery ---------- */
 .gallery {
