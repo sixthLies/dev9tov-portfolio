@@ -8,8 +8,10 @@
   flex-grow: 1;
 }
 
-p {
+.copyright__text {
   flex-grow: 1;
+  display: flex;
+  gap: 5px;
 }
 
 .copyright-link:hover {
