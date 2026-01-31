@@ -1,9 +1,9 @@
 import { Cards } from "@/shared/ui"
 import { homePageCards } from "../model/pageConfig"
-import { homeClass } from "../model/classes"
+import { homeClasses } from "../model/classes"
 
 export const HomePage = () => {
-  const { home } = { ...homeClass }
+  const { home } = { ...homeClasses }
 
   return (
     <section className={home}>

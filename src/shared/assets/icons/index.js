@@ -54,6 +54,12 @@ import vsstudioLogo from "./skills/softwares/svg/vsstudio.svg"
 import procreateLogo from "./skills/softwares/svg/procreate.svg"
 import gdocsLogo from "./skills/softwares/svg/gdocs.svg"
 
+// project
+import image from "./projects/image.svg"
+import music from "./projects/music.svg"
+import video from "./projects/video.svg"
+import project from "./projects/project.svg"
+
 export {
   // базовые
   github,
@@ -102,4 +108,10 @@ export {
   flstudioLogo,
   vsstudioLogo,
   gdocsLogo,
+
+  // projects
+  image,
+  music,
+  video,
+  project,
 }
