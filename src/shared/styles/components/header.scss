@@ -1,6 +1,11 @@
 @use "../configs" as *;
 @use "../theme/colors" as *;
 
+.header {
+  margin-bottom: 75px;
+  border-bottom: 1px solid $primary-color;
+}
+
 .header__content {
   @include flex-between-center;
 }
