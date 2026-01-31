@@ -1,30 +1,28 @@
 import { image, music, project, video } from "@/shared/assets/icons"
 
-const route = "/projects"
-
 export const projectsCardsContent = [
   {
     img: image,
-    title: "Изображения AI",
+    title: "Изображения",
     description: "Проекты в формате изображений: от концепта до финала.",
-    link: route + "/images",
+    link: projects_route + "/images",
   },
   {
     img: music,
-    title: "Музыка AI",
+    title: "Музыка",
     description: "Проекты в формате аудио: треки и вариации.",
-    link: route + "/music",
+    link: projects_route + "/music",
   },
   {
     img: video,
-    title: "Видео AI",
+    title: "Видео",
     description: "Проекты в формате видео: черновики и релизные версии.",
-    link: route + "/video",
+    link: projects_route + "/video",
   },
   {
     img: project,
-    title: "Мои работы AI",
+    title: "Мои работы",
     description: "Полный каталог AI‑проектов и материалов.",
-    link: route + "/assigments",
+    link: projects_route + "/assigments",
   },
 ]
