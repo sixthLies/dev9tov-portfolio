@@ -1,4 +1,5 @@
 import { image, music, project, video } from "@/shared/assets/icons"
+import { projects_route } from "./constants"
 
 export const projectsCardsContent = [
   {
