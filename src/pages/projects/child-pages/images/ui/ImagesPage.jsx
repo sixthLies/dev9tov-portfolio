@@ -6,7 +6,6 @@ import { test } from "@/shared/assets/images"
 const PAGE_SIZE = 9
 const TOTAL_IMAGES = 30
 
-// Обычный массив вместо mockFetchImagesPage
 const IMAGES_DATA = Array.from({ length: TOTAL_IMAGES }, (_, i) => {
   const id = i + 1
   return {
@@ -29,7 +28,6 @@ export const ImagesPage = () => {
   const sentinelRef = useRef(null)
   const closeBtnRef = useRef(null)
 
-  // Служебные ref'ы: не триггерят ререндер и всегда актуальны
   const isFetchingRef = useRef(false)
   const cursorRef = useRef(0)
   const hasMoreRef = useRef(true)
@@ -59,12 +57,10 @@ export const ImagesPage = () => {
     }
   }, [])
 
-  // первичная загрузка
   useEffect(() => {
     loadMore()
   }, [loadMore])
 
-  // infinite scroll через IntersectionObserver [web:47]
   useEffect(() => {
     const el = sentinelRef.current
     if (!el) return
@@ -83,7 +79,6 @@ export const ImagesPage = () => {
     return () => observer.disconnect()
   }, [hasMore, loadMore])
 
-  // модалка: ESC закрывает + фокус на кнопку закрытия [web:39]
   useEffect(() => {
     if (!active) return
 
@@ -106,11 +101,11 @@ export const ImagesPage = () => {
 
   return (
     <section className="gallery" aria-label="Галерея изображений">
-      <h2 className="title">Архив изображений</h2>
+      <h2 className="gallery__title">Архив изображений</h2>
       <InfoBlock data={infoBoxImagesData} />
-      <ul className="grid">
+      <ul className="gallery__list">
         {images.map((img) => (
-          <li key={img.id} className="grid-card">
+          <li key={img.id} className="gallery-card__item">
             <button
               type="button"
               className="thumbButton"
@@ -118,7 +113,7 @@ export const ImagesPage = () => {
               aria-label={`Открыть ${img.title}`}
             >
               <img
-                className="thumb"
+                className="gallery-thumb__img"
                 src={img.thumbUrl}
                 alt={img.title}
                 loading="lazy"
@@ -126,7 +121,7 @@ export const ImagesPage = () => {
               />
             </button>
 
-            <div className="cardMeta">
+            <div className="gallery__card-meta">
               <div className="cardTitle">{img.title}</div>
             </div>
           </li>
@@ -148,19 +143,19 @@ export const ImagesPage = () => {
       )}
 
       {active && (
-        <div className="modalOverlay" onMouseDown={onOverlayMouseDown}>
+        <div className="gallery-modalOverlay" onMouseDown={onOverlayMouseDown}>
           <div
-            className="modal-img"
+            className="gallery-modal"
             role="dialog"
             aria-modal="true"
             aria-labelledby="img-title"
             aria-describedby="img-desc"
             onMouseDown={(e) => e.stopPropagation()}
           >
-            <div className="modalHeader">
-              <h2 className="modalTitle" id="img-title">
+            <div className="gallery-modal__header">
+              <h3 className="gallery-modal__title" id="img-title">
                 {active.title}
-              </h2>
+              </h3>
 
               <button
                 ref={closeBtnRef}
@@ -172,10 +167,14 @@ export const ImagesPage = () => {
               </button>
             </div>
 
-            <div className="modalBody">
-              <img className="full" src={active.fullUrl} alt={active.title} />
-              <div className="descTitle">Как создано</div>
-              <p className="desc" id="img-desc">
+            <div className="gallery-modal__body">
+              <img
+                className="gallery-modal__img"
+                src={active.fullUrl}
+                alt={active.title}
+              />
+              <div className="gallery-modal__descTitle">Как создано</div>
+              <p className="gallery-modal__text" id="img-desc">
                 {active.howCreated}
               </p>
             </div>
