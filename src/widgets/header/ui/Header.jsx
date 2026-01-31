@@ -6,7 +6,7 @@ export const Header = () => {
   const handleContactClick = undefined
 
   return (
-    <header>
+    <header className="header">
       <div className="header__content">
         <HeaderLogo />
         <HeaderNav />
