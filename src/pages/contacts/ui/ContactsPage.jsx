@@ -1,15 +1,15 @@
 import { Cards, InfoBlock, LinksBlock } from "@/shared/ui"
 import { infoBoxContactsData } from "../model/infoBox"
 import { contactsPageCards } from "../model/pageConfig"
-import {
-  CONTACTS_PAGE_CLASS,
-  CONTACTS_TITLE,
-  CONTACTS_TITLE_CLASS,
-} from "../model/constants"
+import { CONTACTS_TITLE } from "../model/constants"
 import { selectContactsLinks } from "../lib/selectContactsLinks"
+import { contactsPageClasses } from "../model/classes"
 
 export const ContactsPage = () => {
   const links = selectContactsLinks()
+  const { CONTACTS_PAGE_CLASS, CONTACTS_TITLE_CLASS } = {
+    ...contactsPageClasses,
+  }
 
   return (
     <section className={CONTACTS_PAGE_CLASS}>
