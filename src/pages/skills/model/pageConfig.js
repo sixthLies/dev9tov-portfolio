@@ -113,7 +113,7 @@ export const skillsInfo = [
       {
         label: "Стили: ",
         items: [
-          { name: "SCSS ❤️", key: "scss" },
+          { name: "SCSS", key: "scss" },
           { name: "TailwindCSS", key: "tailwind" },
         ],
       },
@@ -144,7 +144,7 @@ export const skillsInfo = [
       {
         label: "ComfyUI: ",
         items: [
-          { name: "ComfyUI ❤️", key: "comfy" },
+          { name: "ComfyUI 🔥", key: "comfy" },
           { name: "Qwen", key: "qwen" },
           { name: "Flux-dev", key: "flux" },
           { name: "Wan", key: "wan" },
@@ -154,7 +154,7 @@ export const skillsInfo = [
         label: "Генеративный AI (изображения): ",
         items: [
           { name: "NanoBanana", key: "nanabanana" },
-          { name: "Gemini Pro ❤️", key: "gemini" },
+          { name: "Gemini Pro 🔥", key: "gemini" },
           { name: "Grok", key: "grok" },
           { name: "MidJourney", key: "midjourney" },
         ],
@@ -162,14 +162,14 @@ export const skillsInfo = [
       {
         label: "Генеративный AI (видео): ",
         items: [
-          { name: "Veo 3 ❤️", key: "veo3" },
+          { name: "Veo 3 🔥", key: "veo3" },
           { name: "Sora", key: "sora" },
         ],
       },
       {
         label: "Генеративный AI (музыка): ",
         items: [
-          { name: "SunoAI ❤️", key: "suno" },
+          { name: "SunoAI 🔥", key: "suno" },
           { name: "SonautoAI", key: "sonauto" },
         ],
       },
@@ -177,7 +177,7 @@ export const skillsInfo = [
         label: "LLM's: ",
         items: [
           { name: "ChatGPT", key: "chatgpt" },
-          { name: "Perplexity ❤️", key: "perplexity" },
+          { name: "Perplexity 🔥", key: "perplexity" },
           { name: "NotebookLM", key: "notebookLM" },
         ],
       },
