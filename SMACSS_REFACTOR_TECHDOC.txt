@@ -230,3 +230,34 @@ Date: 2026-02-16
   - use VCS diff for changed files listed in section 10
 - Follow-up tasks:
   - restore lint dependency, add theme switch UI
+
+14.4 Latest entry
+- Date: 2026-02-16
+- Author: Codex
+- Scope: Responsive adaptation (mobile-first) for layout/modules/pages
+- Motivation: Improve mobile/tablet usability while preserving desktop behavior
+- SMACSS layers affected:
+  - Base: unchanged
+  - Layout: app container/scroll panel responsive behavior
+  - Module: header/footer/cards/modals/media grids touch-friendly adaptation
+  - State: unchanged API, reused existing is-/has- classes
+  - Theme: unchanged tokens, reused existing variables
+- Files changed:
+  - src/shared/styles/configs/variables.scss
+  - src/shared/styles/configs/mixins/breakpoints.mixin.scss
+  - src/shared/styles/configs/mixins/index.scss
+  - src/shared/styles/layout/app.scss
+  - src/shared/styles/components/*.scss (header, footer, cards, social-card, modal_window, contactme, images, video, info, mailto-button)
+  - src/shared/styles/pages/*.scss (contacts, projects, skills, about/*)
+- Classname/API changes:
+  - none
+- Visual impact:
+  - Intentional improvements on narrow viewports; desktop geometry preserved
+- Validation:
+  - Build: SUCCESS (npm.cmd run build)
+  - Lint: not rerun here (known external plugin issue from previous iteration)
+  - Manual checks: pending by QA checklist
+- Rollback notes:
+  - revert responsive-related files listed in this entry
+- Follow-up tasks:
+  - run manual viewport/orientation regression checklist

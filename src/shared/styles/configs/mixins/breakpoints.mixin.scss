@@ -1,0 +1,35 @@
+@use "sass:map";
+@use "../variables" as *;
+
+@mixin respond($breakpoint, $direction: up) {
+  $value: map.get($breakpoints, $breakpoint);
+
+  @if $value == null {
+    @error "Unknown breakpoint: #{$breakpoint}";
+  }
+
+  @if $direction == up {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else if $direction == down {
+    @media (max-width: ($value - 0.02px)) {
+      @content;
+    }
+  } @else {
+    @error "Unknown direction: #{$direction}. Use up or down.";
+  }
+}
+
+@mixin respond-between($from, $to) {
+  $from-value: map.get($breakpoints, $from);
+  $to-value: map.get($breakpoints, $to);
+
+  @if $from-value == null or $to-value == null {
+    @error "Unknown breakpoint range: #{$from} -> #{$to}";
+  }
+
+  @media (min-width: $from-value) and (max-width: ($to-value - 0.02px)) {
+    @content;
+  }
+}

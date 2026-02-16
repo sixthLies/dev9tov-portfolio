@@ -7,7 +7,7 @@
 .gallery {
   margin-top: 8px;
   @include scollbar;
-  height: 650px;
+  height: clamp(420px, 72dvh, 650px);
 }
 
 .gallery__title {
@@ -18,10 +18,10 @@
 }
 
 .gallery__list {
-  margin-right: 15px;
+  margin-right: 0;
   display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+  grid-template-columns: 1fr;
   align-items: stretch;
 }
 
@@ -76,8 +76,8 @@
 
 .status,
 .end {
-  margin-top: 16px;
-  margin-right: 15px;
+  margin-top: 12px;
+  margin-right: 0;
   padding: 12px 14px;
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
@@ -95,7 +95,7 @@
   z-index: 50;
   display: grid;
   place-items: center;
-  padding: 18px;
+  padding: 8px;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(7px);
   opacity: 0;
@@ -105,11 +105,13 @@
 }
 
 .gallery-modal {
-  width: min(980px, 100%);
+  width: min(100%, 980px);
+  max-height: calc(100dvh - 16px);
+  overflow: auto;
   position: relative;
-  padding: 20px 44px;
+  padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 24px;
+  border-radius: 16px;
   background: var(--color-bg-surface);
   box-shadow: var(--shadow-modal);
   opacity: 0;
@@ -119,22 +121,24 @@
 
 .gallery-modal__header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 14px;
+  gap: 8px 10px;
+  padding: 10px;
   border-bottom: 1px solid var(--border-subtle);
 }
 
 .gallery-modal__body {
   display: grid;
   gap: 10px;
-  padding: 14px;
+  padding: 10px;
 }
 
 .gallery-modal__img {
   width: 100%;
   border: 1px solid var(--border-subtle);
-  border-radius: 16px;
+  border-radius: 12px;
   box-shadow: var(--shadow-soft);
 }
 
@@ -146,7 +150,8 @@
 
 .closeBtn {
   @include glowing-border-btn;
-  padding: 0.7rem 1rem;
+  min-height: 42px;
+  padding: 0.55rem 0.9rem;
 }
 
 .gallery-modal__text {
@@ -154,29 +159,79 @@
   line-height: 1.55;
 }
 
-@media (max-width: 900px) {
+@include respond(sm) {
   .gallery__list {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 12px;
-  }
-
-  .gallery-modal {
-    max-height: 92dvh;
-  }
-}
-
-@media (max-width: 520px) {
-  .gallery__list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
   }
 
   .gallery-modalOverlay {
     padding: 12px;
   }
 
+  .gallery-modal {
+    max-height: calc(100dvh - 24px);
+    padding: 14px;
+    border-radius: 20px;
+  }
+}
+
+@include respond(md) {
+  .gallery {
+    height: clamp(500px, 74dvh, 650px);
+  }
+
+  .gallery__list {
+    gap: 18px;
+  }
+
+  .gallery-modal {
+    padding: 20px 24px;
+    border-radius: 24px;
+  }
+}
+
+@include respond(lg) {
+  .gallery {
+    height: 650px;
+  }
+
+  .gallery__list {
+    margin-right: 15px;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .status,
+  .end {
+    margin-top: 16px;
+    margin-right: 15px;
+  }
+
+  .gallery-modalOverlay {
+    padding: 18px;
+  }
+
+  .gallery-modal {
+    max-height: none;
+    overflow: visible;
+    padding: 20px 44px;
+  }
+
   .gallery-modal__header,
   .gallery-modal__body {
-    padding: 12px;
+    padding: 14px;
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .gallery {
+    height: 78dvh;
+  }
+
+  .gallery-modalOverlay {
+    place-items: start center;
+    padding-top: 8px;
   }
 }
 

@@ -1,35 +1,75 @@
+@use "../configs" as *;
+
 .footer__content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-}
-
-.footer__nav-list {
-  display: flex;
-  gap: 10px;
+  gap: 14px;
+  padding: 14px 0;
 }
 
 .footer__logo {
-  flex-grow: 1;
+  flex-grow: 0;
 }
 
 .footer__copyright {
-  flex-grow: 1;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 5px;
+  text-align: center;
 }
 
 .footer__copyright-link:hover {
   color: var(--color-accent);
 }
 
+.footer__nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
 .footer__nav-link {
-  display: block;
-  width: 50px;
-  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
 
   &:hover {
     animation: pulse 2s infinite;
+  }
+}
+
+@include respond(md) {
+  .footer__content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer__logo,
+  .footer__copyright {
+    flex-grow: 1;
+  }
+
+  .footer__copyright {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .footer__nav-list {
+    gap: 10px;
+  }
+}
+
+@include respond(lg) {
+  .footer__nav-link {
+    width: 50px;
+    height: 50px;
   }
 }
 

@@ -4,3 +4,17 @@ $header-btn-width: 120px;
 $transition-fast: var(--transition-fast);
 
 $flex-grow-1: 1;
+
+$bp-xs: 360px;
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+$breakpoints: (
+  xs: $bp-xs,
+  sm: $bp-sm,
+  md: $bp-md,
+  lg: $bp-lg,
+  xl: $bp-xl,
+);

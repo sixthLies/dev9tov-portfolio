@@ -3,15 +3,17 @@
 .info {
   @include backdrop-bg;
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 0 10px 16px 0;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 14px;
+  padding: 14px 12px;
 }
 
 .info__marker {
   position: relative;
   width: 30px;
   height: 30px;
+  flex-shrink: 0;
   animation: pulse 0.5s ease-in-out 3 both;
 }
 
@@ -43,6 +45,16 @@
   margin: 0;
   font-size: 13px;
   opacity: 0.8;
+  line-height: 1.45;
+}
+
+@include respond(md) {
+  .info {
+    gap: 12px;
+    margin: 0 10px 16px 0;
+    padding: 20px 14px;
+    align-items: center;
+  }
 }
 
 @keyframes pulse {

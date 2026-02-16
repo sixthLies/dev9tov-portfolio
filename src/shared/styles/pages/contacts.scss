@@ -1,11 +1,14 @@
+@use "../configs" as *;
+
 .contacts__title {
   margin-bottom: 15px;
-  font-size: 28px;
+  font-size: clamp(1.5rem, 4.5vw, 1.75rem);
 }
 
 .contacts .card {
-  width: fit-content;
-  height: fit-content;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
   display: block;
 }
 
@@ -14,6 +17,12 @@
 }
 
 .contacts .card__img {
-  width: 250px;
-  height: 250px;
+  width: clamp(180px, 45vw, 250px);
+  height: clamp(180px, 45vw, 250px);
+}
+
+@include respond(md) {
+  .contacts .card {
+    max-width: none;
+  }
 }

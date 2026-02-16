@@ -1,24 +1,19 @@
+@use "../../../configs" as *;
+
 .process {
   margin-right: auto;
 }
 
 .process__wrap {
   position: relative;
-  padding-left: 6px;
+  padding-left: 0;
 }
 
 .process-head__title {
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  font-size: 44px;
-
-  @media (max-width: 1024px) {
-    font-size: 38px;
-  }
-  @media (max-width: 480px) {
-    font-size: 32px;
-  }
+  font-size: clamp(32px, 7vw, 44px);
 }
 
 .process__head {
@@ -27,42 +22,35 @@
 
 .process__subtitle {
   margin: 0;
+  max-width: 680px;
   color: rgba(255, 255, 255, 0.62);
   font-size: 15px;
   line-height: 1.6;
-  max-width: 680px;
 }
 
 .process__line {
-  position: absolute;
-  left: 28px;
-  top: 6px;
-  bottom: 6px;
-  width: 1px;
-  background: rgba(59, 130, 246, 0.25);
-  opacity: 0.6;
+  display: none;
 }
 
 .process__list {
   display: grid;
-  gap: 24px;
+  gap: 16px;
   max-width: 760px;
 }
 
 .process__item {
   display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 18px;
+  grid-template-columns: 1fr;
+  gap: 10px;
   align-items: start;
 }
 
 .process__dot {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: 10px;
   display: grid;
   place-items: center;
   box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
@@ -70,15 +58,15 @@
 
 .process__dotNum {
   font-weight: 800;
-  font-size: 14px;
+  font-size: 13px;
   color: rgba(255, 255, 255, 0.78);
 }
 
 .process__title {
-  margin: 0 0 6px 0;
+  margin: 0 0 6px;
   font-weight: 850;
   letter-spacing: -0.02em;
-  font-size: 20px;
+  font-size: 19px;
 }
 
 .process__text {
@@ -86,4 +74,48 @@
   color: rgba(255, 255, 255, 0.62);
   line-height: 1.6;
   font-size: 14px;
+}
+
+@include respond(sm) {
+  .process__item {
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+  }
+
+  .process__dot {
+    width: 44px;
+    height: 44px;
+  }
+
+  .process__dotNum {
+    font-size: 14px;
+  }
+}
+
+@include respond(md) {
+  .process__list {
+    gap: 24px;
+  }
+}
+
+@include respond(lg) {
+  .process__wrap {
+    padding-left: 6px;
+  }
+
+  .process__line {
+    position: absolute;
+    display: block;
+    left: 28px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: rgba(59, 130, 246, 0.25);
+    opacity: 0.6;
+  }
+
+  .process__item {
+    grid-template-columns: 56px 1fr;
+    gap: 18px;
+  }
 }

@@ -5,17 +5,16 @@
 @forward "./sections/process";
 @forward "./sections/skills";
 @forward "./sections/goals";
-
 @forward "./dot-nav";
 
 .about {
-  @include flex-column-gap(50px);
+  @include flex-column-gap(34px);
   color: var(--color-white);
 }
 
 .about__title {
   margin-bottom: 15px;
-  font-size: 28px;
+  font-size: clamp(1.5rem, 4.5vw, 1.75rem);
 }
 
 .about__list {
@@ -44,6 +43,26 @@
 }
 
 .about__link {
-  margin-right: auto;
+  width: 100%;
+  justify-content: center;
+  margin-right: 0;
   @include glass-link;
+}
+
+@include respond(md) {
+  .about {
+    gap: 42px;
+  }
+
+  .about__link {
+    width: auto;
+    margin-right: auto;
+    justify-content: flex-start;
+  }
+}
+
+@include respond(lg) {
+  .about {
+    gap: 50px;
+  }
 }

@@ -1,18 +1,25 @@
-.dotnav {
-  position: fixed;
-  right: 36px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  gap: 14px;
+@use "../../configs" as *;
 
-  @media (max-width: 1024px) {
+.dotnav {
+  display: none;
+}
+
+@include respond(lg) {
+  .dotnav {
+    position: fixed;
     right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 14px;
   }
-  @media (max-width: 480px) {
-    display: none;
+}
+
+@include respond(xl) {
+  .dotnav {
+    right: 36px;
   }
 }
 
@@ -37,11 +44,15 @@
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.06);
-  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
 
   &:hover {
     transform: scale(1.15);
     border-color: rgba(255, 255, 255, 0.28);
-    background: rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.1);
   }
 }

@@ -2,7 +2,14 @@
 
 .mailto__btn {
   @include glowing-border-btn;
+  min-height: 44px;
   padding: 0.7rem 1rem;
+}
+
+.mailto__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mailto__link:hover {

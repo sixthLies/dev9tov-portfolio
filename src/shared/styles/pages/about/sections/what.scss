@@ -1,16 +1,14 @@
+@use "../../../configs" as *;
+
 .what__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: 1fr;
+  gap: 14px;
 }
 
 .what__card {
-  padding: 22px 22px 20px;
-  min-height: 170px;
+  padding: 18px 16px 16px;
+  min-height: 150px;
 }
 
 .what__head {
@@ -32,29 +30,22 @@
 }
 
 .what__title {
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  font-size: 44px;
-
-  @media (max-width: 1024px) {
-    font-size: 38px;
-  }
-  @media (max-width: 480px) {
-    font-size: 32px;
-  }
+  font-size: clamp(32px, 7vw, 44px);
 }
 
 .what__subtitle {
   margin: 0;
+  max-width: 680px;
   color: rgba(255, 255, 255, 0.62);
   font-size: 15px;
   line-height: 1.6;
-  max-width: 680px;
 }
 
 .what-grid__title {
-  margin: 14px 0 8px 0;
+  margin: 14px 0 8px;
   font-weight: 800;
   letter-spacing: -0.02em;
   font-size: 18px;
@@ -62,10 +53,10 @@
 
 .what-grid__text {
   margin: 0;
+  max-width: 100%;
   color: rgba(255, 255, 255, 0.62);
   line-height: 1.6;
   font-size: 14px;
-  max-width: 92%;
 }
 
 .card-w {
@@ -89,5 +80,31 @@
     border-color: rgba(59, 130, 246, 0.25);
     background: rgba(255, 255, 255, 0.065);
     box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+  }
+}
+
+@include respond(md) {
+  .what__grid {
+    gap: 18px;
+  }
+
+  .what__card {
+    padding: 20px 20px 18px;
+  }
+}
+
+@include respond(lg) {
+  .what__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .what__card {
+    padding: 22px 22px 20px;
+    min-height: 170px;
+  }
+
+  .what-grid__text {
+    max-width: 92%;
   }
 }

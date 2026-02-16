@@ -1,10 +1,12 @@
+@use "../configs" as *;
+
 .projects .modal-overlay {
   display: none;
 }
 
 .projects__title {
   margin-bottom: 15px;
-  font-size: 1.75rem;
+  font-size: clamp(1.5rem, 4.5vw, 1.75rem);
 }
 
 .projects .card::before {

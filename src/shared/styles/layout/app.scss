@@ -2,10 +2,11 @@
 
 .l-page,
 .container {
+  width: 100%;
   max-width: 1220px;
-  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0 auto;
-  padding: 0 10px;
+  padding-inline: 12px;
   display: flex;
   flex-direction: column;
 }
@@ -23,7 +24,8 @@
 
 .l-scroll-panel {
   @include scollbar;
-  height: 650px;
+  height: clamp(420px, 72dvh, 650px);
+  overflow-x: hidden;
 }
 
 .l-center {
@@ -31,4 +33,39 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+@include respond(sm) {
+  .l-page,
+  .container {
+    padding-inline: 14px;
+  }
+}
+
+@include respond(md) {
+  .l-page,
+  .container {
+    padding-inline: 16px;
+  }
+
+  .l-scroll-panel {
+    height: clamp(500px, 74dvh, 650px);
+  }
+}
+
+@include respond(lg) {
+  .l-page,
+  .container {
+    padding-inline: 10px;
+  }
+
+  .l-scroll-panel {
+    height: 650px;
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .l-scroll-panel {
+    height: 78dvh;
+  }
 }

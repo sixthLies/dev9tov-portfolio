@@ -1,7 +1,7 @@
 @use "../configs" as *;
 
 .video {
-  height: 650px;
+  height: clamp(420px, 72dvh, 650px);
   overflow-y: auto;
   scrollbar-width: thin;
 }
@@ -14,10 +14,10 @@
 }
 
 .videoGallery__grid {
-  margin-right: 15px;
+  margin-right: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
+  grid-template-columns: 1fr;
+  gap: 12px;
   align-items: start;
 }
 
@@ -138,7 +138,7 @@
 }
 
 .videoGallery__state {
-  margin: 12px 15px 0 0;
+  margin: 12px 0 0;
   padding: 10px 12px;
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
@@ -160,6 +160,7 @@
 
 .videoGallery__retryButton {
   @include glowing-border-btn;
+  min-height: 40px;
   padding: 0.4rem 0.8rem;
 }
 
@@ -168,9 +169,9 @@
   inset: 0;
   z-index: 1000;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  padding: 20px;
+  padding: 0;
   background: rgba(0, 0, 0, 0.58);
   backdrop-filter: blur(10px);
   opacity: 0;
@@ -180,10 +181,10 @@
 }
 
 .videoModal__panel {
-  width: min(980px, 92vw);
-  max-height: min(88vh, 960px);
+  width: 100vw;
+  max-height: 100dvh;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius-lg);
+  border-radius: 18px 18px 0 0;
   overflow: hidden;
   transform-origin: 50% 40%;
   opacity: 0;
@@ -209,8 +210,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 14px 14px 0;
+  gap: 10px;
+  padding: 12px 12px 0;
 }
 
 .videoModal__title {
@@ -220,12 +221,13 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   color: var(--color-text-primary);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.25;
 }
 
 .videoModal__closeButton {
   flex: 0 0 auto;
+  min-height: 40px;
   padding: 8px 10px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 12px;
@@ -257,7 +259,7 @@
 
 .videoModal__player,
 .videoModal__details {
-  padding: 14px;
+  padding: 12px;
 }
 
 .videoModal__details {
@@ -297,30 +299,76 @@
   text-decoration: underline;
 }
 
-@media (max-width: 600px) {
+@include respond(sm) {
+  .videoGallery__grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
   .videoModal {
-    padding: 0;
+    align-items: center;
+    padding: 10px;
   }
 
   .videoModal__panel {
-    width: 100vw;
-    max-height: 100vh;
-    border-radius: 0;
+    width: min(96vw, 900px);
+    max-height: calc(100dvh - 20px);
+    border-radius: 20px;
+  }
+}
+
+@include respond(md) {
+  .video {
+    height: clamp(500px, 74dvh, 650px);
+  }
+
+  .videoGallery__grid {
+    gap: 16px;
+  }
+
+  .videoGallery__state {
+    margin-right: 15px;
+  }
+
+  .videoModal {
+    padding: 20px;
+  }
+
+  .videoModal__title {
+    font-size: 16px;
   }
 
   .videoModal__player,
   .videoModal__details {
-    padding: 12px;
-  }
-
-  .videoModal__title {
-    font-size: 15px;
+    padding: 14px;
   }
 }
 
-@media (max-width: 560px) {
+@include respond(lg) {
+  .video {
+    height: 650px;
+  }
+
   .videoGallery__grid {
-    grid-template-columns: 1fr;
+    margin-right: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .videoModal__panel {
+    width: min(980px, 92vw);
+    max-height: min(88vh, 960px);
+    border-radius: var(--radius-lg);
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .video {
+    height: 78dvh;
+  }
+
+  .videoModal {
+    align-items: flex-start;
+    padding-top: 8px;
   }
 }
 

@@ -2,41 +2,42 @@
 
 .skills-page .skills__title {
   margin-bottom: 15px;
-  font-size: 1.75rem;
+  font-size: clamp(1.5rem, 4.5vw, 1.75rem);
 }
 
 .skills-table {
   display: grid;
-  gap: 24px;
-  margin: 0 10px 0 0;
+  gap: 16px;
+  margin: 0;
 }
 
 .skills-table__group {
   @include backdrop-bg;
-  margin: 5px 0;
+  margin: 0;
+  padding: 16px 12px;
 }
 
 .skills-table__title {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 14px;
-  font-size: 1.8rem;
+  font-size: clamp(1.3rem, 4.2vw, 1.8rem);
   font-weight: 700;
 }
 
 .skills-table__group-img {
   margin-top: 3px;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 
 .skills-table__row {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(140px, 220px) 1fr;
-  gap: 16px;
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-items: start;
   padding: 12px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -71,33 +72,87 @@
 .skills-table__tag {
   padding: 4px 10px;
   border-radius: 999px;
-  font-size: 20px;
+  font-size: clamp(16px, 4vw, 20px);
   background: rgba(111, 169, 255, 0.18);
   box-shadow: 0 0 12px rgba(111, 169, 255, 0.25);
 }
 
 .skills-table__link {
   @include glass-link;
+  width: 100%;
+  justify-content: center;
+  font-size: clamp(15px, 3.8vw, 18px);
 }
 
 .skills-table__img {
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   color: aliceblue;
 }
 
 .skills-links__block {
-  @include flex-between-center;
-  margin-top: 25px;
-  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-right: 0;
 }
 
 .skills__link {
   @include glass-link;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 0;
 }
 
-@media (max-width: 640px) {
+@include respond(md) {
+  .skills-table {
+    gap: 24px;
+    margin-right: 10px;
+  }
+
+  .skills-table__group {
+    margin: 5px 0;
+    padding: 20px 14px;
+  }
+
+  .skills-table__title {
+    gap: 10px;
+    font-size: 1.8rem;
+  }
+
+  .skills-table__group-img {
+    width: 32px;
+    height: 32px;
+  }
+
   .skills-table__row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(140px, 220px) 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .skills-table__link {
+    width: auto;
+    justify-content: flex-start;
+    font-size: 18px;
+  }
+
+  .skills-table__img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .skills-links__block {
+    @include flex-between-center;
+    margin-right: 10px;
+    margin-top: 25px;
+  }
+
+  .skills__link {
+    width: auto;
+    justify-content: flex-start;
   }
 }

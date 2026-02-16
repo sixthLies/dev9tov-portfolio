@@ -1,3 +1,5 @@
+@use "../../../configs" as *;
+
 .goals {
   margin-right: auto;
 }
@@ -7,43 +9,35 @@
 }
 
 .goals__title {
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  font-size: 44px;
-
-  @media (max-width: 1024px) {
-    font-size: 38px;
-  }
-  @media (max-width: 480px) {
-    font-size: 32px;
-  }
+  font-size: clamp(32px, 7vw, 44px);
 }
 
 .goals__subtitle {
   margin: 0;
+  max-width: 680px;
   color: rgba(255, 255, 255, 0.62);
   font-size: 15px;
   line-height: 1.6;
-  max-width: 680px;
 }
 
 .goals__list {
   display: grid;
-  gap: 14px;
+  gap: 12px;
   max-width: 980px;
 }
 
 .goals__row {
   display: grid;
-  grid-template-columns: 54px 1fr;
+  grid-template-columns: 1fr;
   align-items: center;
-  gap: 14px;
-  padding: 18px 18px;
+  gap: 12px;
+  padding: 14px;
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.045);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 22px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -72,4 +66,22 @@
   letter-spacing: -0.01em;
   color: rgba(255, 255, 255, 0.86);
   font-size: 15px;
+}
+
+@include respond(sm) {
+  .goals__row {
+    grid-template-columns: 54px 1fr;
+    gap: 14px;
+    padding: 16px 16px;
+  }
+}
+
+@include respond(lg) {
+  .goals__list {
+    gap: 14px;
+  }
+
+  .goals__row {
+    padding: 18px 18px;
+  }
 }
