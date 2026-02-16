@@ -36,6 +36,8 @@ import {
   vsstudioLogo,
   wanLogo,
   reactLogo,
+  claudeLogo,
+  ollamaLogo,
 } from "@/shared/assets/icons"
 
 export const resources = {
@@ -74,6 +76,8 @@ export const resources = {
   chatgpt: { href: "https://chatgpt.com/", logo: ghatGPTLogo },
   perplexity: { href: "https://www.perplexity.ai/", logo: perplexityLogo },
   notebookLM: { href: "https://notebooklm.google/", logo: notebooklmLogo },
+  claude: { href: "https://claude.ai/", logo: claudeLogo },
+  ollama: { href: "https://ollama.com/", logo: ollamaLogo },
 
   // Softwares
   photoshop: {
@@ -176,9 +180,11 @@ export const skillsInfo = [
       {
         label: "LLM's: ",
         items: [
-          { name: "ChatGPT", key: "chatgpt" },
+          { name: "ChatGPT 🔥", key: "chatgpt" },
           { name: "Perplexity 🔥", key: "perplexity" },
           { name: "NotebookLM", key: "notebookLM" },
+          { name: "Claude 🔥", key: "claude" },
+          { name: "Ollama", key: "ollama" },
         ],
       },
     ],

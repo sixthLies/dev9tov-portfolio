@@ -42,6 +42,8 @@ import comfyLogo from "./skills/ai/svg/comfy.svg"
 import ghatGPTLogo from "./skills/ai/svg/ghatGPT.svg"
 import perplexityLogo from "./skills/ai/svg/perplexity.svg"
 import notebooklmLogo from "./skills/ai/svg/notebooklm.svg"
+import claudeLogo from "./skills/ai/svg/claude.svg"
+import ollamaLogo from "./skills/ai/svg/ollama.svg"
 
 // software
 // png
@@ -99,6 +101,8 @@ export {
   ghatGPTLogo,
   perplexityLogo,
   notebooklmLogo,
+  claudeLogo,
+  ollamaLogo,
 
   // software
   software,
