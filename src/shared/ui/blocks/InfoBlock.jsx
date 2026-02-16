@@ -1,8 +1,8 @@
 export const InfoBlock = ({ data }) => {
   return (
     <div className="info">
-      <div className="info-container">
-        <div className="info-icon">i</div>
+      <div className="info__marker">
+        <div className="info__marker-icon">i</div>
       </div>
 
       <div className="info__content">

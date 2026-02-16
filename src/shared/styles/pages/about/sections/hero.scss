@@ -1,0 +1,84 @@
+.hero {
+  @media (max-width: 1024px) {
+    padding-top: 84px;
+  }
+
+  @media (max-width: 480px) {
+    padding-top: 64px;
+  }
+}
+
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hero__badgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.95);
+  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.12);
+}
+
+.hero__title {
+  font-weight: 850;
+
+  line-height: 0.96;
+  font-size: 68px;
+  margin-bottom: 15px;
+
+  @media (max-width: 1024px) {
+    font-size: 56px;
+  }
+  @media (max-width: 480px) {
+    font-size: 40px;
+    line-height: 1.05;
+  }
+}
+
+.hero__desc {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  max-width: 680px;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.hero__btn {
+  margin-top: 18px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+  }
+}
+
+.hero__arrow {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+}

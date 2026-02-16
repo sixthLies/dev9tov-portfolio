@@ -1,1 +1,1 @@
-export const homeClasses = { home: "home" }
+export const homeClasses = { home: "home l-page-section" }

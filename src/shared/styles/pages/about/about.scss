@@ -1,18 +1,16 @@
-@use "../theme/colors.scss" as *;
-@use "../configs" as *;
+@use "../../configs" as *;
+
+@forward "./sections/hero";
+@forward "./sections/what";
+@forward "./sections/process";
+@forward "./sections/skills";
+@forward "./sections/goals";
+
+@forward "./dot-nav";
 
 .about {
-  @include scollbar;
-  color: $color-white;
-  height: 650px;
-}
-
-.about__content {
   @include flex-column-gap(50px);
-}
-
-.block {
-  @include backdrop-bg;
+  color: var(--color-white);
 }
 
 .about__title {
@@ -46,6 +44,6 @@
 }
 
 .about__link {
-  margin-top: 25px;
+  margin-right: auto;
   @include glass-link;
 }

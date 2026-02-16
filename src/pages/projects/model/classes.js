@@ -1,5 +1,5 @@
 const skillsPageClasses = {
-  root: "projects",
+  root: "projects l-page-section",
   title: "projects__title",
 }
 

@@ -11,6 +11,6 @@ export const skillsClasses = {
 }
 
 export const root = {
-  rootClass: "skills",
+  rootClass: "skills-page l-page-section l-scroll-panel",
   titleClass: "skills__title",
 }

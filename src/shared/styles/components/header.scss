@@ -1,9 +1,8 @@
 @use "../configs" as *;
-@use "../theme/colors" as *;
 
 .header {
   margin-bottom: 75px;
-  border-bottom: 1px solid $primary-color;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .header__content {
@@ -14,17 +13,21 @@
   flex-grow: 1;
 }
 
-.menu__list {
+.header__nav {
+  margin-left: auto;
+}
+
+.header__nav-list {
   display: flex;
   gap: 37px;
 }
 
-.menu__item--link {
-  font-size: 20px;
+.header__nav-item {
+  @include underline-gradient(var(--color-white), var(--color-accent));
 }
 
-.menu__item {
-  @include underline-gradient($color-white, $color-accent);
+.header__nav-link {
+  font-size: 20px;
 }
 
 .header__btn {
@@ -32,7 +35,7 @@
   padding: 16px 20px;
   border: none;
   outline: none;
-  color: $color-white;
+  color: var(--color-white);
   background: transparent;
   cursor: pointer;
 

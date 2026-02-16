@@ -1,8 +1,10 @@
-@use "../theme/colors" as *;
 @use "../configs" as *;
 
 .not-found {
-  @include flex-column-center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .not-found__block {
@@ -18,7 +20,7 @@
   padding: 18px 22px;
   border: none;
   outline: none;
-  color: $color-white;
+  color: var(--color-white);
   background: transparent;
   cursor: pointer;
 

@@ -1,16 +1,14 @@
-/* Все звёзды имеют общий класс */
 .star {
   position: absolute;
   z-index: -1;
   width: 2px;
   height: 2px;
-  background-color: white;
+  background-color: var(--color-white);
   border-radius: 50%;
   opacity: 0.5;
   animation: twinkle 3s infinite alternate;
 }
 
-/* Анимация мерцания звёзд */
 @keyframes twinkle {
   0%,
   100% {

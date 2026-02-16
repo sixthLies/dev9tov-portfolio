@@ -1,4 +1,3 @@
-import { Link } from "react-router"
 import { Card } from "./Card"
 
 export const Cards = ({ cards }) => {

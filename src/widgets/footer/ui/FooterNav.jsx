@@ -12,7 +12,7 @@ const links = { telegrammLink, githubLink, gmailLink }
 
 export const FooterNav = () => {
   return (
-    <nav className="menu">
+    <nav className="footer__nav">
       <IconsList items={socialItems(links, icons)} {...footerClasses} />
     </nav>
   )

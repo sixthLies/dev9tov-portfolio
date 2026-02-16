@@ -13,9 +13,9 @@ export function ImagesModal({
   }
 
   return (
-    <div className={root} onMouseDown={onOverlayMouseDown}>
+    <div className={`${root} is-open`} onMouseDown={onOverlayMouseDown}>
       <div
-        className={modal}
+        className={`${modal} is-open`}
         role="dialog"
         aria-modal="true"
         aria-labelledby="img-title"

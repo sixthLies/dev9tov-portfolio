@@ -1,0 +1,24 @@
+.is-hidden {
+  display: none !important;
+}
+
+.is-open {
+  pointer-events: auto;
+}
+
+.modal-overlay.is-open,
+.contact-modal__overlay.is-open,
+.gallery-modalOverlay.is-open,
+.videoModal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal-overlay.is-open .modal,
+.contact-modal__overlay.is-open .contact-modal,
+.gallery-modalOverlay.is-open .gallery-modal,
+.videoModal.is-open .videoModal__panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}

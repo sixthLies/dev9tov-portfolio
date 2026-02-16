@@ -1,6 +1,6 @@
 export const menuItems = [
   { href: "/about", label: "Обо мне" },
-  { href: "/skills", label: "Навыки" },
+  { href: "/skills", label: "Мой Стек" },
   { href: "/projects", label: "Мои проекты" },
   { href: "/contacts", label: "Мои контакты" },
 ]

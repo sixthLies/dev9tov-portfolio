@@ -1,55 +1,45 @@
-@use "../configs" as *;
-@use "../theme/colors" as *;
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--transition-fast),
+    visibility var(--transition-fast);
+}
 
 .modal {
   position: relative;
   padding: 40px 44px;
-
   border-radius: 24px;
-  background: $background-color;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  background: var(--color-bg-surface);
+  box-shadow: var(--shadow-modal);
   text-align: center;
-
-  animation: modal-in $transition-fast;
-}
-
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
-  z-index: 100;
+  opacity: 0;
+  transform: translateY(10px) scale(0.96);
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
 }
 
 .modal__close {
   position: absolute;
   top: 10px;
   right: 12px;
-
   border: none;
   background: transparent;
-  color: #ffffffcc;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 20px;
   cursor: pointer;
 }
 
 .modal__close:hover {
-  color: $color-white;
+  color: var(--color-white);
 }
-
-@keyframes modal-in {
-  from {
-    transform: translateY(10px) scale(0.96);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-}
-
-

@@ -1,9 +1,1 @@
-$primary-color: #dedede;
-$color-white: #ffffff;
-
-$color-accent: #7102da;
-$color-btn-bg: #27004c;
-
-$background-color: #111;
-
-$color-blue: #007bff;
+@forward "tokens";

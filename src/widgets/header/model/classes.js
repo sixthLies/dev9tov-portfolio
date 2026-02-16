@@ -1,5 +1,5 @@
 export const headerClasses = {
-  className: "menu__list",
-  itemsClassName: "menu__item",
-  linkClassName: "menu__item--link",
+  className: "header__nav-list",
+  itemsClassName: "header__nav-item",
+  linkClassName: "header__nav-link",
 }

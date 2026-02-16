@@ -2,10 +2,10 @@ import React from "react"
 
 export const VideoStateMessage = ({ type, error, onRetry }) => {
   const stateClasses = {
-    loading: "videoGallery__state--loading",
-    error: "videoGallery__state--error",
-    empty: "videoGallery__state--empty",
-    loadingMore: "videoGallery__state--loadingMore",
+    loading: "is-loading",
+    error: "has-error",
+    empty: "is-empty",
+    loadingMore: "is-loading-more",
   }
 
   if (type === "loading") {

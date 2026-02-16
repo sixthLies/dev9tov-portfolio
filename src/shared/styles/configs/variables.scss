@@ -1,6 +1,6 @@
-$radius-md: 10px;
+$radius-md: var(--radius-md);
 $header-btn-width: 120px;
 
-$transition-fast: 0.2s ease-out;
+$transition-fast: var(--transition-fast);
 
 $flex-grow-1: 1;

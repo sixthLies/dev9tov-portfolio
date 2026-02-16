@@ -12,13 +12,13 @@ export const VideoModal = ({
 
   return (
     <div
-      className="videoModal"
+      className="videoModal is-open"
       role="dialog"
       aria-modal="true"
       aria-labelledby="videoModalTitle"
       onMouseDown={onOverlayMouseDown}
     >
-      <div className="videoModal__panel">
+      <div className="videoModal__panel is-open">
         <div className="videoModal__header">
           <h2 className="videoModal__title" id="videoModalTitle">
             {selected.title}

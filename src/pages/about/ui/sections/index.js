@@ -1,0 +1,5 @@
+export { HeroSection } from "./HeroSection"
+export { WhatIDoSection } from "./WhatIDoSection"
+export { ProcessSection } from "./ProcessSection"
+export { SkillsSection } from "./SkillsSection"
+export { GoalsSection } from "./GoalsSection"

@@ -1,58 +1,9 @@
-/* ImageArchivePage.scss */
 @use "../configs" as *;
-@use "../theme" as *;
-
-// :root {
-//   color-scheme: dark;
-
-//   --bg0: #0b1020;
-//   --bg1: #0f1730;
-//   --card: rgba(255, 255, 255, 0.06);
-//   --card2: rgba(255, 255, 255, 0.09);
-//   --stroke: rgba(255, 255, 255, 0.12);
-
-//   --text: rgba(255, 255, 255, 0.92);
-//   --muted: rgba(255, 255, 255, 0.66);
-
-//   --accent: #7c5cff;
-//   --accent2: #23d5ff;
-
-//   --shadow: 0 22px 70px rgba(0, 0, 0, 0.55);
-//   --shadow2: 0 14px 38px rgba(0, 0, 0, 0.45);
-
-//   --r12: 12px;
-//   --r16: 16px;
-//   --r20: 20px;
-
-//   --container: 1200px;
-// }
-
-// body {
-//   background:
-//     radial-gradient(
-//       1200px 700px at 10% 10%,
-//       rgba(124, 92, 255, 0.2),
-//       transparent 60%
-//     ),
-//     radial-gradient(
-//       900px 600px at 90% 20%,
-//       rgba(35, 213, 255, 0.14),
-//       transparent 55%
-//     ),
-//     radial-gradient(
-//       1200px 900px at 50% 90%,
-//       rgba(124, 92, 255, 0.12),
-//       transparent 60%
-//     ),
-//     linear-gradient(180deg, var(--bg0), var(--bg1));
-//   color: var(--text);
-// }
 
 ::selection {
   background: rgba(124, 92, 255, 0.35);
 }
 
-/* ---------- Gallery ---------- */
 .gallery {
   margin-top: 8px;
   @include scollbar;
@@ -75,22 +26,25 @@
 }
 
 .gallery-card__item {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  overflow: hidden;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.06),
     rgba(255, 255, 255, 0.03)
   );
-  border-radius: var(--r16);
-  overflow: hidden;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
-  transition:
-    transform 160ms ease,
-    border-color 160ms ease,
-    background 160ms ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.thumbButton {
+  display: block;
+  width: 100%;
 }
 
 .gallery-thumb__img {
+  width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
   transform: scale(1.01);
@@ -99,6 +53,11 @@
 
 .gallery__card-meta {
   padding: 12px 12px 13px;
+}
+
+.cardTitle {
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .gallery-card__item:hover {
@@ -120,59 +79,63 @@
   margin-top: 16px;
   margin-right: 15px;
   padding: 12px 14px;
+  border: 1px solid var(--border-subtle);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.04);
 }
 
 .sentinel {
-  height: 1px;
   width: 100%;
+  height: 1px;
 }
 
-/* ---------- Modal ---------- */
 .gallery-modalOverlay {
   position: fixed;
   inset: 0;
   z-index: 50;
-
   display: grid;
   place-items: center;
   padding: 18px;
-
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(7px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-fast), visibility var(--transition-fast);
 }
 
 .gallery-modal {
   width: min(980px, 100%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
   position: relative;
   padding: 20px 44px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 24px;
-  background: $background-color;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  background: var(--color-bg-surface);
+  box-shadow: var(--shadow-modal);
+  opacity: 0;
+  transform: translateY(10px) scale(0.96);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
 .gallery-modal__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .gallery-modal__body {
-  padding: 14px;
   display: grid;
   gap: 10px;
+  padding: 14px;
 }
 
 .gallery-modal__img {
   width: 100%;
-  border-radius: var(--r16);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow2);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
 }
 
 .gallery-modal__descTitle {
@@ -191,60 +154,35 @@
   line-height: 1.55;
 }
 
-/* ---------- Responsiveness ---------- */
 @media (max-width: 900px) {
-  .main {
-    padding: 14px 16px 44px;
-  }
-
-  .grid {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(200px, 1fr)
-    ); /* адаптивность grid [web:23][web:26] */
+  .gallery__list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 12px;
   }
 
-  .modal {
+  .gallery-modal {
     max-height: 92dvh;
   }
 }
 
 @media (max-width: 520px) {
-  .topbar-inner {
-    padding: 14px 14px;
+  .gallery__list {
+    grid-template-columns: 1fr;
   }
 
-  .main {
-    padding: 12px 14px 36px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr; /* на очень узких экранах одна колонка */
-  }
-
-  .cardMeta {
-    padding: 11px 12px;
-  }
-
-  .modalOverlay {
+  .gallery-modalOverlay {
     padding: 12px;
   }
 
-  .modalHeader {
-    padding: 12px 12px;
-  }
-
-  .modalBody {
+  .gallery-modal__header,
+  .gallery-modal__body {
     padding: 12px;
   }
 }
 
-/* ---------- Motion preferences ---------- */
-/* Отключаем “лишние” анимации, если пользователь просит меньше движения. [web:25] */
 @media (prefers-reduced-motion: reduce) {
-  .card,
-  .thumb,
+  .gallery-card__item,
+  .gallery-thumb__img,
   .closeBtn {
     transition: none !important;
   }

@@ -17,23 +17,23 @@ export const ContactMeModal = ({
 
   return createPortal(
     <div
-      className="contactMeModal__overlay"
+      className="contact-modal__overlay is-open"
       role="presentation"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose()
       }}
     >
       <div
-        className="contactMeModal"
+        className="contact-modal is-open"
         role="dialog"
         aria-modal="true"
         aria-label={CONTACT_ME_TITLE}
       >
-        <h2 className="contactMeModal__title">{CONTACT_ME_TITLE}</h2>
+        <h2 className="contact-modal__title">{CONTACT_ME_TITLE}</h2>
 
-        <div className="contactMeModal__actions">
+        <div className="contact-modal__actions">
           <a
-            className="contactMeModal__action"
+            className="contact-modal__action"
             href={gmailUrl}
             target="_blank"
             rel="noreferrer"
@@ -43,7 +43,7 @@ export const ContactMeModal = ({
 
           {telegramUrl && (
             <a
-              className="contactMeModal__action"
+              className="contact-modal__action"
               href={telegramUrl}
               target="_blank"
               rel="noreferrer"
@@ -54,7 +54,7 @@ export const ContactMeModal = ({
         </div>
 
         <button
-          className="contactMeModal__close"
+          className="contact-modal__close"
           type="button"
           onClick={onClose}
         >

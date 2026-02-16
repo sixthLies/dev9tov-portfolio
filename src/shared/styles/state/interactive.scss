@@ -1,0 +1,19 @@
+.is-active {
+  opacity: 1;
+}
+
+.has-error {
+  border-color: var(--border-error);
+  color: var(--color-error);
+}
+
+.is-disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.dotnav__dot.is-active {
+  background: var(--color-info);
+  border-color: var(--color-info);
+  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.12);
+}

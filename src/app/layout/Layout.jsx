@@ -5,10 +5,10 @@ import { Stars } from "@/widgets/stars"
 
 export const Layout = () => {
   return (
-    <div className="container">
+    <div className="l-page container" data-theme="dark">
       <Stars />
       <Header />
-      <main className="page__content">
+      <main className="l-page__content page__content">
         <Outlet />
       </main>
       <Footer />

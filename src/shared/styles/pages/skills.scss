@@ -1,15 +1,83 @@
-@use "../theme/colors.scss" as *;
 @use "../configs" as *;
 
-.skills {
-  @include scollbar;
-  height: 650px;
+.skills-page .skills__title {
+  margin-bottom: 15px;
+  font-size: 1.75rem;
 }
 
-.group__img {
+.skills-table {
+  display: grid;
+  gap: 24px;
+  margin: 0 10px 0 0;
+}
+
+.skills-table__group {
+  @include backdrop-bg;
+  margin: 5px 0;
+}
+
+.skills-table__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.skills-table__group-img {
   margin-top: 3px;
   width: 32px;
   height: 32px;
+}
+
+.skills-table__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.skills-table__row::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.02)
+  );
+}
+
+.skills-table__row:last-child::after {
+  display: none;
+}
+
+.skills-table__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skills-table__tags--secondary {
+  margin-top: 6px;
+}
+
+.skills-table__tag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 20px;
+  background: rgba(111, 169, 255, 0.18);
+  box-shadow: 0 0 12px rgba(111, 169, 255, 0.25);
+}
+
+.skills-table__link {
+  @include glass-link;
 }
 
 .skills-table__img {
@@ -18,92 +86,18 @@
   color: aliceblue;
 }
 
-.skills__title {
-  margin-bottom: 15px;
-  font-size: 1.75rem; // 28px
-}
-
-.skills-table {
-  display: grid;
-  gap: 24px;
-  margin: 0 10px 0 0;
-
-  &__group {
-    @include backdrop-bg;
-    margin: 5px 0;
-  }
-
-  &__title {
-    margin-bottom: 14px;
-    font-size: 1.8rem; // 29px
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  &__row {
-    position: relative;
-    display: grid;
-    grid-template-columns: minmax(140px, 220px) 1fr;
-    gap: 16px;
-    align-items: center;
-    padding: 12px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset-inline: 0;
-      bottom: 0;
-      height: 1px;
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0.25),
-        rgba(255, 255, 255, 0.02)
-      );
-    }
-
-    &:last-child::after {
-      display: none;
-    }
-  }
-
-  &__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-
-    &--secondary {
-      margin-top: 6px;
-    }
-  }
-
-  &__tag {
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 20px; // 20px
-    background: rgba(111, 169, 255, 0.18);
-    box-shadow: 0 0 12px rgba(111, 169, 255, 0.25);
-  }
-
-  &__link {
-    @include glass-link;
-  }
-
-  @media (max-width: 640px) {
-    &__row {
-      grid-template-columns: 1fr;
-    }
-  }
-}
-
 .skills-links__block {
   @include flex-between-center;
-  margin-right: 10px;
   margin-top: 25px;
+  margin-right: 10px;
 }
 
 .skills__link {
   @include glass-link;
+}
+
+@media (max-width: 640px) {
+  .skills-table__row {
+    grid-template-columns: 1fr;
+  }
 }

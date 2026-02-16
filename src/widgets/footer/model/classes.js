@@ -1,6 +1,6 @@
 // Footer
 export const footerClasses = {
-  listClass: "menu__list",
-  itemClass: "menu__list--item",
-  linkClass: "menu__list--link",
+  listClass: "footer__nav-list",
+  itemClass: "footer__nav-item",
+  linkClass: "footer__nav-link",
 }

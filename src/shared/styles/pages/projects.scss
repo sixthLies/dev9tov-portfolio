@@ -1,44 +1,38 @@
-@use "../theme" as *;
-
-.projects {
-  .card::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-      0deg,
-      transparent,
-      transparent 30%,
-      $primary-color
-    );
-    transform: rotate(-45deg);
-    transition: all 0.5s ease;
-    opacity: 0;
-  }
-
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px $color-accent;
-  }
-
-  .card:hover::before {
-    opacity: 1;
-    transform: rotate(-45deg) translateY(100%);
-  }
-
-  .modal {
-    display: none;
-  }
-
-  .modal-overlay {
-    display: none;
-  }
+.projects .modal-overlay {
+  display: none;
 }
 
 .projects__title {
   margin-bottom: 15px;
   font-size: 1.75rem;
+}
+
+.projects .card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  opacity: 0;
+  transform: rotate(-45deg);
+  background: linear-gradient(
+    0deg,
+    transparent,
+    transparent 30%,
+    var(--color-text-primary)
+  );
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.projects .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--color-accent);
+}
+
+.projects .card:hover::before {
+  opacity: 1;
+  transform: rotate(-45deg) translateY(100%);
 }

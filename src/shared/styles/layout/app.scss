@@ -1,0 +1,34 @@
+@use "../configs" as *;
+
+.l-page,
+.container {
+  max-width: 1220px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.l-page__content,
+.page__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.l-page-section {
+  width: 100%;
+}
+
+.l-scroll-panel {
+  @include scollbar;
+  height: 650px;
+}
+
+.l-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

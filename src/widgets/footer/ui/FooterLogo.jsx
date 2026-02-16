@@ -4,7 +4,7 @@ import { logo } from "@/shared/assets/icons"
 
 export const FooterLogo = () => {
   return (
-    <Link className="logo" to={FOOTER_HOME_PATH}>
+    <Link className="footer__logo" to={FOOTER_HOME_PATH}>
       <img
         className="logo__img"
         src={logo}

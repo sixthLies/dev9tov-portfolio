@@ -4,7 +4,7 @@ import { FooterNav } from "./FooterNav"
 
 export const Footer = () => {
   return (
-    <footer>
+    <footer className="footer">
       <div className="footer__content">
         <FooterLogo />
         <FooterCopyright />

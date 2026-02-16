@@ -1,6 +1,6 @@
 export const SKILLS_PATH = "/skills"
 
-export const PAGE_CLASS = "about"
+export const PAGE_CLASS = "about l-page-section l-scroll-panel"
 export const CONTENT_CLASS = "about__content"
 export const BLOCK_CLASS = "block"
 export const TITLE_CLASS = "about__title"

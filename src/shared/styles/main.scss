@@ -1,5 +1,5 @@
 @use "./base";
-@use "./configs";
 @use "./theme";
-@use "./components";
-@use "./pages";
+@use "./layout";
+@use "./modules";
+@use "./state";

@@ -6,7 +6,7 @@ export const VideoPage = () => {
   const logic = useVideoPageLogic()
 
   return (
-    <section className="video">
+    <section className="video l-page-section">
       <VideoHeader />
       <VideoGallery {...logic} />
     </section>

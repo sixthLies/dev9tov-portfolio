@@ -7,7 +7,7 @@ const listMenuProps = { items: menuItems, ...headerClasses }
 
 export const HeaderNav = () => {
   return (
-    <nav className="menu" aria-label={NAV_ARIA_LABEL}>
+    <nav className="header__nav" aria-label={NAV_ARIA_LABEL}>
       <ListMenu {...listMenuProps} />
     </nav>
   )

@@ -1,29 +1,58 @@
 import { Link } from "react-router"
-import { PortfolioList, PersonalInfoList } from "@/shared/ui"
-import { personalInfo, portfolioInfo } from "../model/pageConfig"
-import { aboutClasses, portfolioClasses } from "../model/classes"
 import {
-  CONTENT_CLASS,
   LINK_CLASS,
   PAGE_CLASS,
   SKILLS_LINK_TEXT,
   SKILLS_PATH,
-  TITLES,
 } from "../model/constants"
-import { AboutSection } from "./AboutSection"
+import { useAboutNavigation } from "../hooks/useAboutNavigation"
+import { DotNav } from "./DotNav"
+import {
+  GoalsSection,
+  HeroSection,
+  ProcessSection,
+  SkillsSection,
+  WhatIDoSection,
+} from "./sections"
 
 export const AboutPage = () => {
+  const {
+    sectionItems,
+    sectionIds,
+    activeSectionId,
+    sectionRefSetters,
+    scrollToSection,
+  } = useAboutNavigation()
+
   return (
     <section className={PAGE_CLASS}>
-      <div className={CONTENT_CLASS}>
-        <AboutSection title={TITLES.aboutMe}>
-          <PersonalInfoList personalInfo={personalInfo} {...aboutClasses} />
-        </AboutSection>
+      <DotNav
+        items={sectionItems}
+        activeId={activeSectionId}
+        onSelect={scrollToSection}
+      />
 
-        <AboutSection title={TITLES.techExperience}>
-          <PortfolioList portfolioInfo={portfolioInfo} {...portfolioClasses} />
-        </AboutSection>
-      </div>
+      <HeroSection
+        id={sectionIds.hero}
+        sectionRef={sectionRefSetters[sectionIds.hero]}
+        onMore={() => scrollToSection(sectionIds.what)}
+      />
+      <WhatIDoSection
+        id={sectionIds.what}
+        sectionRef={sectionRefSetters[sectionIds.what]}
+      />
+      <ProcessSection
+        id={sectionIds.process}
+        sectionRef={sectionRefSetters[sectionIds.process]}
+      />
+      <SkillsSection
+        id={sectionIds.skills}
+        sectionRef={sectionRefSetters[sectionIds.skills]}
+      />
+      <GoalsSection
+        id={sectionIds.goals}
+        sectionRef={sectionRefSetters[sectionIds.goals]}
+      />
 
       <Link className={LINK_CLASS} to={SKILLS_PATH}>
         {SKILLS_LINK_TEXT}

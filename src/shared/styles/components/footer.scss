@@ -4,24 +4,30 @@
   align-items: center;
 }
 
-.logo {
+.footer__nav-list {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__logo {
   flex-grow: 1;
 }
 
-.copyright__text {
+.footer__copyright {
   flex-grow: 1;
   display: flex;
   gap: 5px;
 }
 
-.copyright-link:hover {
-  color: #8404fc;
+.footer__copyright-link:hover {
+  color: var(--color-accent);
 }
 
-.menu__list--link {
+.footer__nav-link {
   display: block;
-  width: 50px; /* Размер иконки */
-  height: 50px; /* Размер иконки */
+  width: 50px;
+  height: 50px;
+
   &:hover {
     animation: pulse 2s infinite;
   }

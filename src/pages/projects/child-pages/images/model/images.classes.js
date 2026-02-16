@@ -11,7 +11,7 @@ export const imagesModalClasses = {
 }
 
 export const imagesPageClasses = {
-  root: "gallery",
+  root: "gallery l-page-section",
   title: "gallery__title",
   list: "gallery__list",
   list_item: "gallery-card__item",

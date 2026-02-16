@@ -1,26 +1,19 @@
-@use "../theme/colors.scss" as *;
-@use "../configs" as *;
+.contacts__title {
+  margin-bottom: 15px;
+  font-size: 28px;
+}
 
-.contacts {
-  @include scollbar;
-  height: 650px;
+.contacts .card {
+  width: fit-content;
+  height: fit-content;
+  display: block;
+}
 
-  .contacts__title {
-    margin-bottom: 15px;
-    font-size: 28px;
-  }
+.contacts .card:hover {
+  box-shadow: 0 0 20px var(--color-accent);
+}
 
-  .card {
-    @include width-height(fit-content, fit-content);
-    display: block;
-  }
-
-  .card:hover {
-    box-shadow: 0 0 20px $color-accent;
-  }
-
-  .card__img {
-    width: 250px;
-    height: 250px;
-  }
+.contacts .card__img {
+  width: 250px;
+  height: 250px;
 }
