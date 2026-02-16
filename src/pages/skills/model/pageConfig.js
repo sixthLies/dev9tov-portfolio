@@ -148,7 +148,6 @@ export const skillsInfo = [
       {
         label: "ComfyUI: ",
         items: [
-          { name: "ComfyUI 🔥", key: "comfy" },
           { name: "Qwen", key: "qwen" },
           { name: "Flux-dev", key: "flux" },
           { name: "Wan", key: "wan" },
@@ -167,6 +166,7 @@ export const skillsInfo = [
         label: "Генеративный AI (видео): ",
         items: [
           { name: "Veo 3 🔥", key: "veo3" },
+          { name: "Grok", key: "grok" },
           { name: "Sora", key: "sora" },
         ],
       },
