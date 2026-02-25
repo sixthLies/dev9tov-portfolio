@@ -23,6 +23,8 @@ import tailwindLogo from "./skills/frontend/svg/tailwind.svg"
 import axiosLogo from "./skills/frontend/svg/axios.svg"
 import gitLogo from "./skills/frontend/svg/git.svg"
 import nodejsLogo from "./skills/frontend/svg/nodejs.svg"
+import dockerLogo from "./skills/frontend/svg/docker.svg"
+import n8nLogo from "./skills/frontend/svg/n8n.svg"
 
 // ai
 // png
@@ -84,6 +86,8 @@ export {
   axiosLogo,
   postgresqlLogo,
   gitLogo,
+  n8nLogo,
+  dockerLogo,
 
   // ai
   ai,
