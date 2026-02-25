@@ -72,7 +72,7 @@
 @include respond(lg) {
   .skills__grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 105px;
   }
 
   .skills__card {
