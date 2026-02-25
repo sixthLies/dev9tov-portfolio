@@ -38,6 +38,8 @@ import {
   reactLogo,
   claudeLogo,
   ollamaLogo,
+  dockerLogo,
+  n8nLogo,
 } from "@/shared/assets/icons"
 
 export const resources = {
@@ -59,6 +61,8 @@ export const resources = {
   vite: { href: "https://vite.dev/", logo: viteLogo },
   rtk: { href: "https://redux-toolkit.js.org/", logo: reduxLogo },
   postgres: { href: "https://www.postgresql.org/", logo: postgresqlLogo },
+  docker: { href: "https://www.docker.com/", logo: dockerLogo },
+  n8n: { href: "https://n8n.io/", logo: n8nLogo },
 
   // AI
   comfy: { href: "https://www.comfy.org", logo: comfyLogo },
@@ -109,8 +113,6 @@ export const skillsInfo = [
           { name: "HTML5", key: "html" },
           { name: "CSS", key: "css" },
           { name: "JavaScript", key: "js" },
-          { name: "Git", key: "git" },
-          { name: "GitHub", key: "github" },
           { name: "Node JS", key: "nodejs" },
         ],
       },
@@ -122,7 +124,7 @@ export const skillsInfo = [
         ],
       },
       {
-        label: "React‑экосистема: ",
+        label: "React-экосистема: ",
         items: [
           { name: "React", key: "react" },
           { name: "React Router", key: "reactRouter" },
@@ -131,12 +133,24 @@ export const skillsInfo = [
         ],
       },
       {
-        label: "State‑manager: ",
+        label: "State-manager: ",
         items: [{ name: "Redux Toolkit", key: "rtk" }],
       },
       {
         label: "База данных: ",
         items: [{ name: "PostgreSQL", key: "postgres" }],
+      },
+      {
+        label: "DevOps / Version Control: ",
+        items: [
+          { name: "Docker", key: "docker" },
+          { name: "Git", key: "git" },
+          { name: "GitHub", key: "github" },
+        ],
+      },
+      {
+        label: "Автоматизация: ",
+        items: [{ name: "n8n", key: "n8n" }],
       },
     ],
   },
@@ -146,7 +160,11 @@ export const skillsInfo = [
     img: ai,
     groups: [
       {
-        label: "ComfyUI: ",
+        label: "Инструменты: ",
+        items: [{ name: "ComfyUI", key: "comfy" }],
+      },
+      {
+        label: "Модели (в ComfyUI): ",
         items: [
           { name: "Qwen", key: "qwen" },
           { name: "Flux-dev", key: "flux" },
@@ -185,6 +203,9 @@ export const skillsInfo = [
           { name: "NotebookLM", key: "notebookLM" },
           { name: "Claude 🔥", key: "claude" },
           { name: "Ollama", key: "ollama" },
+          { name: "Qwen", key: "qwen" },
+          { name: "Gemini", key: "gemini" },
+          { name: "Grok", key: "grok" },
         ],
       },
     ],
