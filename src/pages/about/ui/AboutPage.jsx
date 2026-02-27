@@ -45,10 +45,10 @@ export const AboutPage = () => {
         id={sectionIds.process}
         sectionRef={sectionRefSetters[sectionIds.process]}
       />
-      <SkillsSection
+      {/* <SkillsSection
         id={sectionIds.skills}
         sectionRef={sectionRefSetters[sectionIds.skills]}
-      />
+      /> */}
       <GoalsSection
         id={sectionIds.goals}
         sectionRef={sectionRefSetters[sectionIds.goals]}

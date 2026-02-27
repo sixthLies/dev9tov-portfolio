@@ -11,4 +11,5 @@ export const TITLES = {
   techExperience: "О моём техническом опыте:",
 }
 
-export const SKILLS_LINK_TEXT = "Подробнее о моих навыках →"
+export const SKILLS_LINK_TEXT = "Подробнее о моём стеке и инструментах →"
+

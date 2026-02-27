@@ -43,6 +43,12 @@
   grid-template-columns: 1fr;
   gap: 10px;
   align-items: start;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
 }
 
 .process__dot {
