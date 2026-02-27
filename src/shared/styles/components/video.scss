@@ -21,6 +21,11 @@
   align-items: start;
 }
 
+.videoGallery__sentinel {
+  width: 100%;
+  height: 1px;
+}
+
 .videoCard {
   border: 1px solid var(--border-subtle);
   border-radius: 14px;

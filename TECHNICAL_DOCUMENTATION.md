@@ -143,3 +143,12 @@ src
 Проект демонстрирует зрелый инженерный фундамент: системное мышление, дисциплину слоев, аккуратную модульность и внимание к UI-состояниям.
 
 При доведении quality-gates (lint/tests/типизация) и консолидации архитектурных слоев проект может использоваться как production-grade reference для демонстрации уровня frontend-разработчика.
+
+## 13. Надежность Infinite Scroll (Images/Video)
+- Для `images` и `video` закреплен единый подход: `IntersectionObserver` привязывается к фактическому scroll-контейнеру (не к `window`), что корректно для мобильных вложенных панелей с `overflow-y: auto`.
+- Добавлен shared-утилитный слой `shared/lib/infinite-scroll/observer.js`:
+  - `getIntersectionRoot(element)` — определяет корневой контейнер наблюдения.
+  - `isSentinelNearViewport(...)` — fallback-проверка proximity sentinel.
+- В хуках догрузки добавлены пассивные fallback-слушатели `scroll/resize/orientationchange` с `requestAnimationFrame`-throttle для мобильных кейсов (инерционный скролл, динамический viewport).
+- Для `video` добавлен явный `sentinel` высотой `1px` и `end-of-list` состояние UI.
+- В результате бесконечная прокрутка догружает данные до конца без “ложного конца”, при сохранении защиты от параллельных запросов.

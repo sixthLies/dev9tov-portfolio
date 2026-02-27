@@ -40,14 +40,16 @@ export function useVideoPageLogic() {
     }
   }, [fetchFirstPage, cancel])
 
+  const handleLoadMore = useCallback(() => {
+    if (isLoadingInitial || isLoadingMore || error || !hasMore) return
+    fetchNextPage()
+  }, [error, fetchNextPage, hasMore, isLoadingInitial, isLoadingMore])
+
   // Infinite scroll
   useInfiniteScroll(
     sentinelRef.current,
-    [error, isLoadingInitial, isLoadingMore],
-    () => {
-      if (isLoadingInitial || isLoadingMore || error) return
-      fetchNextPage()
-    },
+    [error, hasMore, isLoadingInitial, isLoadingMore],
+    handleLoadMore,
   )
 
   const onCardKeyDown = useCallback(
@@ -76,10 +78,13 @@ export function useVideoPageLogic() {
   const showGrid = !isLoadingInitial && !error && items.length > 0
   const showLoadingMore =
     !isLoadingInitial && !error && hasMore && isLoadingMore
+  const showEndOfList =
+    !isLoadingInitial && !error && !hasMore && items.length > 0
 
   return {
     // Данные
     items,
+    hasMore,
     selectedVideoError,
     query,
     selected,
@@ -94,6 +99,7 @@ export function useVideoPageLogic() {
     isEmpty,
     showGrid,
     showLoadingMore,
+    showEndOfList,
 
     // Обработчики
     setQuery,

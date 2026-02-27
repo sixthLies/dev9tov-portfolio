@@ -8,6 +8,8 @@ export function VideoGallery({
   isEmpty,
   showGrid,
   showLoadingMore,
+  showEndOfList,
+  hasMore,
   selected,
   selectedVideoError,
   sentinelRef,
@@ -46,13 +48,16 @@ export function VideoGallery({
         </div>
       )}
 
-      <div
-        className="videoGallery__sentinel"
-        ref={sentinelRef}
-        aria-hidden="true"
-      />
+      {hasMore && (
+        <div
+          className="videoGallery__sentinel"
+          ref={sentinelRef}
+          aria-hidden="true"
+        />
+      )}
 
       {showLoadingMore && <VideoStateMessage type="loadingMore" />}
+      {showEndOfList && <VideoStateMessage type="end" />}
 
       <VideoModal
         selected={selected}

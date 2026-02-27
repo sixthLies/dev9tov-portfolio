@@ -1,5 +1,5 @@
 export const PAGE_SIZE = 3
-export const ROOT_MARGIN = "800px"
+export const ROOT_MARGIN = "320px 0px"
 export const MAX_TOTAL = 15
 
 export const TITLE_POOL = [

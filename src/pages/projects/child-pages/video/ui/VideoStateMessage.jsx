@@ -6,6 +6,7 @@ export const VideoStateMessage = ({ type, error, onRetry }) => {
     error: "has-error",
     empty: "is-empty",
     loadingMore: "is-loading-more",
+    end: "is-end",
   }
 
   if (type === "loading") {
@@ -59,5 +60,18 @@ export const VideoStateMessage = ({ type, error, onRetry }) => {
     )
   }
 
+  if (type === "end") {
+    return (
+      <div
+        className={`videoGallery__state ${stateClasses.end}`}
+        role="status"
+        aria-live="polite"
+      >
+        Все видео загружены.
+      </div>
+    )
+  }
+
   return null
 }
+
