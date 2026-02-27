@@ -1,5 +1,6 @@
 import { HeaderLogo } from "./HeaderLogo"
 import { HeaderNav } from "./HeaderNav"
+import { ThemeToggle } from "./ThemeToggle"
 
 export const Header = () => {
   return (
@@ -7,6 +8,7 @@ export const Header = () => {
       <div className="header__content">
         <HeaderLogo />
         <HeaderNav />
+        <ThemeToggle />
         {/* <ContactMeButton /> */}
       </div>
     </header>

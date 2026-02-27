@@ -10,3 +10,59 @@
   outline: none;
   box-shadow: var(--focus-ring);
 }
+
+html[data-theme-ready="true"] :where(
+    body,
+    .l-page,
+    .header,
+    .header__theme-toggle,
+    .card,
+    .info,
+    .skills-table__group,
+    .what__card,
+    .process__item,
+    .goals__row,
+    .videoCard,
+    .gallery-card__item,
+    .playlist-card,
+    .search-results__item,
+    .modal,
+    .gallery-modal,
+    .videoModal__panel,
+    .skills__link,
+    .header__btn
+  ) {
+  transition:
+    background-color var(--theme-transition-duration) var(--theme-transition-easing),
+    color var(--theme-transition-duration) var(--theme-transition-easing),
+    border-color var(--theme-transition-duration) var(--theme-transition-easing),
+    box-shadow var(--theme-transition-duration) var(--theme-transition-easing),
+    fill var(--theme-transition-duration) var(--theme-transition-easing),
+    stroke var(--theme-transition-duration) var(--theme-transition-easing);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme-ready="true"] :where(
+      body,
+      .l-page,
+      .header,
+      .header__theme-toggle,
+      .card,
+      .info,
+      .skills-table__group,
+      .what__card,
+      .process__item,
+      .goals__row,
+      .videoCard,
+      .gallery-card__item,
+      .playlist-card,
+      .search-results__item,
+      .modal,
+      .gallery-modal,
+      .videoModal__panel,
+      .skills__link,
+      .header__btn
+    ) {
+    transition: none !important;
+  }
+}

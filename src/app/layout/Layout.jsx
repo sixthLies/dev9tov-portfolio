@@ -6,7 +6,7 @@ import { GlobalMusicMiniPlayer } from "./GlobalMusicMiniPlayer"
 
 export const Layout = () => {
   return (
-    <div className="l-page container" data-theme="dark">
+    <div className="l-page container">
       <Stars />
       <Header />
       <main className="l-page__content page__content">

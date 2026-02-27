@@ -2,6 +2,7 @@
 
 ## UI Motion
 - Reveal animation system docs: `docs/reveal-system.md`
+- Theme system docs: `docs/theme-system.md`
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
