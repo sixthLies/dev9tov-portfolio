@@ -2,15 +2,22 @@ import { Link } from "react-router"
 import { useState } from "react"
 import { ModalWindow } from "../modals/ModalWindow"
 import { ModalWindowCard } from "../modals/modalWindowCard"
+import { Reveal } from "../reveal"
 
-export const Card = ({ card }) => {
+export const Card = ({ card, index = 0 }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleOpen = () => setIsOpen(true)
   const handleClose = () => setIsOpen(false)
   return (
     <>
-      <Link to={card.link} onClick={handleOpen}>
+      <Reveal
+        as={Link}
+        preset="card"
+        index={index}
+        to={card.link}
+        onClick={handleOpen}
+      >
         <article className="card">
           <div className="card__content">
             {card.img &&
@@ -25,7 +32,7 @@ export const Card = ({ card }) => {
             <p className="card__description">{card.description}</p>
           </div>
         </article>
-      </Link>
+      </Reveal>
 
       <ModalWindow isOpen={isOpen} onClose={handleClose}>
         <ModalWindowCard card={card} />

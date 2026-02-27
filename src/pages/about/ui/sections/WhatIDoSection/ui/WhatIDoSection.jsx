@@ -6,7 +6,7 @@ import { WhatIDoHeader } from "./WhatIDoHeader"
 export const WhatIDoSection = ({ id, sectionRef }) => {
   return (
     <section id={id} ref={sectionRef} className={whatIDoclasses.root}>
-      <Reveal>
+      <Reveal preset="text">
         <WhatIDoHeader {...whatIDoclasses.header} />
       </Reveal>
       <WhatIDoGrid {...whatIDoclasses.grid} />

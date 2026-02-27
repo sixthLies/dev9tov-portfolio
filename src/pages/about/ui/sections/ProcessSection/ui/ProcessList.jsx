@@ -8,7 +8,7 @@ export const ProcessList = ({ list }) => {
         <ProcessItem
           key={step.n}
           step={step}
-          delay={(index % 4) + 1}
+          index={index}
           {...list}
         />
       ))}

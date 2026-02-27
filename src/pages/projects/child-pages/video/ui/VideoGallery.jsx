@@ -37,10 +37,11 @@ export function VideoGallery({
           role="list"
           aria-label="Видеогалерея"
         >
-          {items.map((video) => (
+          {items.map((video, index) => (
             <VideoCard
               key={video.id}
               video={video}
+              index={index}
               onOpen={openVideo}
               onKeyDown={onCardKeyDown}
             />

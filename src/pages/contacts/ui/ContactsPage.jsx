@@ -1,4 +1,4 @@
-import { Cards, InfoBlock, LinksBlock } from "@/shared/ui"
+import { Cards, InfoBlock, LinksBlock, Reveal } from "@/shared/ui"
 import { infoBoxContactsData } from "../model/infoBox"
 import { contactsPageCards } from "../model/pageConfig"
 import { CONTACTS_TITLE } from "../model/constants"
@@ -13,7 +13,9 @@ export const ContactsPage = () => {
 
   return (
     <section className={CONTACTS_PAGE_CLASS}>
-      <h2 className={CONTACTS_TITLE_CLASS}>{CONTACTS_TITLE}</h2>
+      <Reveal as="h2" className={CONTACTS_TITLE_CLASS} preset="text">
+        {CONTACTS_TITLE}
+      </Reveal>
 
       <InfoBlock data={infoBoxContactsData} />
 

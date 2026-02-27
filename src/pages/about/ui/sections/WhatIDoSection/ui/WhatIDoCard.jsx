@@ -1,9 +1,9 @@
 import React from "react"
 import { Reveal } from "@/shared/ui"
 
-export const WhatIDoCard = ({ root, num, title, text, c, delay }) => {
+export const WhatIDoCard = ({ root, num, title, text, c, index }) => {
   return (
-    <Reveal delay={delay}>
+    <Reveal preset="card" index={index}>
       <article className={root}>
         <div className={num} aria-hidden="true">
           {c.n}

@@ -1,4 +1,5 @@
 import { Link } from "react-router"
+import { Reveal } from "@/shared/ui"
 import {
   LINK_CLASS,
   PAGE_CLASS,
@@ -54,9 +55,9 @@ export const AboutPage = () => {
         sectionRef={sectionRefSetters[sectionIds.goals]}
       />
 
-      <Link className={LINK_CLASS} to={SKILLS_PATH}>
+      <Reveal as={Link} preset="inline" className={LINK_CLASS} to={SKILLS_PATH}>
         {SKILLS_LINK_TEXT}
-      </Link>
+      </Reveal>
     </section>
   )
 }

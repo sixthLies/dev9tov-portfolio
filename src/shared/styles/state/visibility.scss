@@ -24,38 +24,81 @@
 }
 
 .reveal {
+  --reveal-easing: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-duration: 420ms;
+  --reveal-y: 18px;
+  --reveal-scale: 0.986;
+  --reveal-blur: 0px;
   opacity: 0;
-  transform: translate3d(0, 20px, 0);
-  transition-property: opacity, transform;
-  transition-duration: 420ms;
-  transition-timing-function: ease-out;
+  transform: translate3d(0, var(--reveal-y), 0) scale(var(--reveal-scale));
+  filter: blur(var(--reveal-blur));
+  will-change: opacity, transform, filter;
+  transition:
+    opacity var(--reveal-duration) var(--reveal-easing),
+    transform var(--reveal-duration) var(--reveal-easing),
+    filter var(--reveal-duration) var(--reveal-easing);
 }
 
 .reveal--visible {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+  will-change: auto;
 }
 
-.reveal--delay-1 {
-  transition-delay: 80ms;
+.reveal--preset-section {
+  --reveal-y: 26px;
+  --reveal-scale: 0.992;
+  --reveal-easing: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.reveal--delay-2 {
-  transition-delay: 140ms;
+.reveal--preset-card {
+  --reveal-y: 18px;
+  --reveal-scale: 0.986;
+  --reveal-easing: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.reveal--delay-3 {
-  transition-delay: 200ms;
+.reveal--preset-text {
+  --reveal-y: 10px;
+  --reveal-scale: 0.998;
+  --reveal-easing: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.reveal--delay-4 {
-  transition-delay: 260ms;
+.reveal--preset-media {
+  --reveal-y: 16px;
+  --reveal-scale: 0.982;
+  --reveal-blur: 2px;
+  --reveal-easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal--preset-inline {
+  --reveal-y: 6px;
+  --reveal-scale: 0.998;
+  --reveal-easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@for $duration from 280 through 640 {
+  @if $duration % 20 == 0 {
+    .reveal--duration-#{$duration} {
+      --reveal-duration: #{$duration}ms;
+    }
+  }
+}
+
+@for $delay from 0 through 400 {
+  @if $delay % 20 == 0 {
+    .reveal--delay-#{$delay} {
+      transition-delay: #{$delay}ms;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
     transform: none;
-    transition: none;
+    filter: none;
+    transition: none !important;
+    will-change: auto;
   }
 }

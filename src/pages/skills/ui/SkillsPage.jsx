@@ -1,4 +1,4 @@
-import { InfoBlock, LinksBlock } from "@/shared/ui"
+import { InfoBlock, LinksBlock, Reveal } from "@/shared/ui"
 import { infoBoxSkillsData } from "../model/infoBox"
 import { skillsInfo } from "../model/pageConfig"
 import { root, skillsClasses } from "../model/classes"
@@ -11,7 +11,9 @@ export const SkillsPage = () => {
 
   return (
     <section className={root.rootClass}>
-      <h2 className={root.titleClass}>{SKILLS_PAGE.titleText}</h2>
+      <Reveal as="h2" className={root.titleClass} preset="text">
+        {SKILLS_PAGE.titleText}
+      </Reveal>
 
       <InfoBlock data={infoBoxSkillsData} />
 

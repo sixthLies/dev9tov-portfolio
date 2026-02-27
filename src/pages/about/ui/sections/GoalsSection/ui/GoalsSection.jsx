@@ -6,7 +6,7 @@ import { GoalsList } from "./GoalsList"
 export const GoalsSection = ({ id, sectionRef }) => {
   return (
     <section id={id} ref={sectionRef} className={goalsClasses.root}>
-      <Reveal>
+      <Reveal preset="text">
         <GoalsHeader {...goalsClasses.header} />
       </Reveal>
       <GoalsList />

@@ -1,4 +1,4 @@
-import { Cards } from "@/shared/ui"
+import { Cards, Reveal } from "@/shared/ui"
 import { homePageCards } from "../model/pageConfig"
 import { homeClasses } from "../model/classes"
 
@@ -7,7 +7,9 @@ export const HomePage = () => {
 
   return (
     <section className={home}>
-      <Cards cards={homePageCards} />
+      <Reveal preset="section">
+        <Cards cards={homePageCards} />
+      </Reveal>
     </section>
   )
 }

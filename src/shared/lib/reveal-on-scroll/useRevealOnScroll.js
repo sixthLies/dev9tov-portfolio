@@ -1,6 +1,9 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
+import { observeWithPool } from "./observerPool"
 
 const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)"
+const useIsomorphicLayoutEffect =
+  typeof window === "undefined" ? useEffect : useLayoutEffect
 
 const isReducedMotionPreferred = () => {
   if (typeof window === "undefined") return false
@@ -17,42 +20,47 @@ export const useRevealOnScroll = ({
 } = {}) => {
   const ref = useRef(null)
   const [isRevealed, setIsRevealed] = useState(false)
+  const hasRevealedRef = useRef(false)
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const node = ref.current
     if (!node) return
 
-    if (isRevealed && once) return
+    if (once && hasRevealedRef.current) return
 
     if (isReducedMotionPreferred()) {
+      hasRevealedRef.current = true
       setIsRevealed(true)
       return
     }
 
     if (typeof IntersectionObserver === "undefined") {
+      hasRevealedRef.current = true
       setIsRevealed(true)
       return
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries
-        if (!entry?.isIntersecting) return
+    let stopObserving = () => {}
 
-        setIsRevealed(true)
-
-        if (once) {
-          observer.unobserve(entry.target)
-          observer.disconnect()
-        }
-      },
+    stopObserving = observeWithPool(
+      node,
       { root, rootMargin, threshold },
+      (entry) => {
+        if (once) {
+          if (!entry?.isIntersecting) return
+
+          hasRevealedRef.current = true
+          setIsRevealed(true)
+          stopObserving()
+          return
+        }
+
+        setIsRevealed(Boolean(entry?.isIntersecting))
+      },
     )
 
-    observer.observe(node)
-
-    return () => observer.disconnect()
-  }, [isRevealed, once, root, rootMargin, threshold])
+    return () => stopObserving()
+  }, [once, root, rootMargin, threshold])
 
   return { ref, isRevealed }
 }

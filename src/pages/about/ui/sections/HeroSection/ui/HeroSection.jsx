@@ -8,13 +8,13 @@ export const HeroSection = ({ id, sectionRef, onMore }) => {
   return (
     <section id={id} ref={sectionRef} className={heroClasses.root}>
       <div className={heroClasses.container}>
-        <Reveal>
+        <Reveal preset="inline">
           <HeroBadge />
         </Reveal>
-        <Reveal delay={1}>
+        <Reveal preset="section" index={1}>
           <HeroInfo />
         </Reveal>
-        <Reveal delay={2}>
+        <Reveal preset="inline" index={2}>
           <HeroBtn onMore={onMore} />
         </Reveal>
       </div>

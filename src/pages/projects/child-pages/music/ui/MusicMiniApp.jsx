@@ -7,7 +7,7 @@ import Search from "./components/Search/Search.jsx"
 import SearchResults from "./components/SearchResults/SearchResults.jsx"
 import "../styles/global.scss"
 import "../styles/App.scss"
-import { InfoBlock } from "@/shared/ui"
+import { InfoBlock, Reveal } from "@/shared/ui"
 import { infoBoxContactsData } from "@/pages/contacts/model/infoBox"
 
 export const MusicMiniApp = () => {
@@ -196,14 +196,14 @@ export const MusicMiniApp = () => {
     <div className="music-mini-app">
       <InfoBlock data={infoBoxContactsData} />
       <div className="app">
-        <header className="app__header">
+        <Reveal as="header" className="app__header" preset="text" index={1}>
           <Search
             value={searchQuery}
             onChange={setSearchQuery}
             onClear={() => setSearchQuery("")}
           />
-        </header>
-        <main className="app__main">
+        </Reveal>
+        <Reveal as="main" className="app__main" preset="section" index={2}>
           {isSearchActive ? (
             <SearchResults
               results={searchResults}
@@ -217,7 +217,7 @@ export const MusicMiniApp = () => {
               onPlaylistClick={handlePlaylistClick}
             />
           )}
-        </main>
+        </Reveal>
         <PlaylistModal
           playlist={musicPlayer.selectedPlaylist}
           isOpen={musicPlayer.isPlaylistModalOpen}

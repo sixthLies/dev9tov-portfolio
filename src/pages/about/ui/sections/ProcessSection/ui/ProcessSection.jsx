@@ -6,7 +6,7 @@ import { ProcessWrapper } from "./ProcessWrapper"
 export const ProcessSection = ({ id, sectionRef }) => {
   return (
     <section id={id} ref={sectionRef} className={processClasses.root}>
-      <Reveal>
+      <Reveal preset="text">
         <ProcessHeader {...processClasses.header} />
       </Reveal>
       <ProcessWrapper {...processClasses.wrap} />

@@ -36,8 +36,6 @@
     cursor: pointer;
     border: 1px solid $border-color;
     transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
-    animation: music-mini-card-fade-in $transition-slow both;
-  
     &:hover {
       transform: translateY(-4px);
       box-shadow: $shadow-card;

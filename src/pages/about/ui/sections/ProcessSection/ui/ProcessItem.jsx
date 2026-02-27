@@ -3,7 +3,7 @@ import { Reveal } from "@/shared/ui"
 
 export const ProcessItem = ({
   step,
-  delay,
+  index,
   item,
   dot,
   dotNum,
@@ -12,7 +12,7 @@ export const ProcessItem = ({
   text,
 }) => {
   return (
-    <Reveal delay={delay}>
+    <Reveal preset="card" index={index}>
       <div className={item}>
         <div className={dot} aria-hidden="true">
           <span className={dotNum}>{step.n}</span>

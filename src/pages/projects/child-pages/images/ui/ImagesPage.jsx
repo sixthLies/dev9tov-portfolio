@@ -1,4 +1,4 @@
-import { InfoBlock } from "@/shared/ui"
+import { InfoBlock, Reveal } from "@/shared/ui"
 import { infoBoxImagesData } from "../model/images.infoBox"
 import { IMAGES_DATA } from "../model/images.data"
 import { useInfiniteImages } from "../lib/useInfiniteImages"
@@ -16,9 +16,14 @@ export const ImagesPage = () => {
   const hasItems = items.length > 0
 
   return (
-    <section className={root} aria-label="Галерея изображений">
-      <h2 className={title}>Архив изображений</h2>
-      <InfoBlock data={infoBoxImagesData} />
+    <section
+      className={root}
+      aria-label={"\u0413\u0430\u043b\u0435\u0440\u0435\u044f \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0439"}
+    >
+      <Reveal as="h2" className={title} preset="text">
+        {"\u0410\u0440\u0445\u0438\u0432 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0439"}
+      </Reveal>
+      <InfoBlock data={infoBoxImagesData} revealIndex={1} />
 
       <ImagesGrid items={items} onOpen={open} classes={imagesPageClasses} />
 

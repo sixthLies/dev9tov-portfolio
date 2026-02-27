@@ -1,8 +1,8 @@
 import { Reveal } from "@/shared/ui"
 
-export const GoalItem = ({ goal, row, icon, iconInner, text, delay }) => {
+export const GoalItem = ({ goal, row, icon, iconInner, text, index }) => {
   return (
-    <Reveal delay={delay}>
+    <Reveal preset="card" index={index}>
       <div className={row}>
         <div className={icon} aria-hidden="true">
           <span className={iconInner} />
