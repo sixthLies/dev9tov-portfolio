@@ -1,10 +1,14 @@
-export const GoalItem = ({ goal, row, icon, iconInner, text }) => {
+import { Reveal } from "@/shared/ui"
+
+export const GoalItem = ({ goal, row, icon, iconInner, text, delay }) => {
   return (
-    <div className={row}>
-      <div className={icon} aria-hidden="true">
-        <span className={iconInner} />
+    <Reveal delay={delay}>
+      <div className={row}>
+        <div className={icon} aria-hidden="true">
+          <span className={iconInner} />
+        </div>
+        <div className={text}>{goal}</div>
       </div>
-      <div className={text}>{goal}</div>
-    </div>
+    </Reveal>
   )
 }

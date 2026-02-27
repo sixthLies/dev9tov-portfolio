@@ -12,3 +12,6 @@ export { ListMenu } from "./lists/ListMenu"
 // modals
 export { ModalWindow } from "./modals/ModalWindow"
 export { ModalWindowCard } from "./modals/modalWindowCard/ModalWindowCard"
+
+// effects
+export { Reveal } from "./reveal"

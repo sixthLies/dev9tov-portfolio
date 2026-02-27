@@ -1,7 +1,9 @@
 import React from "react"
+import { Reveal } from "@/shared/ui"
 
 export const ProcessItem = ({
   step,
+  delay,
   item,
   dot,
   dotNum,
@@ -10,14 +12,16 @@ export const ProcessItem = ({
   text,
 }) => {
   return (
-    <div className={item}>
-      <div className={dot} aria-hidden="true">
-        <span className={dotNum}>{step.n}</span>
+    <Reveal delay={delay}>
+      <div className={item}>
+        <div className={dot} aria-hidden="true">
+          <span className={dotNum}>{step.n}</span>
+        </div>
+        <div className={content}>
+          <h3 className={title}>{step.title}</h3>
+          <p className={text}>{step.text}</p>
+        </div>
       </div>
-      <div className={content}>
-        <h3 className={title}>{step.title}</h3>
-        <p className={text}>{step.text}</p>
-      </div>
-    </div>
+    </Reveal>
   )
 }

@@ -7,8 +7,8 @@ export const GoalsList = () => {
 
   return (
     <div className={list.list}>
-      {GOALS.map((goal) => (
-        <GoalItem key={goal} goal={goal} {...list} />
+      {GOALS.map((goal, index) => (
+        <GoalItem key={goal} goal={goal} delay={(index % 4) + 1} {...list} />
       ))}
     </div>
   )
