@@ -1,11 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { loadLibrary } from "../lib/utils/loadLibrary"
-import { useAudioPlayer } from "../lib/hooks/useAudioPlayer"
+import { useMusicPlayer } from "../model/MusicPlayerContext"
 import PlaylistGrid from "./components/PlaylistGrid/PlaylistGrid.jsx"
 import PlaylistModal from "./components/PlaylistModal/PlaylistModal.jsx"
 import Search from "./components/Search/Search.jsx"
 import SearchResults from "./components/SearchResults/SearchResults.jsx"
-import MiniPlayer from "./components/MiniPlayer/MiniPlayer.jsx"
 import "../styles/global.scss"
 import "../styles/App.scss"
 import { InfoBlock } from "@/shared/ui"
@@ -16,11 +15,9 @@ export const MusicMiniApp = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [searchQuery, setSearchQuery] = useState("")
-  const [selectedPlaylist, setSelectedPlaylist] = useState(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
   const [notification, setNotification] = useState(null)
 
-  const audioPlayer = useAudioPlayer()
+  const musicPlayer = useMusicPlayer()
 
   // Filter tracks across all playlists based on search query (real-time)
   const searchResults = useMemo(() => {
@@ -56,12 +53,12 @@ export const MusicMiniApp = () => {
   const handlePlaylistClick = useCallback((playlist) => {
     // Store the currently focused element (the card that was clicked)
     triggerElementRef.current = document.activeElement
-    setSelectedPlaylist(playlist)
-    setIsModalOpen(true)
-  }, [])
+    musicPlayer.setSelectedPlaylist(playlist)
+    musicPlayer.setIsPlaylistModalOpen(true)
+  }, [musicPlayer.setIsPlaylistModalOpen, musicPlayer.setSelectedPlaylist])
 
   const handleModalClose = useCallback(() => {
-    setIsModalOpen(false)
+    musicPlayer.setIsPlaylistModalOpen(false)
     // Restore focus to the element that triggered the modal
     requestAnimationFrame(() => {
       if (
@@ -71,30 +68,30 @@ export const MusicMiniApp = () => {
         triggerElementRef.current.focus()
       }
     })
-  }, [])
+  }, [musicPlayer.setIsPlaylistModalOpen])
 
   const handleTrackPlay = useCallback(
     (track, playlist) => {
-      audioPlayer.playTrack(track, playlist)
+      musicPlayer.playTrack(track, playlist)
     },
-    [audioPlayer.playTrack],
+    [musicPlayer.playTrack],
   )
 
   const handleSearchResultClick = useCallback(
     (result) => {
       if (!result?.track || !result?.playlist) return
-      audioPlayer.playTrack(result.track, result.playlist)
+      musicPlayer.playTrack(result.track, result.playlist)
     },
-    [audioPlayer.playTrack],
+    [musicPlayer.playTrack],
   )
 
   const handleAddToQueue = useCallback(
     (track, playlist) => {
       // Check if the track is already in the queue to show appropriate feedback
-      const alreadyQueued = audioPlayer.queue.some(
+      const alreadyQueued = musicPlayer.queue.some(
         (q) => q.track.id === track.id,
       )
-      audioPlayer.addToQueue(track, playlist)
+      musicPlayer.addToQueue(track, playlist)
       if (alreadyQueued) {
         setNotification(`"${track.title}" is already in queue`)
       } else {
@@ -102,25 +99,23 @@ export const MusicMiniApp = () => {
       }
       setTimeout(() => setNotification(null), 2000)
     },
-    [audioPlayer.addToQueue, audioPlayer.queue],
+    [musicPlayer.addToQueue, musicPlayer.queue],
   )
 
   // Show error notification when an audio error occurs
   useEffect(() => {
-    if (audioPlayer.audioError) {
-      setNotification(audioPlayer.audioError.message)
+    if (musicPlayer.audioError) {
+      setNotification(musicPlayer.audioError.message)
       const timer = setTimeout(() => setNotification(null), 4000)
       return () => clearTimeout(timer)
     }
-  }, [audioPlayer.audioError])
+  }, [musicPlayer.audioError])
 
-  const handleMiniPlayerExpand = useCallback(() => {
-    if (audioPlayer.currentPlaylist) {
-      triggerElementRef.current = document.activeElement
-      setSelectedPlaylist(audioPlayer.currentPlaylist)
-      setIsModalOpen(true)
+  useEffect(() => {
+    return () => {
+      musicPlayer.setIsPlaylistModalOpen(false)
     }
-  }, [audioPlayer.currentPlaylist])
+  }, [musicPlayer.setIsPlaylistModalOpen])
 
   const fetchLibrary = async () => {
     setLoading(true)
@@ -218,49 +213,27 @@ export const MusicMiniApp = () => {
           ) : (
             <PlaylistGrid
               playlists={library.playlists}
-              currentPlaylistId={audioPlayer.currentPlaylist?.id || null}
+              currentPlaylistId={musicPlayer.currentPlaylist?.id || null}
               onPlaylistClick={handlePlaylistClick}
             />
           )}
         </main>
-        <footer className="app__footer">
-          <MiniPlayer
-            track={audioPlayer.currentTrack}
-            playlist={audioPlayer.currentPlaylist}
-            isVisible={!!audioPlayer.currentTrack && !isModalOpen}
-            isPlaying={audioPlayer.isPlaying}
-            isLoading={audioPlayer.isLoading}
-            audioError={audioPlayer.audioError}
-            currentTime={audioPlayer.currentTime}
-            duration={audioPlayer.duration}
-            volume={audioPlayer.volume}
-            isMuted={audioPlayer.isMuted}
-            repeatMode={audioPlayer.repeatMode}
-            onTogglePlay={audioPlayer.togglePlay}
-            onSeek={audioPlayer.seek}
-            onVolumeChange={audioPlayer.setVolume}
-            onToggleMute={audioPlayer.toggleMute}
-            onSkipNext={audioPlayer.skipNext}
-            onExpand={handleMiniPlayerExpand}
-            onToggleRepeat={audioPlayer.toggleRepeat}
-          />
-        </footer>
         <PlaylistModal
-          playlist={selectedPlaylist}
-          isOpen={isModalOpen}
+          playlist={musicPlayer.selectedPlaylist}
+          isOpen={musicPlayer.isPlaylistModalOpen}
           onClose={handleModalClose}
           onTrackPlay={handleTrackPlay}
           onAddToQueue={handleAddToQueue}
-          currentTrack={audioPlayer.currentTrack}
-          isPlaying={audioPlayer.isPlaying}
-          isLoading={audioPlayer.isLoading}
-          audioError={audioPlayer.audioError}
-          currentTime={audioPlayer.currentTime}
-          duration={audioPlayer.duration}
-          onTogglePlay={audioPlayer.togglePlay}
-          onSeek={audioPlayer.seek}
-          queue={audioPlayer.queue}
-          analyserNode={audioPlayer.analyserNode}
+          currentTrack={musicPlayer.currentTrack}
+          isPlaying={musicPlayer.isPlaying}
+          isLoading={musicPlayer.isLoading}
+          audioError={musicPlayer.audioError}
+          currentTime={musicPlayer.currentTime}
+          duration={musicPlayer.duration}
+          onTogglePlay={musicPlayer.togglePlay}
+          onSeek={musicPlayer.seek}
+          queue={musicPlayer.queue}
+          analyserNode={musicPlayer.analyserNode}
         />
         {notification && (
           <div className="app__notification" role="status" aria-live="polite">
