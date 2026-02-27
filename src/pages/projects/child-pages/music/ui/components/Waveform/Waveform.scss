@@ -1,0 +1,52 @@
+﻿@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.music-mini-app {
+  // =============================================
+  // Waveform Visualization
+  // =============================================
+  // Dark-themed canvas waveform that syncs to audio playback.
+  // Uses accent colors (purple-to-pink gradient) on a dark background.
+  // Responsive: adapts height and bar count across breakpoints.
+  
+  .waveform {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    border-radius: $radius-md;
+    background: color-mix(in srgb, $bg-primary 60%, transparent);
+    overflow: hidden;
+    @include smooth-transition(opacity);
+  
+    &--active {
+      opacity: 1;
+    }
+  
+    &--idle {
+      opacity: 0.6;
+    }
+  
+    &__canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  
+    // Responsive sizing
+    @include mobile {
+      height: 40px;
+      border-radius: $radius-sm;
+    }
+  
+    @include tablet {
+      height: 50px;
+    }
+  
+    @include desktop {
+      height: 60px;
+    }
+  }
+  
+}
+
+

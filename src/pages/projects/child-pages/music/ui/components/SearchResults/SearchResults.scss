@@ -1,0 +1,132 @@
+﻿@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.music-mini-app {
+  .search-results {
+    padding: $spacing-md 0;
+    animation: music-mini-fade-in $transition-slow;
+  
+    &__count {
+      font-size: $font-size-sm;
+      color: $text-secondary;
+      margin-bottom: $spacing-md;
+      padding: 0 $spacing-xs;
+    }
+  
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+  
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: $spacing-md;
+      background: $surface-secondary;
+      border: 1px solid $border-color;
+      border-radius: $radius-md;
+      cursor: pointer;
+      transition: background-color $transition-fast, border-color $transition-fast, transform $transition-fast;
+  
+      &:hover {
+        background: $surface-primary;
+        border-color: $accent-primary;
+        transform: translateX(4px);
+      }
+  
+      &:focus-visible {
+        @include focus-ring;
+      }
+  
+      @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $spacing-sm;
+      }
+    }
+  
+    &__track-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+      flex: 1;
+    }
+  
+    &__track-title {
+      font-size: $font-size-base;
+      font-weight: $font-weight-medium;
+      color: $text-primary;
+      @include text-ellipsis;
+    }
+  
+    &__track-meta {
+      font-size: $font-size-xs;
+      color: $text-muted;
+    }
+  
+    &__track-details {
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+      flex-shrink: 0;
+  
+      @include mobile {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  
+    &__playlist-name {
+      font-size: $font-size-xs;
+      color: $accent-primary;
+      background: color-mix(in srgb, $accent-primary 10%, transparent);
+      padding: 2px $spacing-sm;
+      border-radius: $radius-sm;
+      white-space: nowrap;
+    }
+  
+    &__track-duration {
+      font-size: $font-size-sm;
+      color: $text-secondary;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+  
+    // Empty state
+    &--empty {
+      padding: $spacing-xxl 0;
+    }
+  
+    &__empty {
+      @include flex-center;
+      flex-direction: column;
+      gap: $spacing-md;
+      padding: $spacing-xl;
+    }
+  
+    &__empty-icon {
+      width: 48px;
+      height: 48px;
+      color: $text-muted;
+      opacity: 0.5;
+    }
+  
+    &__empty-text {
+      font-size: $font-size-md;
+      color: $text-secondary;
+      text-align: center;
+    }
+  
+    &__empty-hint {
+      font-size: $font-size-sm;
+      color: $text-muted;
+      text-align: center;
+    }
+  }
+  
+}
+
+

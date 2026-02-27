@@ -1,0 +1,524 @@
+﻿@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.music-mini-app {
+  .music-playlist-modal {
+    position: fixed;
+    inset: 0;
+    z-index: $z-modal;
+    @include flex-center;
+  
+    // Close animation state
+    &--closing {
+      .modal-backdrop {
+        animation: music-mini-fade-out $transition-base forwards;
+      }
+  
+      .modal-content {
+        animation: music-mini-scale-out $transition-base forwards;
+      }
+    }
+  }
+  
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: color-mix(in srgb, $bg-primary 70%, transparent);
+    z-index: $z-modal-backdrop;
+    animation: music-mini-fade-in $transition-fast forwards;
+  }
+  
+  .modal-content {
+    position: relative;
+    z-index: $z-modal;
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh;
+    background: $surface-primary;
+    border-radius: $radius-xl;
+    border: 1px solid $border-color;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: music-mini-scale-in $transition-base forwards;
+    box-shadow: $shadow-modal;
+    outline: none;
+  
+    @include mobile {
+      width: 100%;
+      max-width: 100%;
+      max-height: 100vh;
+      border-radius: 0;
+    }
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: $spacing-md;
+    right: $spacing-md;
+    @include flex-center;
+    @include touch-target;
+    background: color-mix(in srgb, $bg-primary 50%, transparent);
+    border: none;
+    color: $text-primary;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: $radius-round;
+    z-index: 1;
+    @include smooth-transition(background);
+    transition: background $transition-base, transform 150ms ease;
+  
+    &:hover {
+      background: color-mix(in srgb, $bg-primary 80%, transparent);
+    }
+  
+    &:active {
+      transform: scale(0.9);
+    }
+  
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+  
+  .modal-header {
+    padding: $spacing-xl;
+    border-bottom: 1px solid $border-color;
+    flex-shrink: 0;
+  
+    &__cover {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: 250px;
+      overflow: hidden;
+      border-radius: $radius-md;
+      margin-bottom: $spacing-lg;
+      background: $surface-secondary;
+    }
+  
+    &__cover-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    &__info {
+      h2 {
+        font-size: $font-size-xl;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-sm;
+      }
+  
+      p {
+        font-size: $font-size-sm;
+        color: $text-secondary;
+        line-height: 1.6;
+        margin-bottom: $spacing-sm;
+      }
+    }
+  
+    &__meta {
+      font-size: $font-size-xs;
+      color: $text-muted;
+    }
+  }
+  
+  .modal-body {
+    padding: $spacing-lg;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+  
+    &__empty {
+      text-align: center;
+      color: $text-muted;
+      padding: $spacing-xl;
+      font-size: $font-size-sm;
+    }
+  }
+  
+  .modal-track-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .modal-track-wrapper {
+    // Wrapper for track row + expandable details panel
+  }
+  
+  .modal-track {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $radius-md;
+    cursor: pointer;
+    @include smooth-transition(background);
+    user-select: none;
+  
+    &:hover {
+      background: color-mix(in srgb, $accent-primary 10%, transparent);
+    }
+  
+    &:focus-visible {
+      @include focus-ring;
+      outline-offset: -2px;
+    }
+  
+    &--expanded {
+      background: color-mix(in srgb, $accent-primary 8%, transparent);
+  
+      &:hover {
+        background: color-mix(in srgb, $accent-primary 12%, transparent);
+      }
+    }
+  
+    &__number {
+      width: 24px;
+      text-align: center;
+      font-size: $font-size-sm;
+      color: $text-muted;
+      flex-shrink: 0;
+    }
+  
+    &__info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+  
+    &__title {
+      font-size: $font-size-base;
+      font-weight: $font-weight-medium;
+      color: $text-primary;
+      @include text-ellipsis;
+    }
+  
+    &__meta {
+      font-size: $font-size-xs;
+      color: $text-muted;
+    }
+  
+    &__duration {
+      font-size: $font-size-sm;
+      color: $text-secondary;
+      flex-shrink: 0;
+      font-variant-numeric: tabular-nums;
+    }
+  
+    // Play column (track number or play/pause button)
+    &__play-col {
+      width: 28px;
+      flex-shrink: 0;
+      @include flex-center;
+      position: relative;
+    }
+  
+    // Loading spinner for audio buffering state
+    &__spinner {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 2px solid color-mix(in srgb, $accent-primary 30%, transparent);
+      border-top-color: $accent-primary;
+      border-radius: $radius-round;
+      animation: music-mini-modal-track-spin 0.8s linear infinite;
+    }
+  
+    // Play/Pause button
+    &__play-btn {
+      @include flex-center;
+      width: 28px;
+      height: 28px;
+      border: none;
+      background: none;
+      color: $accent-primary;
+      cursor: pointer;
+      padding: 0;
+      border-radius: $radius-round;
+      @include smooth-transition(color, background);
+      transition: color $transition-base, background $transition-base, transform 150ms ease;
+  
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+  
+      &:hover {
+        color: $accent-primary-hover;
+        background: color-mix(in srgb, $accent-primary 15%, transparent);
+      }
+  
+      &:active {
+        transform: scale(0.85);
+        background: color-mix(in srgb, $accent-primary 25%, transparent);
+      }
+  
+      &:focus-visible {
+        @include focus-ring;
+      }
+  
+      &--pause {
+        color: $accent-primary;
+  
+        &:hover {
+          color: $accent-primary-hover;
+        }
+      }
+  
+      &--hover {
+        display: none;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+      }
+    }
+  
+    // Show play button on hover, hide track number
+    &__number-wrap {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      @include flex-center;
+    }
+  
+    &:hover &__number-wrap &__number {
+      display: none;
+    }
+  
+    &:hover &__number-wrap &__play-btn--hover {
+      display: flex;
+    }
+  
+    // Queue "play next" button
+    &__queue-btn {
+      @include flex-center;
+      width: 28px;
+      height: 28px;
+      border: none;
+      background: none;
+      color: $text-muted;
+      cursor: pointer;
+      padding: 0;
+      border-radius: $radius-round;
+      opacity: 0;
+      @include smooth-transition(opacity, color, background);
+      transition: opacity $transition-base, color $transition-base, background $transition-base, transform 150ms ease;
+  
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+  
+      &:hover {
+        color: $accent-primary;
+        background: color-mix(in srgb, $accent-primary 15%, transparent);
+      }
+  
+      &:active {
+        transform: scale(0.85);
+        background: color-mix(in srgb, $accent-primary 25%, transparent);
+      }
+  
+      &:focus-visible {
+        @include focus-ring;
+        opacity: 1;
+      }
+  
+      &--queued {
+        opacity: 1;
+        color: $accent-primary;
+        background: color-mix(in srgb, $accent-primary 10%, transparent);
+  
+        &:hover {
+          color: $accent-primary-hover;
+          background: color-mix(in srgb, $accent-primary 20%, transparent);
+        }
+  
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+  
+    // Show queue button on track row hover
+    &:hover &__queue-btn {
+      opacity: 1;
+    }
+  
+    // Currently playing / active track highlight
+    &--active {
+      background: color-mix(in srgb, $accent-primary 8%, transparent);
+      border-left: 3px solid $accent-primary;
+  
+      .modal-track__title {
+        color: $accent-primary;
+      }
+  
+      .modal-track__number {
+        color: $accent-primary;
+      }
+  
+      &:hover {
+        background: color-mix(in srgb, $accent-primary 14%, transparent);
+      }
+    }
+  
+    &--playing {
+      .modal-track__title {
+        color: $accent-primary;
+        font-weight: $font-weight-bold;
+      }
+    }
+  
+    // Queued track visual indicator
+    &--queued {
+      .modal-track__queue-btn--queued {
+        opacity: 1;
+        color: $accent-primary;
+      }
+    }
+  
+    // Error state for failed audio load
+    &--error {
+      border-left: 3px solid $accent-secondary;
+      background: color-mix(in srgb, $accent-secondary 6%, transparent);
+  
+      .modal-track__title {
+        color: $accent-secondary;
+      }
+  
+      &:hover {
+        background: color-mix(in srgb, $accent-secondary 10%, transparent);
+      }
+    }
+  
+    // Error icon in the play column
+    &__error-icon {
+      color: $accent-secondary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      animation: music-mini-error-pulse 2s ease-in-out infinite;
+    }
+  
+    // Error message below track meta
+    &__error-msg {
+      font-size: $font-size-xs;
+      color: $accent-secondary;
+      margin-top: 2px;
+    }
+  
+    // Seek bar wrapper
+    &__seek-wrapper {
+      padding: $spacing-xs $spacing-md $spacing-sm;
+      padding-left: calc($spacing-md + 28px + $spacing-md);
+    }
+  
+    // Seek bar container
+    &__seek-bar {
+      position: relative;
+      width: 100%;
+      height: 6px;
+      background: $border-color;
+      border-radius: 3px;
+      cursor: pointer;
+      @include smooth-transition(height);
+  
+      &:hover,
+      &--dragging {
+        height: 8px;
+  
+        .modal-track__seek-thumb {
+          opacity: 1;
+          transform: translateX(-50%) scale(1);
+        }
+      }
+  
+      &--dragging {
+        // Prevent text selection while dragging
+        user-select: none;
+      }
+  
+      &:focus-visible {
+        @include focus-ring;
+      }
+    }
+  
+    // Seek progress fill (accent color)
+    &__seek-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: $accent-primary;
+      border-radius: 3px;
+      pointer-events: none;
+      transition: width 0.05s linear;
+    }
+  
+    // Seek thumb/handle
+    &__seek-thumb {
+      position: absolute;
+      top: 50%;
+      width: 14px;
+      height: 14px;
+      background: $accent-primary;
+      border-radius: $radius-round;
+      transform: translateX(-50%) scale(0);
+      margin-top: -7px;
+      opacity: 0;
+      pointer-events: none;
+      @include smooth-transition(opacity, transform);
+      box-shadow: 0 0 6px color-mix(in srgb, $accent-primary 40%, transparent);
+    }
+  
+    &__chevron {
+      flex-shrink: 0;
+      color: $text-muted;
+      @include smooth-transition(transform, color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: $radius-round;
+      cursor: pointer;
+      padding: 2px;
+  
+      &:hover {
+        color: $accent-primary;
+      }
+  
+      &:focus-visible {
+        @include focus-ring;
+      }
+  
+      &--open {
+        transform: rotate(180deg);
+        color: $accent-primary;
+      }
+    }
+  }
+  
+  @keyframes music-mini-modal-track-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes music-mini-error-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+}
+
+

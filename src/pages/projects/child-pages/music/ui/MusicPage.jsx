@@ -1,5 +1,9 @@
-import React from "react"
+import { MusicMiniApp } from "./MusicMiniApp"
 
 export const MusicPage = () => {
-  return <div>MusicPage</div>
+  return (
+    <section className="music-page l-page-section l-scroll-panel">
+      <MusicMiniApp />
+    </section>
+  )
 }

@@ -111,11 +111,35 @@ src
 6. Убрать/реализовать незавершенные участки:
    - `HeaderCta`, `fontLink`,
    - пустые `entities/index.js`, `video.classes.js`,
-   - заглушки `MusicPage`, `AssigmentsPage`.
+   - заглушку `AssigmentsPage`.
 7. Добавить типизацию (TypeScript или runtime schema validation для `pageConfig`/данных).
 8. Обновить `README.md` (сейчас шаблонный текст Vite).
 
-## 11. Заключение
+## 11. Интеграция Mini App (Music)
+### Выбранный слой FSD
+- Мини-приложение интегрировано в слой `pages`, в срез `src/pages/projects/child-pages/music`.
+- Обоснование: это самостоятельный page-level экран маршрута `/projects/music`, а не переиспользуемый `widget` и не локальная `feature`.
+
+### Новая структура среза `music`
+- `ui/MusicPage.jsx` — route-level страница.
+- `ui/MusicMiniApp.jsx` — интегрированный экспортируемый компонент (без `createRoot/render`).
+- `ui/components/*` — UI-компоненты музыкального приложения.
+- `lib/hooks/*`, `lib/utils/*` — изолированная логика плеера и загрузки данных.
+- `model/constants.js` — константы интеграции (`music-library.json`, fallback cover).
+- `styles/*` — локальная тема/миксины/стили mini-app.
+
+### Принципы интеграции
+- Глобальный entrypoint mini-app удален из интеграционной схемы (не используется `src/main.jsx` из внешнего проекта).
+- Стили mini-app изолированы в контейнере `.music-mini-app`.
+- Исключены глобальные reset-правила для `html/body/:root`; модалка больше не меняет `document.body.style`.
+- Цвета и акценты mini-app привязаны к токенам основной темы через CSS variables (`--color-*`, `--border-*`, `--text-*`).
+- Данные mini-app перенесены в `public/music-library.json`, аудио — в `public/audio/*`.
+
+### Роль в архитектуре
+- Интегрированный модуль расширяет `projects`-домейн как специализированная дочерняя страница.
+- Зависимости остаются в допустимой FSD-иерархии: `pages/music -> shared` (через fallback asset), без циклов и без внедрения в `app`/`shared` внутренних деталей mini-app.
+
+## 12. Заключение
 Проект демонстрирует зрелый инженерный фундамент: системное мышление, дисциплину слоев, аккуратную модульность и внимание к UI-состояниям.
 
 При доведении quality-gates (lint/tests/типизация) и консолидации архитектурных слоев проект может использоваться как production-grade reference для демонстрации уровня frontend-разработчика.

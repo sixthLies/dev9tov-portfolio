@@ -7,6 +7,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+
+
 node_modules
 dist
 dist-ssr
@@ -15,8 +17,8 @@ dist-ssr
 .env
 .env.local
 .env.*.local
-trash.txt
 
+TECHNICAL_DOCUMENTATION.md
 
 # Editor directories and files
 .vscode/*
@@ -29,3 +31,7 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+
+
+SMACSS_REFACTOR_TECHDOC.txt
+trash.txt
