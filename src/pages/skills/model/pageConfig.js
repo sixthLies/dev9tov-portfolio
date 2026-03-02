@@ -110,6 +110,7 @@ export const skillsInfo = [
       {
         label: "База: ",
         items: [
+          { name: "VS Code Studio", key: "vscode" },
           { name: "HTML5", key: "html" },
           { name: "CSS", key: "css" },
           { name: "JavaScript", key: "js" },
@@ -177,7 +178,7 @@ export const skillsInfo = [
           { name: "NanoBanana", key: "nanabanana" },
           { name: "Gemini Pro 🔥", key: "gemini" },
           { name: "Grok", key: "grok" },
-          { name: "MidJourney", key: "midjourney" },
+          { name: "MidJourney 🔥", key: "midjourney" },
         ],
       },
       {
@@ -232,10 +233,7 @@ export const skillsInfo = [
       },
       {
         label: "Текст: ",
-        items: [
-          { name: "VS Code Studio", key: "vscode" },
-          { name: "Google Docs", key: "gdocs" },
-        ],
+        items: [{ name: "Google Docs", key: "gdocs" }],
       },
     ],
   },
