@@ -1,18 +1,16 @@
-﻿@use '../../../styles/variables' as *;
-@use '../../../styles/mixins' as *;
+﻿@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
 
 .music-mini-app {
   .search {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto $spacing-lg;
-  
+    margin: 0 10px 16px 0;
+
     &__input-wrapper {
       position: relative;
       display: flex;
       align-items: center;
     }
-  
+
     &__icon {
       position: absolute;
       left: $spacing-md;
@@ -21,7 +19,7 @@
       color: $text-muted;
       pointer-events: none;
     }
-  
+
     &__input {
       width: 100%;
       height: $search-bar-height;
@@ -33,18 +31,19 @@
       font-family: $font-family;
       font-size: $font-size-base;
       @include smooth-transition(border-color);
-  
+
       &::placeholder {
         color: $text-muted;
       }
-  
+
       &:focus {
         outline: none;
         border-color: $accent-primary;
-        box-shadow: 0 0 0 3px color-mix(in srgb, $accent-primary 15%, transparent);
+        box-shadow: 0 0 0 3px
+          color-mix(in srgb, $accent-primary 15%, transparent);
       }
     }
-  
+
     &__clear {
       position: absolute;
       right: $spacing-md;
@@ -57,17 +56,14 @@
       cursor: pointer;
       border-radius: $radius-round;
       @include smooth-transition(color);
-  
+
       &:hover {
         color: $text-primary;
       }
-  
+
       &:focus-visible {
         @include focus-ring;
       }
     }
   }
-  
 }
-
-
