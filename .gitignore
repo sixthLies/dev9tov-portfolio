@@ -31,6 +31,7 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+trash
 
 
 SMACSS_REFACTOR_TECHDOC.txt

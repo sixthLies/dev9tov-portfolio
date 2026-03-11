@@ -1,3 +1,5 @@
+// paths.js
+
 export const ROUTE_PATHS = Object.freeze({
   root: "/",
   about: "/about",
@@ -5,11 +7,4 @@ export const ROUTE_PATHS = Object.freeze({
   skills: "/skills",
   contacts: "/contacts",
   notFound: "*",
-})
-
-export const PROJECTS_CHILD_PATHS = Object.freeze({
-  images: "images",
-  music: "music",
-  video: "video",
-  assigments: "assigments",
 })
