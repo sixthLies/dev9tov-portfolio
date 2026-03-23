@@ -1,15 +1,16 @@
-import { LinksBlock, Reveal } from "@/shared/ui"
-import { Outlet } from "react-router"
-import { root, title } from "../model/classes"
+import { LinksBlock } from "@/shared/ui"
 import { selectProjectsLinks } from "../lib/selectProjectsLink"
+import { root } from "../model/classes"
+import { featuredProject } from "../model/showcaseProjects"
+import { ProjectShowcaseSection } from "./showcase/ProjectShowcaseSection"
 
 export const ProjectsPage = () => {
   const links = selectProjectsLinks()
+
   return (
     <section className={root}>
-      <Reveal as="h2" className={title} preset="text">
-        Мое портфолио
-      </Reveal>
+      <ProjectShowcaseSection project={featuredProject} />
+
       <LinksBlock links={links} />
     </section>
   )

@@ -32,10 +32,7 @@ const getDelayMs = ({
   presetStep,
   presetMaxDelayCap,
 }) => {
-  const normalizedIndex = normalizePositive(
-    index ?? delay,
-    0,
-  )
+  const normalizedIndex = normalizePositive(index ?? delay, 0)
 
   const normalizedStep = clampNumber(
     normalizePositive(step, presetStep),
