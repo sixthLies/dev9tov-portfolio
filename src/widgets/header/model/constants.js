@@ -8,4 +8,3 @@ export const LOGO = {
 
 export const NAV_ARIA_LABEL = "Main navigation"
 export const LOGO_ARIA_LABEL = "Go to home"
-export const THEME_TOGGLE_ARIA_LABEL = "Toggle color theme"

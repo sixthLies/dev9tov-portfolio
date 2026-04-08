@@ -1,10 +1,10 @@
-:root,
-:root[data-theme="dark"] {
+:root {
   color-scheme: dark;
 
   --color-text-primary: #dedede;
   --color-white: #ffffff;
   --color-accent: #7102da;
+  --color-btn-bg: #27004c;
   --color-btn-bg: #27004c;
   --color-bg-surface: #1a1a1e;
   --color-bg-page-alt: #230043;
@@ -30,8 +30,6 @@
 
   --transition-fast: 0.2s ease-out;
   --transition-med: 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
-  --theme-transition-duration: 320ms;
-  --theme-transition-easing: cubic-bezier(0.22, 1, 0.36, 1);
 
   --focus-ring: 0 0 0 4px rgba(113, 2, 218, 0.35);
   --gradient-page: linear-gradient(
@@ -39,13 +37,6 @@
     var(--color-bg-page),
     var(--color-bg-page-alt)
   );
-}
-
-:root[data-theme="light"] {
-  color-scheme: light;
-  --color-bg-surface: #101010;
-  --color-bg-page: #050302;
-  --color-bg-page-alt: #230043;
 }
 
 $primary-color: var(--color-text-primary);

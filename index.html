@@ -4,31 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/logo.png" />
-    <script>
-      ;(() => {
-        const storageKey = "hh-theme"
-        const root = document.documentElement
-
-        try {
-          const storedTheme = localStorage.getItem(storageKey)
-          const isValidStoredTheme =
-            storedTheme === "dark" || storedTheme === "light"
-
-          if (isValidStoredTheme) {
-            root.dataset.theme = storedTheme
-            return
-          }
-
-          const prefersDark =
-            window.matchMedia &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches
-
-          root.dataset.theme = prefersDark ? "dark" : "light"
-        } catch {
-          root.dataset.theme = "dark"
-        }
-      })()
-    </script>
     <title>dev9tov.portfolio</title>
   </head>
   <body>
