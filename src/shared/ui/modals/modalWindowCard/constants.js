@@ -1,5 +1,5 @@
 export const PROFILE_INTEREST_SUBJECT =
-  "Интерес к вашему профилю фронтенд/AI‑разработчика"
+  "Предложение позиции [Название вакансии] в [Название компании]"
 
 export const EMAIL_MARKER = "@"
 export const GMAIL_MARKER = "gmail"
