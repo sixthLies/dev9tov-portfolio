@@ -17,7 +17,7 @@ export const ModalWindowCard = ({ card }) => {
           <img className="social-card__avatar" src={avatar} alt="avatar" />
 
           <div className="social-card__text">
-            <p className="social-card__description">Ник: {name}</p>
+            <p className="social-card__description">Имя: {name}</p>
 
             <SocialLink href={socialLink} />
 

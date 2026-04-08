@@ -7,6 +7,7 @@ import {
   telegramavatar,
   mailavatar,
   githubavatar,
+  hhAvatar,
 } from "@/shared/assets/images"
 import {
   githubLink,
@@ -34,10 +35,11 @@ export const contactsPageCards = [
   },
   {
     img: hh,
-    avatar: mailavatar,
+    avatar: hhAvatar,
+    name: "Данил Девятов",
     title: "HH.ru",
-    socialLink: "https://hh.ru/profile/me?hhtmFrom=ProfileActivator",
-    description: "Мой Профиль на HH.ru",
+    socialLink: "https://hh.ru/resume/a039fdbfff1047d88d0039ed1f4b4474636e4d",
+    description: "Моё резюме на HH.ru",
   },
   {
     img: gmail,
@@ -50,6 +52,7 @@ export const contactsPageCards = [
   {
     img: mail,
     avatar: mailavatar,
+    name: "Danil Devyatov",
     title: "Mail.ru",
     socialLink: mailLink,
     description: "Моя почта mail.ru",
