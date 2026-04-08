@@ -5,9 +5,7 @@ import { NOT_FOUND } from "../model/constants"
 import { notFoundClasses } from "../model/classes"
 
 export const NotFoundPage = () => {
-  const { pageClass, blockClass, buttonClass, textClass } = {
-    ...notFoundClasses,
-  }
+  const { pageClass, blockClass, buttonClass, textClass } = notFoundClasses
 
   return (
     <section className={pageClass}>

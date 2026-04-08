@@ -3,7 +3,6 @@
 @forward "./sections/hero";
 @forward "./sections/what";
 @forward "./sections/process";
-@forward "./sections/skills";
 @forward "./sections/goals";
 @forward "./dot-nav";
 
@@ -15,31 +14,6 @@
 .about__title {
   margin-bottom: 15px;
   font-size: clamp(1.5rem, 4.5vw, 1.75rem);
-}
-
-.about__list {
-  @include flex-column-gap(10px);
-}
-
-.about__list--item {
-  @include row-base(21px, 400);
-}
-
-.portfolio__list {
-  @include flex-column-gap(30px);
-}
-
-.portfolio__list--item {
-  @include flex-column-gap(16px);
-}
-
-.portfolio__title {
-  @include row-base(21px, 700);
-}
-
-.portfolio__task {
-  @include row-base(17px, 400);
-  line-height: 1.5;
 }
 
 .about__link {

@@ -1,4 +1,3 @@
-import React from "react"
 
 export const ProcessHeader = ({ root, title, subtitle }) => {
   return (

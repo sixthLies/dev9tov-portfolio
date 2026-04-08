@@ -52,17 +52,14 @@ import ollamaLogo from "./skills/ai/svg/ollama.svg"
 import software from "./skills/softwares/png/software.png"
 import photoshopLogo from "./skills/softwares/png/photoshop.png"
 import flstudioLogo from "./skills/softwares/png/flstudio.png"
+import jiraLogo from "./skills/softwares/png/jira.png"
 // svg
 import premiereproLogo from "./skills/softwares/svg/premierepro.svg"
 import vsstudioLogo from "./skills/softwares/svg/vsstudio.svg"
 import procreateLogo from "./skills/softwares/svg/procreate.svg"
 import gdocsLogo from "./skills/softwares/svg/gdocs.svg"
-
-// project
-import image from "./projects/image.svg"
-import music from "./projects/music.svg"
-import video from "./projects/video.svg"
-import project from "./projects/project.svg"
+import notionLogo from "./skills/softwares/svg/notion.svg"
+import gSheetsLogo from "./skills/softwares/svg/gsheets.svg"
 
 export {
   // базовые
@@ -116,10 +113,7 @@ export {
   flstudioLogo,
   vsstudioLogo,
   gdocsLogo,
-
-  // projects
-  image,
-  music,
-  video,
-  project,
+  jiraLogo,
+  notionLogo,
+  gSheetsLogo,
 }

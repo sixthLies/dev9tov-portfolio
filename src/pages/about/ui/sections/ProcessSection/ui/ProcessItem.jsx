@@ -1,4 +1,3 @@
-import React from "react"
 import { Reveal } from "@/shared/ui"
 
 export const ProcessItem = ({

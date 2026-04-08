@@ -1,7 +1,7 @@
 import { heroClasses } from "../model/classes"
 
 export const HeroInfo = () => {
-  const { title, desc } = { ...heroClasses }
+  const { title, desc } = heroClasses
   return (
     <>
       <h1 className={title}>

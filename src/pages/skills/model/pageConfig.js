@@ -40,6 +40,9 @@ import {
   ollamaLogo,
   dockerLogo,
   n8nLogo,
+  jiraLogo,
+  notionLogo,
+  gSheetsLogo,
 } from "@/shared/assets/icons"
 
 export const resources = {
@@ -98,6 +101,12 @@ export const resources = {
   gdocs: {
     href: "https://https://workspace.google.com/intl/ru/products/docs/.visualstudio.com/",
     logo: gdocsLogo,
+  },
+  notion: { href: "https://www.notion.so/", logo: notionLogo },
+  jira: { href: "https://www.atlassian.com/ru/software/jira", logo: jiraLogo },
+  gsheets: {
+    href: "https://workspace.google.com/intl/ru/products/sheets/",
+    logo: gSheetsLogo,
   },
 }
 
@@ -233,7 +242,17 @@ export const skillsInfo = [
       },
       {
         label: "Текст: ",
-        items: [{ name: "Google Docs", key: "gdocs" }],
+        items: [
+          { name: "Google Docs", key: "gdocs" },
+          { name: "Google Sheets", key: "gsheets" },
+        ],
+      },
+      {
+        label: "Организация: ",
+        items: [
+          { name: "Notion", key: "notion" },
+          { name: "Jira", key: "jira" },
+        ],
       },
     ],
   },

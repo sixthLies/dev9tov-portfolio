@@ -14,7 +14,7 @@
   width: 30px;
   height: 30px;
   flex-shrink: 0;
-  animation: pulse 0.5s ease-in-out 3 both;
+  animation: pulse-marker 0.5s ease-in-out 3 both;
 }
 
 .info__marker-icon {
@@ -57,7 +57,7 @@
   }
 }
 
-@keyframes pulse {
+@keyframes pulse-marker {
   0% {
     transform: scale(1.1);
   }

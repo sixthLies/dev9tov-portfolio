@@ -8,8 +8,7 @@ export const Header = () => {
       <div className="header__content">
         <HeaderLogo />
         <HeaderNav />
-        <ThemeToggle />
-        {/* <ContactMeButton /> */}
+        {/* <ThemeToggle /> */}
       </div>
     </header>
   )

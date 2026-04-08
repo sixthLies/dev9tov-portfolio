@@ -35,7 +35,6 @@ export const contactsPageCards = [
   {
     img: hh,
     avatar: mailavatar,
-    // name: "Данил Девятов",
     title: "HH.ru",
     socialLink: "https://hh.ru/profile/me?hhtmFrom=ProfileActivator",
     description: "Мой Профиль на HH.ru",
@@ -51,7 +50,6 @@ export const contactsPageCards = [
   {
     img: mail,
     avatar: mailavatar,
-    // name: "Danil Devyatov",
     title: "Mail.ru",
     socialLink: mailLink,
     description: "Моя почта mail.ru",

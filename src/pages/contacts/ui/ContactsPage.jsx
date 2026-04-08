@@ -7,9 +7,7 @@ import { contactsPageClasses } from "../model/classes"
 
 export const ContactsPage = () => {
   const links = selectContactsLinks()
-  const { CONTACTS_PAGE_CLASS, CONTACTS_TITLE_CLASS } = {
-    ...contactsPageClasses,
-  }
+  const { CONTACTS_PAGE_CLASS, CONTACTS_TITLE_CLASS } = contactsPageClasses
 
   return (
     <section className={CONTACTS_PAGE_CLASS}>

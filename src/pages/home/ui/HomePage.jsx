@@ -3,7 +3,7 @@ import { homePageCards } from "../model/pageConfig"
 import { homeClasses } from "../model/classes"
 
 export const HomePage = () => {
-  const { home } = { ...homeClasses }
+  const { home } = homeClasses
 
   return (
     <section className={home}>

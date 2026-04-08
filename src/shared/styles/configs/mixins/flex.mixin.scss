@@ -21,10 +21,6 @@
   @include flex-box(row, space-between, center);
 }
 
-@mixin flex-gap-center($value) {
-  @include flex-box(row, flex-start, center, $value);
-}
-
 @mixin flex-column-center {
   @include flex-box(column, space-between, center);
 }

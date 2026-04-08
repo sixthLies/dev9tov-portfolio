@@ -10,7 +10,6 @@ import github from "./contacts/githubqr.svg"
 import telegramavatar from "./contacts/avatars/telegram-avatar.jpg"
 import githubavatar from "./contacts/avatars/githubavatar.jpg"
 import mailavatar from "./contacts/avatars/mailavatar.jpg"
-import test from "./projects/test.jpg"
 
 export {
   notFoundPageImg,
@@ -22,6 +21,4 @@ export {
   telegramavatar,
   githubavatar,
   mailavatar,
-  // test images page
-  test,
 }

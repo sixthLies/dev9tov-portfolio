@@ -1,7 +1,7 @@
 import { heroClasses } from "../model/classes"
 
 export const HeroBtn = ({ onMore }) => {
-  const { button, moreText, arrow } = { ...heroClasses }
+  const { button, moreText, arrow } = heroClasses
 
   return (
     <button type="button" className={button} onClick={onMore}>

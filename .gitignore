@@ -11,6 +11,7 @@ lerna-debug.log*
 
 node_modules
 dist
+docs
 dist-ssr
 *.local
 
@@ -33,6 +34,4 @@ Thumbs.db
 *.sw?
 trash
 
-
-SMACSS_REFACTOR_TECHDOC.txt
 trash.txt

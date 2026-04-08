@@ -44,7 +44,7 @@
   height: 44px;
 
   &:hover {
-    animation: pulse 2s infinite;
+    animation: pulse-icon 2s infinite;
   }
 }
 
@@ -78,7 +78,7 @@
   }
 }
 
-@keyframes pulse {
+@keyframes pulse-icon {
   0% {
     transform: scale(1);
   }

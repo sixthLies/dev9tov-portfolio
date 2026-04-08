@@ -20,16 +20,3 @@
     @error "Unknown direction: #{$direction}. Use up or down.";
   }
 }
-
-@mixin respond-between($from, $to) {
-  $from-value: map.get($breakpoints, $from);
-  $to-value: map.get($breakpoints, $to);
-
-  @if $from-value == null or $to-value == null {
-    @error "Unknown breakpoint range: #{$from} -> #{$to}";
-  }
-
-  @media (min-width: $from-value) and (max-width: ($to-value - 0.02px)) {
-    @content;
-  }
-}
