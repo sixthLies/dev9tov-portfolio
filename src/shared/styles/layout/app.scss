@@ -22,11 +22,11 @@
   width: 100%;
 }
 
-.l-scroll-panel {
-  @include scollbar;
-  height: clamp(420px, 72dvh, 590px);
-  overflow-x: hidden;
-}
+// .l-scroll-panel {
+//   @include scollbar;
+//   height: clamp(420px, 72dvh, 590px);
+//   overflow-x: hidden;
+// }
 
 .l-center {
   display: flex;
@@ -48,9 +48,9 @@
     padding-inline: 16px;
   }
 
-  .l-scroll-panel {
-    height: clamp(500px, 74dvh, 590px);
-  }
+  // .l-scroll-panel {
+  //   height: clamp(500px, 74dvh, 590px);
+  // }
 }
 
 @include respond(lg) {
@@ -59,13 +59,13 @@
     padding-inline: 10px;
   }
 
-  .l-scroll-panel {
-    height: 590px;
-  }
+  // .l-scroll-panel {
+  //   height: 590px;
+  // }
 }
 
-@media (max-height: 520px) and (orientation: landscape) {
-  .l-scroll-panel {
-    height: 78dvh;
-  }
-}
+// @media (max-height: 520px) and (orientation: landscape) {
+//   .l-scroll-panel {
+//     height: 78dvh;
+//   }
+// }

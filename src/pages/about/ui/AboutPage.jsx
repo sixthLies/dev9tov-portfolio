@@ -26,11 +26,11 @@ export const AboutPage = () => {
 
   return (
     <section className={PAGE_CLASS}>
-      <DotNav
+      {/* <DotNav
         items={sectionItems}
         activeId={activeSectionId}
         onSelect={scrollToSection}
-      />
+      /> */}
 
       <HeroSection
         id={sectionIds.hero}
