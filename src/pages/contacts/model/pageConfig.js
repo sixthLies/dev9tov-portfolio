@@ -25,14 +25,14 @@ export const contactsPageCards = [
     title: "Telegram",
     description: "Мой телеграмм аккаунт",
   },
-  {
-    img: github,
-    avatar: githubavatar,
-    name: "SixthLies",
-    title: "GitHub",
-    socialLink: githubLink,
-    description: "Мой профиль на GitHub",
-  },
+  // {
+  //   img: github,
+  //   avatar: githubavatar,
+  //   name: "SixthLies",
+  //   title: "GitHub",
+  //   socialLink: githubLink,
+  //   description: "Мой профиль на GitHub",
+  // },
   {
     img: hh,
     avatar: hhAvatar,
