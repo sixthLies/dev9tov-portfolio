@@ -33,7 +33,7 @@ export const contactsPageCards = [
   //   socialLink: githubLink,
   //   description: "Мой профиль на GitHub",
   // },
-  {
+  { 
     img: hh,
     avatar: hhAvatar,
     name: "Данил Девятов",

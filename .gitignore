@@ -7,8 +7,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-
-
 node_modules
 dist
 docs
@@ -20,6 +18,8 @@ dist-ssr
 .env.*.local
 
 TECHNICAL_DOCUMENTATION.md
+reveal-system.md
+theme-system.md
 
 # Editor directories and files
 .vscode/*
