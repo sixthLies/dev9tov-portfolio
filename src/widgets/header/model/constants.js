@@ -1,4 +1,6 @@
-export const HOME_ROUTE = "/"
+import { ROUTE_PATHS } from "@/shared/config/routes"
+
+export const HOME_ROUTE = ROUTE_PATHS.home
 
 export const LOGO = {
   width: 110,

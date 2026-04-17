@@ -1,10 +1,1 @@
-// paths.js
-
-export const ROUTE_PATHS = Object.freeze({
-  root: "/",
-  about: "/about",
-  projects: "/projects",
-  skills: "/skills",
-  contacts: "/contacts",
-  notFound: "*",
-})
+export { PAGE_ROUTE_RECORDS, ROUTE_PATHS } from "@/shared/config/routes"

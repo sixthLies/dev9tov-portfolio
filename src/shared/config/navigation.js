@@ -1,9 +1,6 @@
-export const menuItems = [
-  { href: "/about", label: "Обо мне" },
-  { href: "/skills", label: "Мой Стек" },
-  { href: "/projects", label: "Мое портфолио" },
-  { href: "/contacts", label: "Мои контакты" },
-]
+import { MENU_ITEMS } from "./routes"
+
+export const menuItems = MENU_ITEMS
 
 export const socialItems = (links, icons) => [
   {

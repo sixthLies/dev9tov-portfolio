@@ -4,15 +4,27 @@ import { SkillsPage } from "../../../pages/skills"
 import { ContactsPage } from "../../../pages/contacts"
 import { NotFoundPage } from "../../../pages/not-found"
 import { createChildRoute, createIndexRoute } from "../lib/routeFactories"
-import { ROUTE_PATHS } from "../const/paths"
+import { PAGE_ROUTE_RECORDS } from "../const/paths"
 import { ProjectsPage } from "@/pages/projects"
 
-export const routes = [
-  createIndexRoute(<HomePage />),
+const routeElements = {
+  home: <HomePage />,
+  about: <AboutPage />,
+  skills: <SkillsPage />,
+  contacts: <ContactsPage />,
+  projects: <ProjectsPage />,
+  notFound: <NotFoundPage />,
+}
 
-  createChildRoute(ROUTE_PATHS.about, <AboutPage />),
-  createChildRoute(ROUTE_PATHS.skills, <SkillsPage />),
-  createChildRoute(ROUTE_PATHS.contacts, <ContactsPage />),
-  createChildRoute(ROUTE_PATHS.projects, <ProjectsPage />),
-  createChildRoute(ROUTE_PATHS.notFound, <NotFoundPage />),
-]
+export const routes = PAGE_ROUTE_RECORDS.map(({ id, index, segment }) => {
+  const element = routeElements[id]
+
+  if (index) {
+    return { id, ...createIndexRoute(element) }
+  }
+
+  return {
+    id,
+    ...createChildRoute(segment, element),
+  }
+})

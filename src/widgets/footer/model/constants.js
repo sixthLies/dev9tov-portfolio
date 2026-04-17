@@ -1,4 +1,6 @@
-export const FOOTER_HOME_PATH = "/"
+import { ROUTE_PATHS } from "@/shared/config/routes"
+
+export const FOOTER_HOME_PATH = ROUTE_PATHS.home
 export const FOOTER_LOGO = {
   width: 110,
   heightAttr: "",
