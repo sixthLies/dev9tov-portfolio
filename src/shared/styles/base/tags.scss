@@ -1,23 +1,41 @@
 @use "../theme/tokens.scss" as *;
 
-body,
 html {
+  min-height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: var(--gradient-page);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
   font-family: "Titillium Web", sans-serif;
   font-size: 18px;
   color: $primary-color;
   position: relative;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
   z-index: -1;
-  background-image: var(--gradient-page);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  backdrop-filter: blur(5px);
+  background: transparent;
   overflow-x: hidden;
-  // overflow-y: hidden;    
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+@media (min-width: 768px) {
+  html {
+    background-attachment: fixed;
+  }
 }
 
 
