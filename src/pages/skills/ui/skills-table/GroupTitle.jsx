@@ -1,8 +1,7 @@
-export const GroupTitle = ({ titleClassName, title, img }) => {
+export const GroupTitle = ({ titleClassName, title }) => {
   return (
     <h3 className={titleClassName}>
       {title}
-      <img className="skills-table__group-img" src={img} alt="Logo" />
     </h3>
   )
 }

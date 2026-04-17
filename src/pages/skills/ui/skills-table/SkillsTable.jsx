@@ -26,7 +26,6 @@ export const SkillsTable = ({
           <GroupTitle
             title={block.title}
             titleClassName={title}
-            img={block.img}
           />
 
           {block.groups.map((skillGroup, groupIndex) => (

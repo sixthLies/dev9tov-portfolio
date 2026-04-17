@@ -1,9 +1,9 @@
-import notFoundPageImg from "./404page.png"
+import notFoundPageImg from "./404/404page.webp"
 
-import telegram from "./contacts/telegram-qr.png"
-import gmail from "./contacts/gmail.png"
-import mail from "./contacts/mail.png"
-import hh from "./contacts/hh.png"
+import telegram from "./contacts/qr/telegram-qr.webp"
+import gmail from "./contacts/qr/gmail.webp"
+import mail from "./contacts/qr/mail.webp"
+import hh from "./contacts/qr/hh.webp"
 
 import github from "./contacts/githubqr.svg"
 
