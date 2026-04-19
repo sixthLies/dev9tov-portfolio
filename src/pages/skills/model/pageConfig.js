@@ -163,6 +163,49 @@ export const resources = {
 
 export const skillsInfo = [
   {
+    id: "tools",
+    title: "Инструменты и программы",
+    groups: [
+      {
+        label: "Разработка",
+        items: [{ name: "Visual Studio Code", key: "vscode" }],
+      },
+      {
+        label: "Дизайн",
+        items: [
+          { name: "Adobe Photoshop", key: "photoshop" },
+          { name: "Procreate", key: "procreate" },
+        ],
+      },
+      {
+        label: "Видео и звук",
+        items: [
+          { name: "Adobe Premiere Pro", key: "premiere" },
+          { name: "FL Studio", key: "flStudio" },
+        ],
+      },
+      {
+        label: "Офис и продуктивность",
+        items: [
+          { name: "Google Docs", key: "gdocs" },
+          { name: "Google Sheets", key: "gsheets" },
+          { name: "Word", key: "word" },
+          { name: "Excel", key: "excel" },
+          { name: "Notion", key: "notion" },
+          { name: "Jira", key: "jira" },
+        ],
+      },
+      {
+        label: "Удаленный доступ",
+        items: [{ name: "AnyDesk", key: "anydesk" }],
+      },
+      {
+        label: "Бизнес-софт",
+        items: [{ name: "1C", key: "onec" }],
+      },
+    ],
+  },
+  {
     id: "frontend",
     title: "Веб-разработка",
     groups: [
@@ -300,50 +343,6 @@ export const skillsInfo = [
           { name: "Veo 3", key: "veo3" },
           { name: "SunoAI", key: "suno" },
         ],
-      },
-    ],
-  },
-
-  {
-    id: "tools",
-    title: "Инструменты и программы",
-    groups: [
-      {
-        label: "Разработка",
-        items: [{ name: "Visual Studio Code", key: "vscode" }],
-      },
-      {
-        label: "Дизайн",
-        items: [
-          { name: "Adobe Photoshop", key: "photoshop" },
-          { name: "Procreate", key: "procreate" },
-        ],
-      },
-      {
-        label: "Видео и звук",
-        items: [
-          { name: "Adobe Premiere Pro", key: "premiere" },
-          { name: "FL Studio", key: "flStudio" },
-        ],
-      },
-      {
-        label: "Офис и продуктивность",
-        items: [
-          { name: "Google Docs", key: "gdocs" },
-          { name: "Google Sheets", key: "gsheets" },
-          { name: "Word", key: "word" },
-          { name: "Excel", key: "excel" },
-          { name: "Notion", key: "notion" },
-          { name: "Jira", key: "jira" },
-        ],
-      },
-      {
-        label: "Удаленный доступ",
-        items: [{ name: "AnyDesk", key: "anydesk" }],
-      },
-      {
-        label: "Бизнес-софт",
-        items: [{ name: "1C", key: "onec" }],
       },
     ],
   },
