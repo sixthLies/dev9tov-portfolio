@@ -9,6 +9,7 @@ import {
 import { useAboutNavigation } from "../hooks/useAboutNavigation"
 import { DotNav } from "./DotNav"
 import {
+  ExperienceSection,
   GoalsSection,
   HeroSection,
   ProcessSection,
@@ -40,6 +41,10 @@ export const AboutPage = () => {
       <WhatIDoSection
         id={sectionIds.what}
         sectionRef={sectionRefSetters[sectionIds.what]}
+      />
+      <ExperienceSection
+        id={sectionIds.experience}
+        sectionRef={sectionRefSetters[sectionIds.experience]}
       />
       <ProcessSection
         id={sectionIds.process}

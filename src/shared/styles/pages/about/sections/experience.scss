@@ -1,0 +1,128 @@
+@use "../../../configs" as *;
+
+.experience {
+  margin-right: auto;
+}
+
+.experience__head {
+  margin-bottom: 15px;
+}
+
+.experience__title {
+  margin: 0 0 10px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(32px, 7vw, 44px);
+}
+
+.experience__subtitle,
+.experience__intro,
+.experience__summary,
+.experience__item,
+.experience__impactText {
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.experience__subtitle {
+  margin: 0;
+  max-width: 680px;
+  font-size: 15px;
+}
+
+.experience__intro {
+  max-width: 900px;
+  margin: 0 0 18px;
+}
+
+.experience__grid,
+.experience__impactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.experience__impactGrid {
+  margin-top: 14px;
+}
+
+.experience__card,
+.experience__impactCard {
+  padding: 18px 16px 16px;
+}
+
+.experience__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(59, 130, 246, 0.24);
+  background: rgba(59, 130, 246, 0.12);
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.experience__company,
+.experience__impactTitle {
+  margin: 14px 0 8px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.experience__company {
+  font-size: 22px;
+}
+
+.experience__summary {
+  margin: 0 0 14px;
+}
+
+.experience__list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.experience__item {
+  margin: 0;
+}
+
+.experience__impactTitle {
+  font-size: 18px;
+}
+
+.experience__impactText {
+  margin: 0;
+}
+
+@include respond(md) {
+  .experience__grid,
+  .experience__impactGrid {
+    gap: 18px;
+  }
+
+  .experience__card,
+  .experience__impactCard {
+    padding: 20px 20px 18px;
+  }
+}
+
+@include respond(lg) {
+  .experience__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .experience__impactGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .experience__card,
+  .experience__impactCard {
+    padding: 22px 22px 20px;
+  }
+}
