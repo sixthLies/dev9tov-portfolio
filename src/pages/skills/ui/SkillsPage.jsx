@@ -1,5 +1,5 @@
 import { InfoBlock, LinksBlock, Reveal } from "@/shared/ui"
-import { infoBoxSkillsData, secondInfoBoxSkillsData } from "../model/infoBox"
+import { infoBoxSkillsData } from "../model/infoBox"
 import { skillsInfo } from "../model/pageConfig"
 import { root, skillsClasses } from "../model/classes"
 import { SKILLS_PAGE } from "../model/constants"
@@ -16,7 +16,6 @@ export const SkillsPage = () => {
       </Reveal>
 
       <InfoBlock data={infoBoxSkillsData} />
-      <InfoBlock data={secondInfoBoxSkillsData} />
 
       <SkillsTable skillsInfo={skillsInfo} {...skillsClasses} />
 
