@@ -4,7 +4,6 @@ import {
   cssLogo,
   nodejsLogo,
   flstudioLogo,
-  fluxLogo,
   gdocsLogo,
   geminiLogo,
   ghatGPTLogo,
@@ -14,8 +13,6 @@ import {
   htmlLogo,
   jsLogo,
   midjourneyLogo,
-  nanoBananaLogo,
-  notebooklmLogo,
   perplexityLogo,
   photoshopLogo,
   postgresqlLogo,
@@ -44,61 +41,108 @@ import {
   anydeskLogo,
   windowsLogo,
   postmanLogo,
+  jsonLogo,
+  figmaLogo,
+  ubuntuLogo,
+  powershellLogo,
+  aistudioLogo,
+  civitaiLogo,
 } from "@/shared/assets/icons"
 
 export const resources = {
   // Frontend
+  // базовые
   html: { href: "https://developer.mozilla.org/docs/Web/HTML", logo: htmlLogo },
   css: { href: "https://developer.mozilla.org/docs/Web/CSS", logo: cssLogo },
   js: {
     href: "https://developer.mozilla.org/docs/Web/JavaScript",
     logo: jsLogo,
   },
-  git: { href: "https://git-scm.com/", logo: gitLogo },
-  github: { href: "https://github.com/", logo: github },
-  nodejs: { href: "https://nodejs.org/en", logo: nodejsLogo },
-  scss: { href: "https://sass-lang.com/", logo: sassLogo },
-  tailwind: { href: "https://tailwindcss.com/", logo: tailwindLogo },
+  // фреймворк и экосистема
   react: { href: "https://react.dev/", logo: reactLogo },
   reactRouter: { href: "https://reactrouter.com/", logo: reactRouterLogo },
   axios: { href: "https://axios-http.com/docs/api_intro", logo: axiosLogo },
-  vite: { href: "https://vite.dev/", logo: viteLogo },
+  // стилизация
+  scss: { href: "https://sass-lang.com/", logo: sassLogo },
+  tailwind: { href: "https://tailwindcss.com/", logo: tailwindLogo },
+  // UI/UX и дизайн
+  figma: { href: "https://www.figma.com/", logo: figmaLogo },
+  // управление состоянием
   rtk: { href: "https://redux-toolkit.js.org/", logo: reduxLogo },
+  // сборка и среда выполнения
+  vite: { href: "https://vite.dev/", logo: viteLogo },
+  nodejs: { href: "https://nodejs.org/en", logo: nodejsLogo },
+  // база данных
   postgres: { href: "https://www.postgresql.org/", logo: postgresqlLogo },
+
+  // форматы данных
+  json: { href: "https://www.json.org/json-ru.html", logo: jsonLogo },
+
+  // работа с API
+  postman: { href: "https://www.postman.com/", logo: postmanLogo },
+
+  // Операционные системы
+  windows: {
+    href: "https://www.microsoft.com/en-us/windows/",
+    logo: windowsLogo,
+  },
+  ubuntu: {
+    href: "https://ubuntu.com/",
+    logo: ubuntuLogo,
+  },
+  powershell: {
+    href: "https://aka.ms/powershell",
+    logo: powershellLogo,
+  },
+
+  // контроль версий
+  git: { href: "https://git-scm.com/", logo: gitLogo },
+  github: { href: "https://github.com/", logo: github },
+  // контейнеризация
   docker: { href: "https://www.docker.com/", logo: dockerLogo },
+  // автоматизация
   n8n: { href: "https://n8n.io/", logo: n8nLogo },
-  windows: { href: "https://n8n.io/", logo: windowsLogo },
-  postman: { href: "https://n8n.io/", logo: postmanLogo },
 
   // AI
-  comfy: { href: "https://www.comfy.org", logo: comfyLogo },
-  qwen: { href: "https://qwen.ai/home", logo: qwenLogo },
-  flux: { href: "https://flux.com.ru/", logo: fluxLogo },
-  nanabanana: { href: "https://nanabanana.ai/", logo: nanoBananaLogo },
+  // LLM-платформы
+  chatgpt: { href: "https://chatgpt.com/", logo: ghatGPTLogo },
+  perplexity: { href: "https://www.perplexity.ai/", logo: perplexityLogo },
+  claude: { href: "https://claude.ai/", logo: claudeLogo },
   gemini: { href: "https://gemini.google.com/", logo: geminiLogo },
   grok: { href: "https://x.ai", logo: grokLogo },
+  googleAIStudio: { href: "https://aistudio.google.com/", logo: aistudioLogo },
+  // Локальные модели
+  qwen: { href: "https://qwen.ai/home", logo: qwenLogo },
+  ollama: { href: "https://ollama.com/", logo: ollamaLogo },
+  // Инструменты
+  comfy: { href: "https://www.comfy.org", logo: comfyLogo },
+  // AI-экосистема и модели
+  civitai: {
+    href: "https://civitai.com/",
+    logo: civitaiLogo,
+  },
+  // Генеративный AI
   midjourney: { href: "https://www.midjourney.com/home", logo: midjourneyLogo },
   veo3: { href: "https://aistudio.google.com/models/veo-3", logo: geminiLogo },
   sora: { href: "https://sora.com/", logo: soraLogo },
   suno: { href: "https://suno.com/", logo: sunoLogo },
-  chatgpt: { href: "https://chatgpt.com/", logo: ghatGPTLogo },
-  perplexity: { href: "https://www.perplexity.ai/", logo: perplexityLogo },
-  notebookLM: { href: "https://notebooklm.google/", logo: notebooklmLogo },
-  claude: { href: "https://claude.ai/", logo: claudeLogo },
-  ollama: { href: "https://ollama.com/", logo: ollamaLogo },
 
   // Softwares
+  // Разработка
+  vscode: { href: "https://code.visualstudio.com/", logo: vsstudioLogo },
+  // Дизайн
   photoshop: {
     href: "https://www.adobe.com/ru/products/photoshop.html",
     logo: photoshopLogo,
   },
   procreate: { href: "https://procreate.com/", logo: procreateLogo },
+  // Видео и звук
   premiere: {
     href: "https://www.adobe.com/products/premiere.html#modal-hash",
     logo: premiereproLogo,
   },
   flStudio: { href: "https://www.image-line.com/", logo: flstudioLogo },
-  vscode: { href: "https://code.visualstudio.com/", logo: vsstudioLogo },
+  // Офис и продуктивность
   gdocs: {
     href: "https://https://workspace.google.com/intl/ru/products/docs/.visualstudio.com/",
     logo: gdocsLogo,
@@ -109,22 +153,12 @@ export const resources = {
     href: "https://workspace.google.com/intl/ru/products/sheets/",
     logo: gSheetsLogo,
   },
-  onec: {
-    href: "",
-    logo: onecLogo,
-  },
-  exel: {
-    href: "",
-    logo: exelLogo,
-  },
-  word: {
-    href: "",
-    logo: wordLogo,
-  },
-  anydesk: {
-    href: "",
-    logo: anydeskLogo,
-  },
+  excel: { href: "https://excel.cloud.microsoft/ru-ru/", logo: exelLogo },
+  word: { href: "https://word.cloud.microsoft/ru-ru/", logo: wordLogo },
+  // Удаленный доступ
+  anydesk: { href: "https://anydesk.com/ru", logo: anydeskLogo },
+  // Бизнес-софт
+  onec: { href: "https://1c.ru/", logo: onecLogo },
 }
 
 export const skillsInfo = [
@@ -156,6 +190,10 @@ export const skillsInfo = [
         ],
       },
       {
+        label: "UI/UX и дизайн",
+        items: [{ name: "Figma", key: "figma" }],
+      },
+      {
         label: "Управление состоянием",
         items: [{ name: "Redux Toolkit", key: "rtk" }],
       },
@@ -178,6 +216,10 @@ export const skillsInfo = [
         items: [{ name: "PostgreSQL", key: "postgres" }],
       },
       {
+        label: "Форматы данных",
+        items: [{ name: "JSON", key: "json" }],
+      },
+      {
         label: "Работа с API",
         items: [
           { name: "Axios", key: "axios" },
@@ -193,7 +235,14 @@ export const skillsInfo = [
     groups: [
       {
         label: "Операционные системы",
-        items: [{ name: "Windows", key: "windows" }],
+        items: [
+          { name: "Windows", key: "windows" },
+          { name: "Ubuntu", key: "ubuntu" },
+        ],
+      },
+      {
+        label: "Командная строка",
+        items: [{ name: "PowerShell", key: "powershell" }],
       },
       {
         label: "Контроль версий",
@@ -223,6 +272,7 @@ export const skillsInfo = [
           { name: "ChatGPT", key: "chatgpt" },
           { name: "Claude", key: "claude" },
           { name: "Gemini", key: "gemini" },
+          { name: "Google AI Studio", key: "googleAIStudio" },
           { name: "Perplexity", key: "perplexity" },
           { name: "Grok", key: "grok" },
         ],
@@ -237,6 +287,10 @@ export const skillsInfo = [
       {
         label: "Инструменты",
         items: [{ name: "ComfyUI", key: "comfy" }],
+      },
+      {
+        label: "AI-экосистема и модели",
+        items: [{ name: "Civitai", key: "civitai" }],
       },
       {
         label: "Генеративный AI",
@@ -278,7 +332,7 @@ export const skillsInfo = [
           { name: "Google Docs", key: "gdocs" },
           { name: "Google Sheets", key: "gsheets" },
           { name: "Word", key: "word" },
-          { name: "Exel", key: "exel" },
+          { name: "Excel", key: "excel" },
           { name: "Notion", key: "notion" },
           { name: "Jira", key: "jira" },
         ],
