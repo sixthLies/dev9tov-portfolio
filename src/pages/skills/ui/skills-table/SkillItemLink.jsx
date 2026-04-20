@@ -12,7 +12,11 @@ export const SkillItemLink = ({ item, linkClassName, itemClassName }) => {
         target="_blank"
         rel="noreferrer"
       >
-        <img className="skills-table__img" src={resource.logo} alt="itemLogo" />
+        <img
+          className="skills-table__img"
+          src={resource.logo}
+          alt={`${item.name} logo`}
+        />
         {item.name}
       </a>
     </li>

@@ -6,13 +6,15 @@ import {
   LABEL_GMAIL,
   LABEL_MAIL_RU,
 } from "../constants"
+import { extractEmailAddress } from "../utils"
 
 export const ContactButton = ({ socialLink, subject }) => {
-  const hasEmail = socialLink?.includes(EMAIL_MARKER)
-  if (!hasEmail) return null
+  const emailAddress = extractEmailAddress(socialLink)
+  const hasEmail = emailAddress?.includes(EMAIL_MARKER)
+  if (!hasEmail || !emailAddress) return null
 
-  const isGmail = socialLink.includes(GMAIL_MARKER)
-  const to = isGmail ? socialLink : FALLBACK_EMAIL_TO
+  const isGmail = emailAddress.includes(GMAIL_MARKER)
+  const to = isGmail ? emailAddress : FALLBACK_EMAIL_TO
   const label = isGmail ? LABEL_GMAIL : LABEL_MAIL_RU
 
   return (

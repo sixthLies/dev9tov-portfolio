@@ -2,15 +2,18 @@
 
 .mailto__btn {
   @include glowing-border-btn;
-  min-height: 44px;
-  padding: 0.7rem 1rem;
-  width: stretch;
-}
-
-.mailto__link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 44px;
+  padding: 0.7rem 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.mailto__link {
+  color: var(--color-white);
+  text-decoration: none;
 }
 
 .mailto__link:hover {

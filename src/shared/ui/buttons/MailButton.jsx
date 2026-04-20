@@ -3,13 +3,12 @@ export const MailButton = ({ to, subject, body, children }) => {
   if (subject) params.set("subject", subject)
   if (body) params.set("body", body)
 
-  const href = `mailto:${to}${params.toString() ? `?${params}` : ""}`
+  const normalizedTo = typeof to === "string" ? to.replace(/^mailto:/i, "") : ""
+  const href = `mailto:${normalizedTo}${params.toString() ? `?${params}` : ""}`
 
   return (
-    <button className="mailto__btn">
-      <a className="mailto__link" href={href} target="_blank" rel="noreferrer">
-        {children}
-      </a>
-    </button>
+    <a className="mailto__btn mailto__link" href={href} rel="noreferrer">
+      {children}
+    </a>
   )
 }

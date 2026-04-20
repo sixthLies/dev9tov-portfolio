@@ -1,12 +1,18 @@
+import { createPublicMediaUrl } from "./publicMedia"
+
 const IMAGE_MODULES = import.meta.glob(
   "/src/shared/assets/projects/*/images/*.{png,jpg,jpeg,webp,avif,gif}",
   { eager: true, import: "default" },
 )
 
-const VIDEO_MODULES = import.meta.glob(
-  "/src/shared/assets/projects/*/video/*.{mp4,webm,ogg,mov,m4v}",
-  { eager: true, import: "default" },
-)
+// Heavy project videos live in `public/` so they bypass the Vite asset bundling
+// pipeline and keep stable URLs under the configured public base path.
+const PUBLIC_VIDEO_FILES = Object.freeze({
+  "eCommerce-shows": Object.freeze([
+    "n8n workflow mp4.mp4",
+    "Модель mp4.mp4",
+  ]),
+})
 
 const PROJECT_MEDIA_PATH_PATTERN =
   /\/projects\/([^/]+)\/(images|video)\/([^/]+)$/i
@@ -67,8 +73,32 @@ const buildRegistry = (modules, type) => {
   return registry
 }
 
+const buildPublicVideoRegistry = (entriesByProject, baseUrl) => {
+  const registry = {}
+
+  Object.entries(entriesByProject).forEach(([projectSlug, fileNames]) => {
+    registry[projectSlug] = fileNames
+      .map((fileName) => ({
+        id: `${projectSlug}-video-${normalizeKeyPart(fileName)}`,
+        type: "video",
+        fileName,
+        caption: normalizeFileName(fileName),
+        src: createPublicMediaUrl(
+          `project-media/${projectSlug}/video/${fileName}`,
+          baseUrl,
+        ),
+      }))
+      .sort((a, b) => fileNameCollator.compare(a.fileName, b.fileName))
+  })
+
+  return registry
+}
+
 const projectImagesRegistry = buildRegistry(IMAGE_MODULES, "image")
-const projectVideosRegistry = buildRegistry(VIDEO_MODULES, "video")
+const projectVideosRegistry = buildPublicVideoRegistry(
+  PUBLIC_VIDEO_FILES,
+  import.meta.env.BASE_URL,
+)
 
 export const getProjectMedia = (projectSlug) => {
   const images = projectImagesRegistry[projectSlug] ?? []

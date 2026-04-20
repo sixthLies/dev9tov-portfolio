@@ -67,9 +67,9 @@ export const Carousel = ({ items, emptyMessage }) => {
           role="tablist"
           aria-label="Индикаторы слайдов"
         >
-          {items.map((_, index) => (
+          {items.map((item, index) => (
             <button
-              key={index}
+              key={item.id}
               className={`project-showcase-modal__carousel-indicator${
                 index === currentIndex
                   ? " project-showcase-modal__carousel-indicator--active"

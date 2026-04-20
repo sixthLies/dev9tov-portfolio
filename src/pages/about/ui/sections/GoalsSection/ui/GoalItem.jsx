@@ -5,8 +5,8 @@ export const GoalItem = ({ goal, row, icon, iconInner, text, index }) => {
   return (
     <Reveal preset="card" index={index} {...ABOUT_CARD_REVEAL_PROPS}>
       <div className={row}>
-        <div className={icon} aria-hidden="true">
-          <span className={iconInner} />
+        <div className="goals__icon" aria-hidden="true">
+          <span className="process__dotNum">{index + 1}</span>
         </div>
         <div className={text}>{goal}</div>
       </div>

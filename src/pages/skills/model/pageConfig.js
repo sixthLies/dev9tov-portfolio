@@ -144,7 +144,7 @@ export const resources = {
   flStudio: { href: "https://www.image-line.com/", logo: flstudioLogo },
   // Офис и продуктивность
   gdocs: {
-    href: "https://https://workspace.google.com/intl/ru/products/docs/.visualstudio.com/",
+    href: "https://workspace.google.com/intl/ru/products/docs/",
     logo: gdocsLogo,
   },
   notion: { href: "https://www.notion.so/", logo: notionLogo },

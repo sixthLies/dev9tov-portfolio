@@ -8,8 +8,8 @@ export const ListMenu = ({
 }) => {
   return (
     <ul className={className}>
-      {items.map(({ href, label, value }, index) => (
-        <li key={index} className={itemsClassName}>
+      {items.map(({ href, label, value }) => (
+        <li key={href} className={itemsClassName}>
           <Link className={linkClassName} to={href}>
             <b>{label}</b> {value}
           </Link>

@@ -1,7 +1,7 @@
 export const IconsList = ({ items, listClass, itemClass, linkClass }) => (
   <ul className={listClass}>
-    {items.map(({ href, img, alt, target }, index) => (
-      <li className={itemClass} key={index}>
+    {items.map(({ href, img, alt, target }) => (
+      <li className={itemClass} key={href ?? alt}>
         <a
           className={linkClass}
           href={href}

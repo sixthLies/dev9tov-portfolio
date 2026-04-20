@@ -1,4 +1,5 @@
 import { Carousel } from "./Carousel"
+import { ProjectVideoPreview } from "./ProjectVideoPreview"
 import { getMaleImages, getFemaleImages } from "../../lib/filterImagesByGender"
 
 export const ProjectShowcaseModal = ({ project, isOpen, onClose }) => {
@@ -50,14 +51,7 @@ export const ProjectShowcaseModal = ({ project, isOpen, onClose }) => {
                     className="project-showcase-modal__video-card"
                     key={video.id}
                   >
-                    <video
-                      className="project-showcase-modal__video"
-                      controls
-                      preload="metadata"
-                    >
-                      <source src={video.src} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
+                    <ProjectVideoPreview video={video} />
                     <figcaption>{video.caption}</figcaption>
                   </figure>
                 ))}

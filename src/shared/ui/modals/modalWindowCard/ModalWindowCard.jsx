@@ -14,7 +14,11 @@ export const ModalWindowCard = ({ card }) => {
         <CardMedia img={img} title={title} />
 
         <div className="social-card__content">
-          <img className="social-card__avatar" src={avatar} alt="avatar" />
+          <img
+            className="social-card__avatar"
+            src={avatar}
+            alt={`${name} avatar`}
+          />
 
           <div className="social-card__text">
             <p className="social-card__description">Имя: {name}</p>

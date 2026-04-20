@@ -8,6 +8,8 @@
     "dev": "vite",
     "build": "vite build && node scripts/postbuild-gh-pages.mjs",
     "lint": "eslint .",
+    "test:links": "node tests/links/social-links.test.mjs",
+    "test:projects-media": "node tests/projects/public-media.test.mjs",
     "test:routing": "node tests/routing/routing.test.mjs",
     "preview": "vite preview",
     "predeploy": "npm run build",
