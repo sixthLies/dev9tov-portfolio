@@ -5,11 +5,7 @@ export const HeroInfo = () => {
   return (
     <>
       <h1 className={title}>
-        Frontend-инженер
-        <br />
-        с уклоном в automation-first
-        <br />
-        архитектуру и AI-интеграции
+        Инженер по разработке интерфейсов с использованием AI и автоматизации
       </h1>
 
       <p className={desc}>

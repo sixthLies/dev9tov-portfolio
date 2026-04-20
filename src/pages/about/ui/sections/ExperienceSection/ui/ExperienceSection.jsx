@@ -19,7 +19,7 @@ export const ExperienceSection = ({ id, sectionRef }) => {
       </Reveal>
 
       <ExperienceGrid {...grid} />
-      <ExperienceImpactGrid {...impact} />
+      {/* <ExperienceImpactGrid {...impact} /> */}
     </section>
   )
 }
