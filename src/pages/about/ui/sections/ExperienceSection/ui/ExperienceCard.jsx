@@ -1,4 +1,5 @@
 import { Reveal } from "@/shared/ui"
+import { ABOUT_CARD_REVEAL_PROPS } from "@/pages/about/model/reveal"
 
 export const ExperienceCard = ({
   item,
@@ -11,7 +12,7 @@ export const ExperienceCard = ({
   listItem,
 }) => {
   return (
-    <Reveal preset="card" index={index}>
+    <Reveal preset="card" index={index} {...ABOUT_CARD_REVEAL_PROPS}>
       <article className={root}>
         <span className={badge}>{item.focus}</span>
         <h3 className={company}>{item.company}</h3>
