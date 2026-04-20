@@ -5,16 +5,10 @@
 @forward "./sections/experience";
 @forward "./sections/process";
 @forward "./sections/goals";
-@forward "./dot-nav";
 
 .about {
   @include flex-column-gap(34px);
   color: var(--color-white);
-}
-
-.about__title {
-  margin-bottom: 15px;
-  font-size: clamp(1.5rem, 4.5vw, 1.75rem);
 }
 
 .about__link {

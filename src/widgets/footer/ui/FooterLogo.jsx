@@ -1,6 +1,6 @@
 import { Link } from "react-router"
 import { FOOTER_HOME_PATH, FOOTER_LOGO } from "../model/constants"
-import { logo } from "@/shared/assets/icons"
+import logo from "@/shared/assets/icons/app/logo.webp"
 
 export const FooterLogo = () => {
   return (

@@ -121,11 +121,13 @@ export const ProjectShowcaseSection = ({ project }) => {
         </div>
       </section>
 
-      <ProjectShowcaseModal
-        project={project}
-        isOpen={isModalOpen}
-        onClose={closeModal}
-      />
+      {isModalOpen ? (
+        <ProjectShowcaseModal
+          project={project}
+          isOpen={isModalOpen}
+          onClose={closeModal}
+        />
+      ) : null}
     </>
   )
 }

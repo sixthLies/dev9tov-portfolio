@@ -8,7 +8,7 @@ export const Layout = () => {
     <div className="l-page container">
       <Stars />
       <Header />
-      <main className="l-page__content page__content">
+      <main className="l-page__content">
         <Outlet />
       </main>
       <Footer />

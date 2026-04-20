@@ -18,8 +18,7 @@
 .experience__subtitle,
 .experience__intro,
 .experience__summary,
-.experience__item,
-.experience__impactText {
+.experience__item {
   color: rgba(255, 255, 255, 0.62);
   line-height: 1.6;
   font-size: 14px;
@@ -36,20 +35,14 @@
   margin: 0 0 18px;
 }
 
-.experience__grid,
-.experience__impactGrid {
+.experience__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
   margin-right: 10px;
 }
 
-.experience__impactGrid {
-  margin-top: 14px;
-}
-
-.experience__card,
-.experience__impactCard {
+.experience__card {
   padding: 18px 16px 16px;
 }
 
@@ -66,8 +59,7 @@
   letter-spacing: 0.01em;
 }
 
-.experience__company,
-.experience__impactTitle {
+.experience__company {
   margin: 14px 0 8px;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -92,22 +84,12 @@
   margin: 0;
 }
 
-.experience__impactTitle {
-  font-size: 18px;
-}
-
-.experience__impactText {
-  margin: 0;
-}
-
 @include respond(md) {
-  .experience__grid,
-  .experience__impactGrid {
+  .experience__grid {
     gap: 18px;
   }
 
-  .experience__card,
-  .experience__impactCard {
+  .experience__card {
     padding: 20px 20px 18px;
   }
 }
@@ -117,13 +99,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .experience__impactGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-  }
-
-  .experience__card,
-  .experience__impactCard {
+  .experience__card {
     padding: 22px 22px 20px;
   }
 }

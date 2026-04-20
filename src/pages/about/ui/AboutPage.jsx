@@ -7,7 +7,6 @@ import {
   SKILLS_PATH,
 } from "../model/constants"
 import { useAboutNavigation } from "../hooks/useAboutNavigation"
-import { DotNav } from "./DotNav"
 import {
   ExperienceSection,
   GoalsSection,
@@ -18,21 +17,13 @@ import {
 
 export const AboutPage = () => {
   const {
-    sectionItems,
     sectionIds,
-    activeSectionId,
     sectionRefSetters,
     scrollToSection,
   } = useAboutNavigation()
 
   return (
     <section className={PAGE_CLASS}>
-      {/* <DotNav
-        items={sectionItems}
-        activeId={activeSectionId}
-        onSelect={scrollToSection}
-      /> */}
-
       <HeroSection
         id={sectionIds.hero}
         sectionRef={sectionRefSetters[sectionIds.hero]}

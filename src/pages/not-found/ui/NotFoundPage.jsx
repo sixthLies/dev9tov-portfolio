@@ -1,5 +1,5 @@
 import { Link } from "react-router"
-import { images } from "@/shared/assets"
+import notFoundPageImg from "@/shared/assets/images/404/404page.webp"
 import { Reveal } from "@/shared/ui"
 import { NOT_FOUND } from "../model/constants"
 import { notFoundClasses } from "../model/classes"
@@ -12,7 +12,7 @@ export const NotFoundPage = () => {
       <Reveal preset="media">
         <img
           width={`${NOT_FOUND.imageWidthPx}px`}
-          src={images.notFoundPageImg}
+          src={notFoundPageImg}
           alt={NOT_FOUND.imageAlt}
         />
       </Reveal>

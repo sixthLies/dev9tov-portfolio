@@ -1,5 +1,5 @@
 import { Link } from "react-router"
-import { logo } from "@/shared/assets/icons"
+import logo from "@/shared/assets/icons/app/logo.webp"
 import { HOME_ROUTE, LOGO, LOGO_ARIA_LABEL } from "../model/constants"
 
 export const HeaderLogo = () => {

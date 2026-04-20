@@ -17,10 +17,4 @@ export const experienceClasses = {
       listItem: "experience__item",
     },
   },
-  impact: {
-    root: "experience__impactGrid",
-    card: "experience__impactCard card-w",
-    title: "experience__impactTitle",
-    text: "experience__impactText",
-  },
 }

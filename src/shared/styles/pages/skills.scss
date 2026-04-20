@@ -26,12 +26,6 @@
   font-weight: 700;
 }
 
-.skills-table__group-img {
-  margin-top: 3px;
-  width: 28px;
-  height: 28px;
-}
-
 .skills-table__row {
   position: relative;
   display: grid;
@@ -121,11 +115,6 @@
   .skills-table__title {
     gap: 10px;
     font-size: 1.8rem;
-  }
-
-  .skills-table__group-img {
-    width: 32px;
-    height: 32px;
   }
 
   .skills-table__row {

@@ -3,10 +3,9 @@ import { experienceClasses } from "../model/classes"
 import { EXPERIENCE_INTRO } from "../model/constants"
 import { ExperienceGrid } from "./ExperienceGrid"
 import { ExperienceHeader } from "./ExperienceHeader"
-import { ExperienceImpactGrid } from "./ExperienceImpactGrid"
 
 export const ExperienceSection = ({ id, sectionRef }) => {
-  const { root, header, intro, grid, impact } = experienceClasses
+  const { root, header, intro, grid } = experienceClasses
 
   return (
     <section id={id} ref={sectionRef} className={root}>
@@ -19,7 +18,6 @@ export const ExperienceSection = ({ id, sectionRef }) => {
       </Reveal>
 
       <ExperienceGrid {...grid} />
-      {/* <ExperienceImpactGrid {...impact} /> */}
     </section>
   )
 }
