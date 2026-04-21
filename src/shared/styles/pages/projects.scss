@@ -19,7 +19,7 @@
 }
 
 .projects-showcase::before {
-  content: "";
+  content: "";  
   position: absolute;
   top: -120px;
   right: -100px;
@@ -234,6 +234,9 @@
   position: relative;
   width: min(1040px, 100%);
   max-height: calc(100dvh - 20px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   padding: clamp(18px, 2.6vw, 34px);
   border-radius: 24px;
   border: 1px solid var(--border-strong);
@@ -244,7 +247,6 @@
   box-shadow: var(--shadow-modal);
   opacity: 0;
   transform: translateY(16px) scale(0.98);
-  -webkit-overflow-scrolling: touch;
   transition:
     transform var(--transition-med),
     opacity var(--transition-med);
