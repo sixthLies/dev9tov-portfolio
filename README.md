@@ -1,20 +1,67 @@
-# React + Vite
+# 🚀 Сайт портфолио
 
-## UI Motion
-- Reveal animation system docs: `docs/reveal-system.md`
-- Theme system docs: `docs/theme-system.md`
+Современное портфолио, в котором я показываю свои проекты, подход к разработке и используемые технологии.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🔗 Открыть сайт
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 https://dev9tov.com
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 💡 О проекте
 
-## Expanding the ESLint configuration
+Этот сайт — демонстрация того, как я подхожу к разработке:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* стараюсь делать интерфейсы понятными и удобными
+* уделяю внимание структуре и чистоте кода
+* думаю о производительности и стабильности
+* автоматизирую процессы там, где это возможно
+
+---
+
+## ⚙️ Что есть в проекте
+
+* 📱 Адаптивный дизайн (корректно работает на мобильных и десктопе)
+* ⚡ Быстрая загрузка и оптимизация медиа
+* 🎨 Современный UI с визуальными эффектами
+
+---
+
+## 🤖 Использование AI
+
+В работе над проектом я использую AI-инструменты (ChatGPT, Claude и др.):
+
+* для анализа задач
+* для ускорения разработки
+* для поиска и исправления ошибок
+
+При этом все решения проверяются и дорабатываются вручную.
+
+---
+
+## 🎯 Цель проекта
+
+Показать мой подход к разработке:
+
+* аккуратный и понятный код
+* продуманная структура
+* внимание к деталям
+* стремление делать качественный продукт
+
+---
+
+## 📬 Контакты
+
+* 🌐 Портфолио: https://dev9tov.com
+* 💻 GitHub: https://github.com/sixthLies
+* ✉️ Gmail: prodbyxantha@gmail.com
+* 💬 Telegram: https://t.me/aveaveavenjoyer
+
+---
+
+## 📌 Итог
+
+Этот проект отражает мой текущий уровень и подход к работе.
+Я продолжаю его развивать и улучшать.
