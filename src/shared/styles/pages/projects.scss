@@ -244,6 +244,7 @@
   box-shadow: var(--shadow-modal);
   opacity: 0;
   transform: translateY(16px) scale(0.98);
+  -webkit-overflow-scrolling: touch;
   transition:
     transform var(--transition-med),
     opacity var(--transition-med);
