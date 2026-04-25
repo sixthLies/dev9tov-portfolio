@@ -170,20 +170,20 @@ export const skillsInfo = [
         label: "Разработка",
         items: [{ name: "Visual Studio Code", key: "vscode" }],
       },
-      {
-        label: "Дизайн",
-        items: [
-          { name: "Adobe Photoshop", key: "photoshop" },
-          { name: "Procreate", key: "procreate" },
-        ],
-      },
-      {
-        label: "Видео и звук",
-        items: [
-          { name: "Adobe Premiere Pro", key: "premiere" },
-          { name: "FL Studio", key: "flStudio" },
-        ],
-      },
+      // {
+      //   label: "Дизайн",
+      //   items: [
+      //     { name: "Adobe Photoshop", key: "photoshop" },
+      //     { name: "Procreate", key: "procreate" },
+      //   ],
+      // },
+      // {
+      //   label: "Видео и звук",
+      //   items: [
+      //     { name: "Adobe Premiere Pro", key: "premiere" },
+      //     { name: "FL Studio", key: "flStudio" },
+      //   ],
+      // },
       {
         label: "Офис и продуктивность",
         items: [
@@ -320,21 +320,21 @@ export const skillsInfo = [
           { name: "Grok", key: "grok" },
         ],
       },
-      {
-        label: "Локальные модели",
-        items: [
-          { name: "Ollama", key: "ollama" },
-          { name: "Qwen", key: "qwen" },
-        ],
-      },
+      // {
+      //   label: "Локальные модели",
+      //   items: [
+      //     { name: "Ollama", key: "ollama" },
+      //     { name: "Qwen", key: "qwen" },
+      //   ],
+      // },
       {
         label: "Инструменты",
         items: [{ name: "ComfyUI", key: "comfy" }],
       },
-      {
-        label: "AI-экосистема и модели",
-        items: [{ name: "Civitai", key: "civitai" }],
-      },
+      // {
+      //   label: "AI-экосистема и модели",
+      //   items: [{ name: "Civitai", key: "civitai" }],
+      // },
       {
         label: "Генеративный AI",
         items: [
