@@ -1,4 +1,6 @@
 const normalizePath = (value) => value.replace(/^\/+|\/+$/g, "")
+const SITE_VERSION_PREFIX = "l"
+const SITE_VERSION_PARAM = ":versionId"
 
 const createRoutePath = (segment = "") => {
   const normalizedSegment = normalizePath(segment)
@@ -53,6 +55,7 @@ export const PAGE_ROUTE_RECORDS = Object.freeze([
 export const ROUTE_PATHS = Object.freeze({
   root: "/",
   home: "/",
+  versionRoot: createRoutePath(`${SITE_VERSION_PREFIX}/${SITE_VERSION_PARAM}`),
   about: createRoutePath("about"),
   skills: createRoutePath("skills"),
   projects: createRoutePath("projects"),
@@ -79,5 +82,19 @@ export const normalizeRouterBasename = (baseUrl = "/") => {
 export const getRouterBasename = (baseUrl = "/") => {
   const normalized = normalizeRouterBasename(baseUrl)
   return normalized === "/" ? undefined : normalized
+}
+
+export const buildVersionedPath = (path = ROUTE_PATHS.home, versionId) => {
+  const normalizedVersionId = normalizePath(versionId ?? "")
+
+  if (!normalizedVersionId) {
+    return path
+  }
+
+  const normalizedPath = normalizePath(path === "*" ? ROUTE_PATHS.home : path)
+
+  return normalizedPath
+    ? `/${SITE_VERSION_PREFIX}/${normalizedVersionId}/${normalizedPath}`
+    : `/${SITE_VERSION_PREFIX}/${normalizedVersionId}`
 }
 

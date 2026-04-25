@@ -3,10 +3,12 @@ import { useState } from "react"
 import { ModalWindow } from "../modals/ModalWindow"
 import { ModalWindowCard } from "../modals/modalWindowCard"
 import { Reveal } from "../reveal"
+import { useVersionedPath } from "@/shared/lib/useSiteVersion"
 
 export const Card = ({ card, index = 0 }) => {
   const [isOpen, setIsOpen] = useState(false)
   const isNavigational = Boolean(card.link)
+  const toVersionedPath = useVersionedPath()
 
   const handleOpen = () => setIsOpen(true)
   const handleClose = () => setIsOpen(false)
@@ -37,7 +39,12 @@ export const Card = ({ card, index = 0 }) => {
   return (
     <>
       {isNavigational ? (
-        <Reveal as={Link} preset="card" index={index} to={card.link}>
+        <Reveal
+          as={Link}
+          preset="card"
+          index={index}
+          to={toVersionedPath(card.link)}
+        >
           {cardContent}
         </Reveal>
       ) : (

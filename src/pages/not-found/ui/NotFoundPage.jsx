@@ -1,10 +1,12 @@
 import { Link } from "react-router"
 import notFoundPageImg from "@/shared/assets/images/404/404page.webp"
 import { Reveal } from "@/shared/ui"
+import { useVersionedPath } from "@/shared/lib/useSiteVersion"
 import { NOT_FOUND } from "../model/constants"
 import { notFoundClasses } from "../model/classes"
 
 export const NotFoundPage = () => {
+  const toVersionedPath = useVersionedPath()
   const { pageClass, blockClass, buttonClass, textClass } = notFoundClasses
 
   return (
@@ -21,7 +23,7 @@ export const NotFoundPage = () => {
         <div className={blockClass}>
           <p className={textClass}>{NOT_FOUND.message}</p>
 
-          <Link className={buttonClass} to={NOT_FOUND.homePath}>
+          <Link className={buttonClass} to={toVersionedPath(NOT_FOUND.homePath)}>
             {NOT_FOUND.homeLinkText}
           </Link>
         </div>

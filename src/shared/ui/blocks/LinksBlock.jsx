@@ -1,10 +1,12 @@
 import { Link } from "react-router"
 import { Reveal } from "../reveal"
+import { useVersionedPath } from "@/shared/lib/useSiteVersion"
 
 export const LinksBlock = ({ links }) => {
   if (!links?.length) return null
 
   const [first, ...rest] = links
+  const toVersionedPath = useVersionedPath()
 
   return (
     <div className="skills-links__block">
@@ -15,7 +17,7 @@ export const LinksBlock = ({ links }) => {
           preset="inline"
           index={index}
           className="skills__link"
-          to={link.href}
+          to={toVersionedPath(link.href)}
         >
           {link.href === first.href
             ? `\u2190 ${link.label}`

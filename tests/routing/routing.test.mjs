@@ -2,6 +2,7 @@ import test from "node:test"
 import assert from "node:assert/strict"
 import { createMemoryRouter, matchRoutes } from "react-router"
 import {
+  buildVersionedPath,
   getRouterBasename,
   MENU_ITEMS,
   PAGE_ROUTE_RECORDS,
@@ -11,25 +12,33 @@ import {
 const TEST_BASE_URL = "/dev9tov-portfolio/"
 const TEST_BASENAME = getRouterBasename(TEST_BASE_URL)
 
+const createChildren = (prefix = "") =>
+  PAGE_ROUTE_RECORDS.map((route) => {
+    if (route.index) {
+      return {
+        id: `${prefix}${route.id}`,
+        index: true,
+        element: null,
+      }
+    }
+
+    return {
+      id: `${prefix}${route.id}`,
+      path: route.segment,
+      element: null,
+    }
+  })
+
 const createRouteTree = () => [
   {
     id: "layout",
     path: ROUTE_PATHS.root,
-    children: PAGE_ROUTE_RECORDS.map((route) => {
-      if (route.index) {
-        return {
-          id: route.id,
-          index: true,
-          element: null,
-        }
-      }
-
-      return {
-        id: route.id,
-        path: route.segment,
-        element: null,
-      }
-    }),
+    children: createChildren(),
+  },
+  {
+    id: "version-layout",
+    path: ROUTE_PATHS.versionRoot,
+    children: createChildren("version-"),
   },
 ]
 
@@ -72,6 +81,25 @@ test("direct URLs resolve correctly under the GitHub Pages basename", () => {
     "layout",
     "contacts",
   ])
+})
+
+test("versioned URLs resolve correctly under the GitHub Pages basename", () => {
+  assert.deepEqual(getMatchedRouteIds("/dev9tov-portfolio/l/frontend"), [
+    "version-layout",
+    "version-home",
+  ])
+  assert.deepEqual(getMatchedRouteIds("/dev9tov-portfolio/l/frontend/about"), [
+    "version-layout",
+    "version-about",
+  ])
+  assert.deepEqual(getMatchedRouteIds("/dev9tov-portfolio/l/automation/skills"), [
+    "version-layout",
+    "version-skills",
+  ])
+  assert.deepEqual(
+    getMatchedRouteIds("/dev9tov-portfolio/l/technical-support/projects"),
+    ["version-layout", "version-projects"],
+  )
 })
 
 test("unknown paths fall back to the wildcard route instead of crashing", () => {
@@ -135,10 +163,16 @@ test("navigation menu only references registered routes", () => {
   })
 })
 
-test("current route config has no dynamic segments yet", () => {
+test("page route records remain static while versioned helper builds namespaced links", () => {
   const dynamicRoutes = PAGE_ROUTE_RECORDS.filter(
     (route) => !route.index && route.segment.includes(":"),
   )
 
   assert.equal(dynamicRoutes.length, 0)
+  assert.equal(buildVersionedPath(ROUTE_PATHS.home, "frontend"), "/l/frontend")
+  assert.equal(
+    buildVersionedPath(ROUTE_PATHS.skills, "frontend"),
+    "/l/frontend/skills",
+  )
+  assert.equal(buildVersionedPath(ROUTE_PATHS.skills), ROUTE_PATHS.skills)
 })

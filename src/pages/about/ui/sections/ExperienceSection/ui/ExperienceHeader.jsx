@@ -1,10 +1,11 @@
-export const ExperienceHeader = ({ root, title, subtitle }) => {
+import { useSiteVersionContent } from "@/shared/lib/useSiteVersion"
+
+export const ExperienceHeader = ({ root, title }) => {
+  const { about } = useSiteVersionContent()
+
   return (
     <header className={root}>
-      <h2 className={title}>Мой Опыт работы</h2>
-      {/* <p className={subtitle}>
-        Опыт, из которого вырос мой подход к диагностике, стабильности, и автоматизации процессов.
-      </p> */}
+      <h2 className={title}>{about.experience.title}</h2>
     </header>
   )
 }

@@ -1,11 +1,13 @@
-import { CARDS } from "../model/constants"
+import { useSiteVersionContent } from "@/shared/lib/useSiteVersion"
 import { WhatIDoCard } from "./WhatIDoCard"
 
 export const WhatIDoGrid = ({ root, card }) => {
+  const { about } = useSiteVersionContent()
+
   return (
     <div className={root}>
-      {CARDS.map((c, index) => (
-        <WhatIDoCard key={c.n} c={c} index={index} {...card} />
+      {about.what.cards.map((cardItem, index) => (
+        <WhatIDoCard key={cardItem.n} c={cardItem} index={index} {...card} />
       ))}
     </div>
   )

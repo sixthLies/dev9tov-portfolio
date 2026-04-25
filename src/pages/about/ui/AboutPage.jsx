@@ -1,5 +1,6 @@
 import { Link } from "react-router"
 import { Reveal } from "@/shared/ui"
+import { useVersionedPath } from "@/shared/lib/useSiteVersion"
 import {
   LINK_CLASS,
   PAGE_CLASS,
@@ -16,6 +17,7 @@ import {
 } from "./sections"
 
 export const AboutPage = () => {
+  const toVersionedPath = useVersionedPath()
   const {
     sectionIds,
     sectionRefSetters,
@@ -46,7 +48,12 @@ export const AboutPage = () => {
         sectionRef={sectionRefSetters[sectionIds.goals]}
       />
 
-      <Reveal as={Link} preset="inline" className={LINK_CLASS} to={SKILLS_PATH}>
+      <Reveal
+        as={Link}
+        preset="inline"
+        className={LINK_CLASS}
+        to={toVersionedPath(SKILLS_PATH)}
+      >
         {SKILLS_LINK_TEXT}
       </Reveal>
     </section>
