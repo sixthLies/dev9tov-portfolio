@@ -25,8 +25,6 @@ import dockerLogo from "./skills/frontend/svg/docker.svg"
 import n8nLogo from "./skills/frontend/svg/n8n.svg"
 import postmanLogo from "./skills/frontend/svg/postman.svg"
 import windowsLogo from "./skills/frontend/svg/windows.svg"
-import ubuntuLogo from "./skills/frontend/svg/ubuntu.svg"
-import powershellLogo from "./skills/frontend/svg/powershell.svg"
 import figmaLogo from "./skills/frontend/svg/figma.svg"
 import jsonLogo from "./skills/frontend/svg/json.svg"
 
@@ -48,15 +46,11 @@ import ollamaLogo from "./skills/ai/svg/ollama.svg"
 
 // software
 // webp
-import flstudioLogo from "./skills/softwares/webp/flstudio.webp"
 import onecLogo from "./skills/softwares/webp/1C.webp"
 import exelLogo from "./skills/softwares/webp/exel.webp"
 // svg
-import photoshopLogo from "./skills/softwares/svg/photoshop.svg"
 import jiraLogo from "./skills/softwares/svg/jira.svg"
-import premiereproLogo from "./skills/softwares/svg/premierepro.svg"
 import vsstudioLogo from "./skills/softwares/svg/vsstudio.svg"
-import procreateLogo from "./skills/softwares/svg/procreate.svg"
 import gdocsLogo from "./skills/softwares/svg/gdocs.svg"
 import notionLogo from "./skills/softwares/svg/notion.svg"
 import gSheetsLogo from "./skills/softwares/svg/gsheets.svg"
@@ -88,8 +82,6 @@ export {
   dockerLogo,
   postmanLogo,
   windowsLogo,
-  powershellLogo,
-  ubuntuLogo,
   jsonLogo,
   figmaLogo,
 
@@ -109,10 +101,6 @@ export {
   ollamaLogo,
 
   // software
-  photoshopLogo,
-  procreateLogo,
-  premiereproLogo,
-  flstudioLogo,
   vsstudioLogo,
   gdocsLogo,
   jiraLogo,
