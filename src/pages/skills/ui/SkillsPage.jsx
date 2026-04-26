@@ -1,5 +1,5 @@
 import { InfoBlock, LinksBlock, Reveal } from "@/shared/ui"
-import { useSiteVersionContent } from "@/shared/lib/useSiteVersion"
+import { useSiteVersion } from "@/shared/lib/useSiteVersion"
 import { infoBoxSkillsData } from "../model/infoBox"
 import { root, skillsClasses } from "../model/classes"
 import { SKILLS_PAGE } from "../model/constants"
@@ -7,8 +7,9 @@ import { SkillsTable } from "./skills-table"
 import { selectSkillsLinks } from "../lib/selectSkillsLinks"
 
 export const SkillsPage = () => {
-  const links = selectSkillsLinks()
-  const { skills } = useSiteVersionContent()
+  const { content, versionId } = useSiteVersion()
+  const links = selectSkillsLinks(versionId)
+  const { skills } = content
 
   return (
     <section className={root.rootClass}>

@@ -4,9 +4,11 @@ import { contactsPageCards } from "../model/pageConfig"
 import { CONTACTS_TITLE } from "../model/constants"
 import { selectContactsLinks } from "../lib/selectContactsLinks"
 import { contactsPageClasses } from "../model/classes"
+import { useSiteVersion } from "@/shared/lib/useSiteVersion"
 
 export const ContactsPage = () => {
-  const links = selectContactsLinks()
+  const { versionId } = useSiteVersion()
+  const links = selectContactsLinks(versionId)
   const { CONTACTS_PAGE_CLASS, CONTACTS_TITLE_CLASS } = contactsPageClasses
 
   return (
