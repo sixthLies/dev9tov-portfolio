@@ -27,7 +27,17 @@
   box-shadow: 0 0 20px var(--color-accent);
 }
 
+.home .card--disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
 .home .card:hover::before {
   opacity: 1;
   transform: rotate(-45deg) translateY(100%);
+}
+
+.home .card--disabled:hover::before {
+  opacity: 0;
+  transform: rotate(-45deg);
 }

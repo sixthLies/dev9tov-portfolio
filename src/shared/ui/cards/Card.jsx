@@ -7,7 +7,8 @@ import { useVersionedPath } from "@/shared/lib/useSiteVersion"
 
 export const Card = ({ card, index = 0 }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const isNavigational = Boolean(card.link)
+  const isDisabled = Boolean(card.disabled)
+  const isNavigational = Boolean(card.link) && !isDisabled
   const toVersionedPath = useVersionedPath()
 
   const handleOpen = () => setIsOpen(true)
@@ -20,7 +21,7 @@ export const Card = ({ card, index = 0 }) => {
   }
 
   const cardContent = (
-    <article className="card">
+    <article className={`card${isDisabled ? " card--disabled" : ""}`}>
       <div className="card__content">
         {card.img &&
         typeof card.img === "string" &&
@@ -32,13 +33,25 @@ export const Card = ({ card, index = 0 }) => {
 
         <h3 className="card__title">{card.title}</h3>
         <p className="card__description">{card.description}</p>
+        {card.disabledText ? (
+          <p className="card__disabled-text">{card.disabledText}</p>
+        ) : null}
       </div>
     </article>
   )
 
   return (
     <>
-      {isNavigational ? (
+      {isDisabled ? (
+        <Reveal
+          as="div"
+          preset="card"
+          index={index}
+          aria-disabled="true"
+        >
+          {cardContent}
+        </Reveal>
+      ) : isNavigational ? (
         <Reveal
           as={Link}
           preset="card"
