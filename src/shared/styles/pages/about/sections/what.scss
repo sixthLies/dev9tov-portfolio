@@ -4,16 +4,28 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
-  margin-right: 10px;
+  margin-right: 0;
 }
 
 .what__card {
-  padding: 18px 16px 16px;
-  min-height: 150px;
+  isolation: isolate;
+  display: flex;
+  min-height: 190px;
+  flex-direction: column;
+  padding: 22px;
 }
 
-.what__head {
-  margin-bottom: 15px;
+.what__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: 100%;
+  flex: 1;
+  flex-direction: column;
+}
+
+.what__copy {
+  position: relative;
 }
 
 .what__num {
@@ -23,64 +35,238 @@
   width: 42px;
   height: 34px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.065);
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: rgba(255, 255, 255, 0.9);
   font-weight: 800;
   font-size: 13px;
 }
 
+.what__card--featured {
+  min-height: 320px;
+  border-color: var(--about-accent-border);
+  background:
+    radial-gradient(
+      circle at 76% 12%,
+      var(--about-accent-tint),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 22% 26%,
+      var(--about-accent-tint-weak),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.085),
+      rgba(255, 255, 255, 0.026)
+    ),
+    rgba(7, 10, 18, 0.52);
+}
+
+.what__card--featured::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02), transparent 42%),
+    radial-gradient(
+      circle at 78% 72%,
+      var(--about-accent-tint-weak),
+      transparent 35%
+    );
+  opacity: 0.9;
+}
+
+.what__card--featured:hover {
+  border-color: var(--about-accent-border-strong);
+}
+
+.what-showcase {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.what-showcase__grid {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image:
+    radial-gradient(circle at 74% 24%, #000, transparent 48%),
+    linear-gradient(to bottom, #000, transparent 82%);
+  opacity: 0.42;
+}
+
+.what-showcase__number {
+  position: absolute;
+  top: 6px;
+  right: 18px;
+  color: rgba(255, 255, 255, 0.055);
+  font-size: 132px;
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: 0;
+}
+
+.what-showcase__metrics {
+  position: absolute;
+  top: 88px;
+  right: 18px;
+  display: none;
+  width: min(260px, 48%);
+}
+
+.what-showcase__metric {
+  position: absolute;
+  display: grid;
+  min-width: 112px;
+  gap: 4px;
+  padding: 11px 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.036)
+    ),
+    rgba(8, 12, 20, 0.52);
+  box-shadow:
+    0 18px 52px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: what-metric-float 6s ease-in-out infinite;
+  transition:
+    opacity 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.what-showcase__metric:nth-child(1) {
+  top: 0;
+  right: 90px;
+}
+
+.what-showcase__metric:nth-child(2) {
+  top: 58px;
+  right: 0;
+  animation-delay: 900ms;
+}
+
+.what-showcase__metric:nth-child(3) {
+  top: 126px;
+  right: 54px;
+  animation-delay: 1600ms;
+}
+
+.what__card--featured:hover .what-showcase__metric {
+  border-color: var(--about-accent-border);
+}
+
+.what-showcase__metricLabel {
+  color: rgba(232, 238, 255, 0.52);
+  font-size: 11px;
+  line-height: 1;
+}
+
+.what-showcase__metricValue {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.what-showcase__nodes {
+  position: absolute;
+  top: 40%;
+  right: 12%;
+  display: none;
+  width: 250px;
+  height: 120px;
+  opacity: 0.72;
+}
+
+.what-showcase__node {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--about-accent-gradient);
+  box-shadow:
+    0 0 0 7px var(--about-accent-tint-weak),
+    0 0 28px var(--about-accent-glow);
+}
+
+.what-showcase__node--a {
+  left: 16px;
+  top: 62px;
+}
+
+.what-showcase__node--b {
+  left: 118px;
+  top: 18px;
+}
+
+.what-showcase__node--c {
+  right: 20px;
+  bottom: 20px;
+  background: var(--about-accent-gradient);
+  box-shadow:
+    0 0 0 7px var(--about-accent-tint-weak),
+    0 0 28px var(--about-accent-glow);
+}
+
+.what-showcase__connector {
+  position: absolute;
+  inset: 27px 28px 24px 24px;
+  border-top: 1px solid var(--about-accent-border);
+  border-right: 1px solid var(--about-accent-border);
+  transform: skewY(-14deg);
+  opacity: 0.72;
+}
+
+@keyframes what-metric-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
 .what__title {
-  margin: 0 0 10px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  font-size: clamp(27px, 7vw, 44px);
+  max-width: 720px;
+  margin-bottom: 12px;
 }
 
 .what__subtitle {
   margin: 0;
   max-width: 680px;
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 15px;
-  line-height: 1.6;
 }
 
 .what-grid__title {
-  margin: 14px 0 8px;
+  margin: 18px 0 10px;
   font-weight: 800;
-  letter-spacing: -0.02em;
-  font-size: 18px;
+  letter-spacing: 0;
+  font-size: 20px;
 }
 
 .what-grid__text {
   margin: 0;
   max-width: 100%;
-  color: rgba(255, 255, 255, 0.62);
-  line-height: 1.6;
+  color: rgba(232, 238, 255, 0.64);
+  line-height: 1.68;
   font-size: 14px;
-}
-
-.card-w {
-  background: rgb(0 0 0 / 5%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 22px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(10px);
-}
-
-.card--hover {
-  transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    background 180ms ease,
-    box-shadow 180ms ease;
-
-  &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.14);
-    background: rgba(255, 255, 255, 0.065);
-    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
-  }
 }
 
 @include respond(md) {
@@ -89,22 +275,88 @@
   }
 
   .what__card {
-    padding: 20px 20px 18px;
+    padding: 24px;
+  }
+
+  .what__card--featured {
+    min-height: 380px;
+  }
+
+  .what-showcase__number {
+    font-size: 170px;
+  }
+
+  .what-showcase__nodes {
+    display: block;
   }
 }
 
 @include respond(lg) {
   .what__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+    grid-template-areas:
+      "primary secondary-a"
+      "primary secondary-b";
     gap: 22px;
   }
 
   .what__card {
-    padding: 22px 22px 20px;
-    min-height: 170px;
+    min-height: 220px;
+    padding: 28px;
+  }
+
+  .what__grid > .reveal:first-child {
+    grid-area: primary;
+  }
+
+  .what__grid > .reveal:nth-child(2) {
+    grid-area: secondary-a;
+  }
+
+  .what__grid > .reveal:nth-child(3) {
+    grid-area: secondary-b;
+  }
+
+  .what__grid > .reveal:first-child .what__card {
+    min-height: 100%;
+    padding: 34px;
+  }
+
+  .what__grid > .reveal:first-child .what__copy {
+    margin-top: 21%;
+  }
+
+  .what__grid > .reveal:first-child .what__num {
+    width: 52px;
+    height: 42px;
+  }
+
+  .what__grid > .reveal:first-child .what-grid__title {
+    font-size: 28px;
+  }
+
+  .what-showcase__number {
+    top: 12px;
+    right: 24px;
+    font-size: 210px;
+  }
+
+  .what-showcase__metrics {
+    display: block;
+  }
+
+  .what-showcase__nodes {
+    top: 38%;
+    right: 14%;
   }
 
   .what-grid__text {
     max-width: 92%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .what-showcase__metric {
+    animation: none;
   }
 }
