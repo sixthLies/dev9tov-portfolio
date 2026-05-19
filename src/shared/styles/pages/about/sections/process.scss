@@ -22,7 +22,10 @@
 }
 
 .process::after {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.46) 1px, transparent 1px);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.46) 1px,
+    transparent 1px
+  );
   background-size: 132px 118px;
   background-position: 18px 30px;
   opacity: 0.2;
@@ -77,7 +80,10 @@
 .process__dots {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.5) 1px,
+    transparent 1px
+  );
   background-size: 164px 126px;
   opacity: 0.15;
 }
@@ -101,7 +107,8 @@
   stroke-linejoin: round;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: process-line-draw 900ms cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards;
+  animation: process-line-draw 900ms cubic-bezier(0.22, 1, 0.36, 1) 160ms
+    forwards;
 }
 
 .process__pathAura {
@@ -159,7 +166,11 @@
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.088), rgba(255, 255, 255, 0.028)),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.088),
+      rgba(255, 255, 255, 0.028)
+    ),
     rgba(12, 15, 24, 0.64);
   box-shadow:
     0 26px 80px rgba(0, 0, 0, 0.38),
@@ -179,8 +190,17 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 82% 22%, var(--about-accent-tint), transparent 32%),
-    linear-gradient(45deg, transparent 18%, rgba(255, 255, 255, 0.04), transparent 42%);
+    radial-gradient(
+      circle at 82% 22%,
+      var(--about-accent-tint),
+      transparent 32%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 18%,
+      rgba(255, 255, 255, 0.04),
+      transparent 42%
+    );
   opacity: 0;
   transition: opacity 180ms ease;
 }
@@ -189,7 +209,11 @@
   transform: translateY(-4px);
   border-color: var(--about-accent-border-strong);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.108), rgba(255, 255, 255, 0.036)),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.108),
+      rgba(255, 255, 255, 0.036)
+    ),
     rgba(12, 15, 24, 0.74);
   box-shadow:
     0 34px 96px rgba(0, 0, 0, 0.46),
@@ -256,10 +280,6 @@
 }
 
 @include respond(md) {
-  .process {
-    padding: 38px 32px 42px;
-  }
-
   .process__head {
     margin-bottom: 40px;
   }
@@ -283,10 +303,6 @@
 }
 
 @include respond(lg) {
-  .process {
-    padding: 46px 44px 56px;
-  }
-
   .process-head__title {
     font-size: 58px;
   }
@@ -333,14 +349,9 @@
     min-height: 162px;
     padding: 28px 30px;
   }
-
 }
 
 @include respond(xl) {
-  .process {
-    padding-inline: 48px;
-  }
-
   .process__list {
     column-gap: 116px;
   }

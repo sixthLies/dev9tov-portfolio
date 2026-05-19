@@ -6,6 +6,7 @@ export const GoalsHeader = ({ head, title }) => {
   return (
     <header className={head}>
       <h2 className={title}>{about.goals.title}</h2>
+      <p className="process__subtitle">{about.goals.subtitle}</p>
     </header>
   )
 }

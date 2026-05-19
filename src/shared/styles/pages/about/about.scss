@@ -24,11 +24,7 @@
     var(--color-accent) 10%,
     transparent
   );
-  --about-accent-tint: color-mix(
-    in srgb,
-    var(--color-accent) 18%,
-    transparent
-  );
+  --about-accent-tint: color-mix(in srgb, var(--color-accent) 18%, transparent);
   --about-accent-tint-strong: color-mix(
     in srgb,
     var(--color-accent) 28%,
@@ -44,11 +40,7 @@
     var(--color-accent) 44%,
     rgba(255, 255, 255, 0.18)
   );
-  --about-accent-glow: color-mix(
-    in srgb,
-    var(--color-accent) 26%,
-    transparent
-  );
+  --about-accent-glow: color-mix(in srgb, var(--color-accent) 26%, transparent);
   position: relative;
   isolation: isolate;
   @include flex-column-gap(44px);
@@ -173,31 +165,27 @@
 }
 
 .about__link {
+  padding: 19px;
   width: 100%;
   justify-content: center;
   margin-right: 0;
-  @include glass-link;
+  @include glowing-border-btn;
   min-height: 48px;
   border-color: rgba(255, 255, 255, 0.18);
-  background:
-    var(--about-accent-gradient-soft),
-    rgba(255, 255, 255, 0.055);
+  background: var(--about-accent-gradient-soft), rgba(255, 255, 255, 0.055);
   box-shadow: 0 16px 44px rgba(0, 0, 0, 0.28);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 750;
 }
 
 .about-closing {
   overflow: hidden;
   padding: 22px;
+  width: stretch;
+  backdrop-filter: blur(18px);
   border-radius: 28px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background:
-    radial-gradient(
-      circle at 82% 10%,
-      var(--about-accent-tint),
-      transparent 34%
-    ),
     linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.074),
@@ -212,21 +200,20 @@
 .about-closing__status {
   margin-bottom: 18px;
   color: rgba(255, 255, 255, 0.9);
-  border-color: var(--about-accent-border);
-  background: var(--about-accent-tint-weak);
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.045);
 }
 
 .about-closing__pulse {
   width: 7px;
   height: 7px;
   border-radius: 999px;
-  background: var(--about-accent-gradient);
-  box-shadow: 0 0 0 6px var(--about-accent-glow);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.08);
 }
 
 .about-closing__body {
   display: grid;
-  gap: 22px;
   align-items: end;
 }
 
@@ -236,7 +223,7 @@
 
 .about-closing__text {
   max-width: 620px;
-  margin: 12px 0 0;
+  margin-bottom: 22px;
 }
 
 .about-closing__signals {
@@ -288,7 +275,7 @@
 
 @include respond(lg) {
   .about {
-    gap: 76px;
+    gap: 38px;
   }
 
   // .about::before {
@@ -308,11 +295,16 @@
   .about-closing__body {
     grid-template-columns: minmax(0, 1fr) auto;
   }
+
+  .about-closing__text {
+    margin-bottom: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .card--hover,
-  .hero-visual__railFill {
+  .hero-visual__railFill,
+  .about-closing__body .about__link {
     transition: none;
     animation: none;
   }
