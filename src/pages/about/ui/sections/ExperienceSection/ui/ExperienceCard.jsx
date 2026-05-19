@@ -34,7 +34,7 @@ export const ExperienceCard = ({
         </div>
 
         <ul className={list}>
-          {item.points.slice(0, 4).map((point) => (
+          {item.points.slice(0, 8).map((point) => (
             <li key={point} className={listItem}>
               {point.replace(/^-\s*/, "")}
             </li>

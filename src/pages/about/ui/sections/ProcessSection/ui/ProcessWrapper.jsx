@@ -17,9 +17,6 @@ export const ProcessWrapper = ({
 
   return (
     <div className={root} ref={rootRef}>
-      {/* <div className={atmosphere} aria-hidden="true">
-
-      </div> */}
       {connector ? (
         <svg
           className={path}
