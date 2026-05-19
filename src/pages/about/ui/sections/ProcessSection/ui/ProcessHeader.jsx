@@ -1,12 +1,10 @@
-import { useSiteVersionContent } from "@/shared/lib/useSiteVersion"
+import { PROCESS_HEADER } from "../model/constants"
 
 export const ProcessHeader = ({ root, title, subtitle }) => {
-  const { about } = useSiteVersionContent()
-
   return (
     <header className={root}>
-      <h2 className={title}>{about.process.title}</h2>
-      <p className={subtitle}>{about.process.subtitle}</p>
+      <h2 className={title}>{PROCESS_HEADER.title}</h2>
+      <p className={subtitle}>{PROCESS_HEADER.subtitle}</p>
     </header>
   )
 }
