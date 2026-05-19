@@ -3,10 +3,11 @@ import { Reveal } from "../reveal"
 import { useVersionedPath } from "@/shared/lib/useSiteVersion"
 
 export const LinksBlock = ({ links }) => {
+  const toVersionedPath = useVersionedPath()
+
   if (!links?.length) return null
 
   const [first, ...rest] = links
-  const toVersionedPath = useVersionedPath()
 
   return (
     <div className="skills-links__block">

@@ -28,7 +28,4 @@ export const heroClasses = {
   },
   title: "hero__title",
   desc: "hero__desc",
-  button: "hero__btn",
-  moreText: "hero__moreText",
-  arrow: "hero__arrow",
 }

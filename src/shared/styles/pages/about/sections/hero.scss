@@ -58,46 +58,6 @@
   font-size: 15px;
 }
 
-.hero__btn {
-  margin-top: 24px;
-  border: none;
-  border-radius: 14px;
-  color: rgba(255, 255, 255, 0.82);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 48px;
-  padding: 11px 15px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 16px 46px rgba(0, 0, 0, 0.32);
-  background:
-    var(--about-accent-gradient-soft),
-    rgba(255, 255, 255, 0.055);
-  transition:
-    color 160ms ease,
-    transform 160ms ease,
-    border-color 160ms ease,
-    background 160ms ease;
-
-  &:hover {
-    color: rgba(255, 255, 255, 0.94);
-    transform: translateY(-2px);
-    border-color: var(--about-accent-border-strong);
-    background:
-      var(--about-accent-gradient-soft),
-      rgba(255, 255, 255, 0.075);
-  }
-}
-
-.hero__arrow {
-  display: inline-flex;
-  width: 22px;
-  height: 22px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-}
-
 .hero__visualReveal {
   min-width: 0;
 }

@@ -9,7 +9,6 @@ export const whatIDoclasses = {
     root: "what__grid",
     card: {
       root: "what__card card-w card--hover",
-      num: "what__num",
       title: "what-grid__title",
       text: "what-grid__text",
       content: "what__content",

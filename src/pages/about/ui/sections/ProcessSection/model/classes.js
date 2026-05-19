@@ -7,9 +7,6 @@ export const processClasses = {
   },
   wrap: {
     root: "process__wrap",
-    atmosphere: "process__atmosphere",
-    glow: "process__glow",
-    dots: "process__dots",
     path: "process__path",
     pathAura: "process__pathAura",
     pathLine: "process__pathLine",

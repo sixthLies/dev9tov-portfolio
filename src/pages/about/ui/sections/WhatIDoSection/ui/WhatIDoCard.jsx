@@ -21,7 +21,6 @@ const FeaturedAtmosphere = ({ classes, number }) => {
 
 export const WhatIDoCard = ({
   root,
-  num,
   title,
   text,
   content,
@@ -42,9 +41,6 @@ export const WhatIDoCard = ({
         ) : null}
 
         <div className={content}>
-          {/* <div className={num} aria-hidden="true">
-            {c.n}
-          </div> */}
           <div className={copy}>
             <h3 className={title}>{c.title}</h3>
             <p className={text}>{c.text}</p>

@@ -9,16 +9,12 @@ lerna-debug.log*
 
 node_modules
 dist
-docs
 dist-ssr
 *.local
 
 .env
 .env.local
 .env.*.local
-
-TECHNICAL_DOCUMENTATION.md
-reveal-system.md
 
 # Editor directories and files
 .vscode/*

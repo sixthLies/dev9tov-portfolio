@@ -55,146 +55,6 @@
   isolation: isolate;
 }
 
-.goals-flow__atmosphere {
-  position: absolute;
-  inset: -46px -18px -28px;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.goals-flow__glow,
-.goals-flow__grid,
-.goals-flow__particles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.goals-flow__glow {
-  background:
-    radial-gradient(
-      circle at 44% 12%,
-      rgba(95, 180, 255, 0.11),
-      transparent 24%
-    ),
-    radial-gradient(
-      circle at 50% 48%,
-      var(--about-accent-tint-strong),
-      transparent 46%
-    ),
-    radial-gradient(
-      circle at 18% 74%,
-      rgba(255, 255, 255, 0.052),
-      transparent 26%
-    );
-  filter: blur(4px);
-  opacity: 0.92;
-}
-
-.goals-flow__grid {
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.034) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.034) 1px, transparent 1px);
-  background-size: 54px 54px;
-  mask-image: radial-gradient(circle at 50% 52%, #000, transparent 74%);
-  opacity: 0.42;
-}
-
-.goals-flow__particles {
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.54) 1px,
-    transparent 1px
-  );
-  background-position: 22px 14px;
-  background-size: 122px 98px;
-  opacity: 0.16;
-}
-
-.goals-flow__path {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  pointer-events: none;
-}
-
-.goals-flow__pathAura,
-.goals-flow__pathLine,
-.goals-flow__pathFlow {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-}
-
-.goals-flow__pathAura,
-.goals-flow__pathLine {
-  stroke: color-mix(
-    in srgb,
-    var(--color-accent) 72%,
-    rgba(150, 210, 255, 0.84)
-  );
-  animation: goals-flow-draw 940ms cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards;
-}
-
-.goals-flow__pathAura {
-  stroke-width: 16;
-  filter: url("#goals-flow-blur");
-  opacity: 0.31;
-}
-
-.goals-flow__pathAura--branch {
-  opacity: 0.24;
-}
-
-.goals-flow__pathLine {
-  stroke-width: 2;
-  filter: drop-shadow(0 0 10px var(--about-accent-glow));
-  opacity: 0.95;
-}
-
-.goals-flow__pathLine--branch {
-  stroke-width: 1.7;
-  opacity: 0.82;
-}
-
-.goals-flow__pathFlow {
-  stroke: rgba(255, 255, 255, 0.78);
-  stroke-width: 2.4;
-  stroke-dasharray: 0.07 0.93;
-  opacity: 0.58;
-  filter: drop-shadow(0 0 9px rgba(255, 255, 255, 0.36));
-  animation:
-    goals-flow-draw 720ms cubic-bezier(0.22, 1, 0.36, 1) 220ms forwards,
-    goals-flow-energy 4200ms linear 1120ms infinite;
-}
-
-.goals-flow__pathFlow--branch {
-  opacity: 0.46;
-}
-
-.goals-flow__pathNode {
-  fill: color-mix(in srgb, var(--color-accent) 52%, transparent);
-  filter: drop-shadow(0 0 16px var(--about-accent-glow));
-  opacity: 0;
-  animation:
-    goals-flow-node-reveal 420ms ease-out 620ms forwards,
-    goals-flow-node-pulse 3400ms ease-in-out 1200ms infinite;
-}
-
-.goals-flow__pathNode--card {
-  opacity: 0.86;
-}
-
-.goals-flow__pathNodeInner {
-  fill: color-mix(in srgb, var(--color-accent) 38%, var(--color-white));
-}
-
 .goals__list {
   position: relative;
   z-index: 2;
@@ -314,56 +174,6 @@
   pointer-events: none;
 }
 
-.goals__icon {
-  position: relative;
-  display: grid;
-  width: 42px;
-  height: 42px;
-  flex: 0 0 auto;
-  place-items: center;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.035)
-    ),
-    var(--about-accent-tint-weak);
-  box-shadow:
-    0 0 24px var(--about-accent-glow),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
-}
-
-.goals__icon::before,
-.goals__icon::after,
-.goals__icon span {
-  content: "";
-  position: absolute;
-  border-radius: 999px;
-}
-
-.goals__icon::before {
-  width: 20px;
-  height: 20px;
-  border: 1px solid
-    color-mix(in srgb, var(--color-accent) 48%, var(--color-white));
-}
-
-.goals__icon::after {
-  width: 7px;
-  height: 7px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 14px var(--about-accent-glow);
-}
-
-.goals__icon span {
-  width: 31px;
-  height: 1px;
-  background: color-mix(in srgb, var(--color-accent) 46%, var(--color-white));
-  opacity: 0.72;
-}
-
 .goals__number {
   position: absolute;
   top: 6px;
@@ -375,21 +185,9 @@
   letter-spacing: 0;
 }
 
-.goals__label,
 .goals__text {
   position: relative;
   z-index: 1;
-}
-
-.goals__label {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  line-height: 1.2;
-}
-
-.goals__label {
-  color: rgba(232, 238, 255, 0.54);
-  font-size: 11px;
-  text-transform: uppercase;
 }
 
 .goals__text {
@@ -420,45 +218,6 @@
 
 .goals__item--4 .goals__card {
   min-height: 148px;
-}
-
-@keyframes goals-flow-draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes goals-flow-energy {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes goals-flow-node-reveal {
-  from {
-    opacity: 0;
-    transform: scale(0.78);
-    transform-box: fill-box;
-    transform-origin: center;
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-    transform-box: fill-box;
-    transform-origin: center;
-  }
-}
-
-@keyframes goals-flow-node-pulse {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 12px var(--about-accent-glow));
-  }
-
-  50% {
-    filter: drop-shadow(0 0 22px var(--about-accent-glow));
-  }
 }
 
 @keyframes goals-card-float {
@@ -605,22 +364,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .goals-flow__pathAura,
-  .goals-flow__pathLine,
-  .goals-flow__pathFlow,
-  .goals-flow__pathNode,
   .goals__card {
     animation: none;
-  }
-
-  .goals-flow__pathAura,
-  .goals-flow__pathLine,
-  .goals-flow__pathFlow {
-    stroke-dashoffset: 0;
-  }
-
-  .goals-flow__pathNode {
-    opacity: 1;
   }
 
   .goals__item:hover .goals__card {

@@ -28,20 +28,6 @@
   position: relative;
 }
 
-.what__num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 34px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.065);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 800;
-  font-size: 13px;
-}
-
 .what__card--featured {
   min-height: 320px;
   border-color: var(--about-accent-border);
@@ -324,11 +310,6 @@
 
   .what__grid > .reveal:first-child .what__copy {
     margin-top: 21%;
-  }
-
-  .what__grid > .reveal:first-child .what__num {
-    width: 52px;
-    height: 42px;
   }
 
   .what__grid > .reveal:first-child .what-grid__title {

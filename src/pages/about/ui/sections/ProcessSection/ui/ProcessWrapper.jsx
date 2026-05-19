@@ -3,9 +3,6 @@ import { ProcessList } from "./ProcessList"
 
 export const ProcessWrapper = ({
   root,
-  atmosphere,
-  glow,
-  dots,
   path,
   pathAura,
   pathLine,

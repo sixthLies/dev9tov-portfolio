@@ -13,7 +13,6 @@ export const AboutPage = () => {
   const {
     sectionIds,
     sectionRefSetters,
-    scrollToSection,
   } = useAboutNavigation()
 
   return (
@@ -21,7 +20,6 @@ export const AboutPage = () => {
       <HeroSection
         id={sectionIds.hero}
         sectionRef={sectionRefSetters[sectionIds.hero]}
-        onMore={() => scrollToSection(sectionIds.what)}
       />
       <WhatIDoSection
         id={sectionIds.what}

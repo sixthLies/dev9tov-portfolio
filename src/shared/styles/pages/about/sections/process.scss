@@ -58,36 +58,6 @@
   padding-bottom: 86px;
 }
 
-.process__atmosphere {
-  position: absolute;
-  inset: -24px;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.process__glow {
-  position: absolute;
-  left: 5%;
-  bottom: 4%;
-  width: 240px;
-  height: 240px;
-  border-radius: 999px;
-  background: var(--about-accent-tint);
-  filter: blur(54px);
-  opacity: 0.62;
-}
-
-.process__dots {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.5) 1px,
-    transparent 1px
-  );
-  background-size: 164px 126px;
-  opacity: 0.15;
-}
-
 .process__path {
   position: absolute;
   inset: 0;
