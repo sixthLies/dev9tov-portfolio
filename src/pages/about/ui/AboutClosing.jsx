@@ -17,7 +17,7 @@ export const AboutClosing = () => {
       <div className="about-closing__body">
         <p className="about-closing__text">
           Следующий слой портфолио раскрывает стек, инструменты и рабочую
-          систему, на которой строятся эти решения.
+          систему.
         </p>
 
         <Reveal
